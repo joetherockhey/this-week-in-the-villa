@@ -67,8 +67,10 @@ def card(i, t):
         cap = "AI illustration. No example post could be captured."
     elif shot:
         cap = f'<a href="{e(shot["url"])}" target="_blank" rel="noopener">{e(who(shot["url"]))}</a>'
-    img = (f'<figure><img src="img/{i}.jpg?v={today}" alt="{"AI illustration" if shot["kind"] == "ai" else "Example post"} for {e(t["name"])}" loading="lazy">'
-           f'<figcaption>{cap}</figcaption></figure>' if shot else '<figure class="noimg"></figure>')
+    pic = shot and f'<img src="img/{i}.jpg?v={today}" alt="{"AI illustration" if shot["kind"] == "ai" else "Example post"} for {e(t["name"])}" loading="lazy">'
+    if shot and shot["kind"] != "ai":
+        pic = f'<a class="pic" href="{e(shot["url"])}" target="_blank" rel="noopener">{pic}</a>'
+    img = f'<figure>{pic}<figcaption>{cap}</figcaption></figure>' if shot else '<figure class="noimg"></figure>'
     sound = (f'<a href="{e(t["sound_url"])}" target="_blank" rel="noopener">{e(t["sound"])}</a>' if t.get("sound_url") else e(t.get("sound"))) or "No set sound. It's a format."
     risk = f'<dt>Watch out</dt><dd>{e(t["risk"])}</dd>' if t.get("risk") else ""
     srcs = ", ".join(f'<a href="{e(u)}" target="_blank" rel="noopener">{e(host(u))}</a>' for u in t["sources"])
@@ -138,6 +140,7 @@ td a{{text-decoration:none;font-weight:500}}
 .section-break{{margin-top:80px;padding-top:24px;border-top:1px solid var(--ink)}}
 .trend{{display:grid;grid-template-columns:240px 1fr;gap:40px;padding:40px 0;border-bottom:1px solid var(--line);scroll-margin-top:12px}}
 figure img{{width:100%;aspect-ratio:9/14;object-fit:cover;object-position:top;border-radius:6px;display:block;background:var(--line)}}
+.pic{{display:block}} .pic:hover img{{opacity:.85}}
 figcaption{{margin-top:8px;color:var(--muted)}}
 .noimg{{aspect-ratio:9/14;border-radius:6px;background:var(--line)}}
 .meta{{display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--muted)}}
