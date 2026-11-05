@@ -54,6 +54,10 @@ footer{padding:40px 0 64px;color:var(--muted);font-size:14px;display:grid;gap:10
   .trend{grid-template-columns:1fr;gap:20px} figure{max-width:260px}
   dl{grid-template-columns:1fr;gap:2px} dd{margin-bottom:10px}
 }
+.intro .past{margin-top:22px}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 18px;border-radius:8px;background:var(--ink);color:var(--bg);font-size:15px;font-weight:500;text-decoration:none}
+.btn:hover{background:var(--red);color:var(--bg)}
+.btn:focus-visible{outline:2px solid var(--red);outline-offset:2px}
 </style>
 </head>
 <body>
@@ -62,7 +66,7 @@ footer{padding:40px 0 64px;color:var(--muted);font-size:14px;display:grid;gap:10
 <section class="intro">
   <h1>Social trend report</h1>
   <p>16 TikTok and Reels trends, ranked by how many videos use them. Trends a brand can run any week sit at the top. Ones tied to a date sit lower.</p>
-  <p style="margin-top:14px;font-size:15px"><a href="../">Past reports and trend history</a></p>
+  <p class="past"><a class="btn" href="../">Past reports and trend history <span aria-hidden="true">→</span></a></p>
 </section>
 <h2>Works any week</h2>
 <p>Not tied to a date. Ranked by videos made.</p>
