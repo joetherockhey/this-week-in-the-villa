@@ -1,0 +1,249 @@
+[
+ {
+  "n": 1,
+  "name": "Vlog timestamps",
+  "platforms": [
+   "Instagram"
+  ],
+  "status": "Steady",
+  "longevity": "evergreen",
+  "ends": null,
+  "sound": "Pump It, The Black Eyed Peas",
+  "sound_url": "https://www.instagram.com/reels/audio/1154559479569864/",
+  "what": "A quick run of clips from a day or a job, each labelled with a time or a step (the setting, the fuel, the tools), joined by swipe transitions with no voiceover.",
+  "origin": "An older track picked up by small businesses and runners from Sept 2026. Later listed the format on 23 Oct 2026 and Buffer on 3 Nov 2026. Original creator not found.",
+  "usage": "692K Instagram reels on the audio (5 Nov 2026), up from 682K on Postdom (2 Nov); top reel on the audio page 295K views",
+  "usage_n": 692000,
+  "brand_use": "A day in the life of the business: open up, coffee, tools, first customer, finished job. Suits salons, cafes, trades and studios, and any team with a behind-the-scenes story.",
+  "risk": "Major-label track, so it may be restricted on business accounts. Check in-app or run the same format on a cleared sound.",
+  "examples": [
+   {
+    "url": "https://www.instagram.com/reel/DezoYfII6LQ/",
+    "plays": 295000,
+    "likes": 6069,
+    "audio_verified": true,
+    "note": "top reel on the audio page, runner labelling coffee, shoes and fuel (@edmond.running, 22 Oct 2026)"
+   },
+   {
+    "url": "https://www.instagram.com/reel/Dd7O66vSUcy/",
+    "plays": 254000,
+    "likes": 4034,
+    "audio_verified": true,
+    "note": "hair stylist's working day (@hairby_kileychristine, 30 Sep 2026)"
+   },
+   {
+    "url": "https://www.instagram.com/reel/DehBOTLg2A8/",
+    "plays": 195000,
+    "likes": 4300,
+    "audio_verified": true,
+    "note": "behind the scenes of a designer, labelled 'The Architect' (@laledesign.me, 15 Oct 2026)"
+   }
+  ],
+  "sources": [
+   "https://www.instagram.com/reels/audio/1154559479569864/",
+   "https://later.com/blog/instagram-reels-trends/",
+   "https://buffer.com/resources/trending-audio-instagram/",
+   "https://postdom.com/blog/instagram-trends"
+  ],
+  "weak": false,
+  "notes": "Count is lifetime for a long-standing song, so many of the 692K reels will not be this format. Later describes timestamps, Buffer describes labels; the cover frames I saw show labels and no timestamps, and I could only view covers. No big posts: mainly a small-business format. Instagram shows only 12 reels logged out, so 'top' means top of those. Business-account access could not be checked logged out. Plays are the view counts on Instagram's audio page grid (5 Nov 2026); likes and the song on each reel come from its embed page, which also reports a lower video_view_count (about half), so plays depend on which Instagram figure you read."
+ },
+ {
+  "n": 2,
+  "name": "Small text zoom",
+  "platforms": [
+   "Instagram"
+  ],
+  "status": "Peaking",
+  "longevity": "evergreen",
+  "ends": null,
+  "sound": "DROP IT LIKE ITS HOT x STAYIN ALIVE (ALTÉGO MIX), altego_music (original audio)",
+  "sound_url": "https://www.instagram.com/reels/audio/35471216759159857/",
+  "what": "A tiny line of text sits in the scene, then the camera zooms in until it fills the frame: 'You're doing amazing sweetie', 'You're a good mama'. Usually an encouraging message aimed at one type of person.",
+  "origin": "Mash-up uploaded by altego_music; the biggest reels are from 7 to 9 Oct 2026, on parenting accounts. Later listed it on 30 Oct 2026 and Buffer on 3 Nov 2026. Original reel not found.",
+  "usage": "570K Instagram reels on the audio (5 Nov 2026); top reel 8.2M views, 534.6K likes",
+  "usage_n": 570000,
+  "brand_use": "Pick one audience and say something kind or cheeky to them: 'You're nearly at payday', 'Your dog thinks you're great'. Later also suggests it for hinting at an announcement. Cheap to make and built to be sent to a friend.",
+  "risk": "Tagged original audio, but it is a mash-up of two commercial songs, so don't assume it is cleared. Sincere messages from a brand can feel forced, so keep it light.",
+  "examples": [
+   {
+    "url": "https://www.instagram.com/reel/DeRmOiIpWmQ/",
+    "plays": 8200000,
+    "likes": 534643,
+    "audio_verified": true,
+    "note": "top reel on the audio page, 'You're doing amazing sweetie' (@mrsemilynicholas, 9 Oct 2026)"
+   },
+   {
+    "url": "https://www.instagram.com/reel/DeMV7YiBdu-/",
+    "plays": 5400000,
+    "likes": 194023,
+    "audio_verified": true,
+    "note": "'You're a good mama' (@tinanatwilson, 7 Oct 2026)"
+   },
+   {
+    "url": "https://www.instagram.com/reel/DeiPlykhOoI/",
+    "plays": 858000,
+    "likes": 26055,
+    "audio_verified": true,
+    "note": "'You're a cool Dad', the example Buffer uses (@dontdillydally_, 16 Oct 2026)"
+   }
+  ],
+  "sources": [
+   "https://www.instagram.com/reels/audio/35471216759159857/",
+   "https://later.com/blog/instagram-reels-trends/",
+   "https://buffer.com/resources/trending-audio-instagram/"
+  ],
+  "weak": false,
+  "notes": "Status is a judgement: there is no earlier dated count to measure growth, the biggest reels are about four weeks old, and the round-ups only listed it from 30 Oct. No brand example among the 12 reels Instagram shows logged out; Kerry Washington used it for a voting message (602K views, 49,266 likes), left out as political. No TikTok version checked. Plays are the view counts on Instagram's audio page grid (5 Nov 2026); likes and the song on each reel come from its embed page, which also reports a lower video_view_count (about half), so plays depend on which Instagram figure you read."
+ },
+ {
+  "n": 3,
+  "name": "Not every angel walks the runway",
+  "platforms": [
+   "Instagram",
+   "TikTok"
+  ],
+  "status": "Rising",
+  "longevity": "evergreen",
+  "ends": null,
+  "sound": "Angel Of My Dreams, JADE",
+  "sound_url": "https://www.instagram.com/reels/audio/496336559627131/",
+  "what": "On-screen text says not every angel gets the Victoria's Secret runway, over a clip of you at your desk or on your commute, walking like one anyway. A dreamier version sets the song over a too-pretty view or a glam look.",
+  "origin": "JADE's 2024 single came back after Kylie Jenner's Victoria's Secret show walk (18 Oct 2026, InMusicBlog). JADE's own TikTok about it (20 Oct) is the most-played post checked on the sound.",
+  "usage": "263K Instagram reels on the audio and 128.6K TikTok videos on the sound (5 Nov 2026); Instagram was 241K on Postdom (2 Nov) and 211K on SocialPilot; top post 23.7M plays",
+  "usage_n": 391600,
+  "brand_use": "The workplace joke suits any team: 'not every angel walks the runway, some of us do the BAS'. Tourism and hospitality can use the dreamy version, as @australia did for Melbourne: a hotel's best view, a ring box opening, a finished nail set.",
+  "risk": "Major-label track, so it may be restricted on business accounts. The joke leans on one celebrity moment, so it will date quicker than the dreamy version.",
+  "examples": [
+   {
+    "url": "https://www.tiktok.com/@jadethirlwall/video/7698681423989017858",
+    "plays": 23700000,
+    "likes": 3000000,
+    "audio_verified": true,
+    "note": "most-played TikTok checked on the sound, JADE on Kylie Jenner (20 Oct 2026)"
+   },
+   {
+    "url": "https://www.instagram.com/reel/Deu2w6UBd-1/",
+    "plays": 986000,
+    "likes": 75269,
+    "audio_verified": true,
+    "note": "joint top reel on the Instagram audio page, 'not all angels can be in the VSFS, I'm in Excel' (@kelsey_paul, 20 Oct 2026)"
+   },
+   {
+    "url": "https://www.instagram.com/reel/De_fGtRsNdX/",
+    "plays": 383048,
+    "likes": 23212,
+    "audio_verified": true,
+    "note": "brand use, Melbourne reel from @australia (27 Oct 2026); plays from Postdom, 2 Nov"
+   }
+  ],
+  "sources": [
+   "https://www.instagram.com/reels/audio/496336559627131/",
+   "https://www.tiktok.com/music/Angel-Of-My-Dreams-7393199330905262096",
+   "https://www.socialpilot.co/blog/instagram-reels-trends",
+   "https://postdom.com/blog/instagram-trends",
+   "https://creatordb.app/free-tools/trending-instagram-audio/",
+   "https://inmusicblog.com/analysis/jade-angel-of-my-dreams-tiktok-spotify-surge/"
+  ],
+  "weak": false,
+  "notes": "usage_n adds the Instagram and TikTok page counts, as the Money can't buy happiness entry does. TikTok counts disagree: the sound page showed 128.6K videos, Tokchart about 83.6K in late Oct, and InMusicBlog over 270,000 creations on 23 Oct. I used the sound page. Rising on Instagram's own counts: 241K to 263K in three days. The count covers all uses of the song, not just the angel joke. The name is mine, not an established trend name. @australia's embed page shows 83,792 views against Postdom's 383,048, and 23,212 likes against Postdom's 23,784; likes here are the embed figure. Business-account access could not be checked logged out. Plays are the view counts on Instagram's audio page grid (5 Nov 2026); likes and the song on each reel come from its embed page, which also reports a lower video_view_count (about half), so plays depend on which Instagram figure you read."
+ },
+ {
+  "n": 4,
+  "name": "Upside Down hand transition",
+  "platforms": [
+   "Instagram"
+  ],
+  "status": "Steady",
+  "longevity": "evergreen",
+  "ends": null,
+  "sound": "Upside Down, Diana Ross",
+  "sound_url": "https://www.instagram.com/reels/audio/2006821089449485/",
+  "what": "Mouth the lyric, hit the hand gesture and cut to the reveal: new hair, a day-to-night outfit or a big travel view.",
+  "origin": "Later listed it on 2 Oct 2026; the biggest reels are from 4 to 7 Oct 2026. Buffer still had it on 3 Nov and CreatorDB on 4 Nov. Original creator not found.",
+  "usage": "352K Instagram reels on the audio (5 Nov 2026); top reel 3.9M views, 272.8K likes",
+  "usage_n": 352000,
+  "brand_use": "A before-and-after with one hand gesture: the tired room to the styled room, day look to night look, raw ingredient to finished plate. Fashion, beauty, homewares and tourism fit best.",
+  "risk": "Major-label track, so it may be restricted on business accounts. The transition works on a cleared sound.",
+  "examples": [
+   {
+    "url": "https://www.instagram.com/reel/DeFeUtWBmVK/",
+    "plays": 3900000,
+    "likes": 272825,
+    "audio_verified": true,
+    "note": "top reel on the audio page, Victoria Falls travel reel (@abeunseen, 4 Oct 2026)"
+   },
+   {
+    "url": "https://www.instagram.com/reel/DeJohjwJNP4/",
+    "plays": 945000,
+    "likes": 36657,
+    "audio_verified": true,
+    "note": "second most-viewed reel, Thailand (@bohomeann, 6 Oct 2026)"
+   },
+   {
+    "url": "https://www.instagram.com/reel/DemmJK-CWpl/",
+    "plays": 660000,
+    "likes": 31773,
+    "audio_verified": true,
+    "note": "day-to-night outfit reveal tagging Cult Gaia and Alexander Wang (@valslooks, 17 Oct 2026)"
+   }
+  ],
+  "sources": [
+   "https://www.instagram.com/reels/audio/2006821089449485/",
+   "https://later.com/blog/instagram-reels-trends/",
+   "https://buffer.com/resources/trending-audio-instagram/",
+   "https://www.socialpilot.co/blog/instagram-reels-trends",
+   "https://creatordb.app/free-tools/trending-instagram-audio/"
+  ],
+  "weak": false,
+  "notes": "CreatorDB lists 127K reels and calls it Rising, but Instagram's page shows 352K, so its figure is out of date. Status is a judgement: no reel among the 12 shown is newer than 17 Oct, though round-ups still list it. Count is lifetime for a classic song, so not every reel is this format. I saw cover frames only, so the transition itself rests on Later and Buffer; the two biggest reels are travel clips and I could not confirm they show it. @valslooks' caption says 'day and night'. Business-account access could not be checked logged out. Plays are the view counts on Instagram's audio page grid (5 Nov 2026); likes and the song on each reel come from its embed page, which also reports a lower video_view_count (about half), so plays depend on which Instagram figure you read."
+ },
+ {
+  "n": 5,
+  "name": "Toggle on",
+  "platforms": [
+   "Instagram"
+  ],
+  "status": "Rising",
+  "longevity": "evergreen",
+  "ends": null,
+  "sound": "Original audio, sviola_handmade (Mix: Kanye West, Touch The Sky, plus Instagram click sounds)",
+  "sound_url": "https://www.instagram.com/reels/audio/29285135541104810/",
+  "what": "An iPhone-style ON/OFF switch sits above a poster or photo. A finger flips it on and the news appears: a launch, an event, a new series.",
+  "origin": "Italian knitwear maker @sviola_handmade posted the audio with a pattern launch on 7 Oct 2026, which is also the top reel on it. Later listed it on 30 Oct 2026 and Buffer on 3 Nov 2026.",
+  "usage": "27K Instagram reels on the audio (5 Nov 2026); top reel 4.8M views",
+  "usage_n": 27000,
+  "brand_use": "Made for announcements: flip the switch to reveal a sale date, a new store, a menu or a booking window. Small brands are already doing this, and it needs only a static poster and a finger.",
+  "risk": "The audio's own title credits a Kanye West song, so check the client is comfortable, and don't assume it is cleared because it's tagged original audio. The switch works with a click sound alone.",
+  "examples": [
+   {
+    "url": "https://www.instagram.com/reel/DeL0bVzt1As/",
+    "plays": 4800000,
+    "likes": 47363,
+    "audio_verified": true,
+    "note": "origin of the audio and top reel on it, knitting pattern launch (@sviola_handmade, 7 Oct 2026)"
+   },
+   {
+    "url": "https://www.instagram.com/reel/DeaVIMfRDo5/",
+    "plays": 1100000,
+    "likes": 5924,
+    "audio_verified": true,
+    "note": "brand use, shoe shop trunk show announcement (@chattanoogashoe, 12 Oct 2026)"
+   },
+   {
+    "url": "https://www.instagram.com/reel/DeYyl_vNtcc/",
+    "plays": 484000,
+    "likes": 3105,
+    "audio_verified": true,
+    "note": "brand use, skincare event announcement (@infyve.beauty, 12 Oct 2026)"
+   }
+  ],
+  "sources": [
+   "https://www.instagram.com/reels/audio/29285135541104810/",
+   "https://later.com/blog/instagram-reels-trends/",
+   "https://buffer.com/resources/trending-audio-instagram/"
+  ],
+  "weak": false,
+  "notes": "Smallest count here but the most brand-ready format: the reels I checked on the audio are businesses announcing something. Status rests on round-ups adding it from 30 Oct; there is no earlier dated count. Views are high against likes on the brand posts, and I can't say why. @sviola_handmade is the earliest of the 12 reels shown logged out and the audio is theirs, but I can't rule out an earlier one. No TikTok version checked. Plays are the view counts on Instagram's audio page grid (5 Nov 2026); likes and the song on each reel come from its embed page, which also reports a lower video_view_count (about half), so plays depend on which Instagram figure you read."
+ }
+]

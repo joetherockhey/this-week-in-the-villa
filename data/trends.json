@@ -1,6 +1,250 @@
 [
  {
-  "n": 11,
+  "n": 1,
+  "name": "Ba Ba Ba dance",
+  "platforms": [
+   "TikTok"
+  ],
+  "status": "Peaking",
+  "longevity": "evergreen",
+  "ends": null,
+  "sound": "original sound, prodshyp (Don't You Worry Bout a Thing x She Twerkin mash-up)",
+  "sound_url": "https://www.tiktok.com/music/original-sound-7687490376903052046",
+  "what": "Two people do a short, easy duo dance to a 'ba ba ba' mash-up, often under a caption that sets up the relationship, like 'How long have you been friends?'",
+  "origin": "The audio comes from a DJ mash-up posted by @iproducedit (prodshyp) on 20 Sep 2026. One dance post credits the steps to OTR.J5. A dad and daughter post on 27 Oct became the biggest on the sound.",
+  "usage": "714.6K TikTok videos on the sound (5 Nov 2026); top post 22.1M views, 3.9M likes",
+  "usage_n": 714600,
+  "brand_use": "Pair up two long-serving staff, or a founder and their parent, under 'How long have you worked together?' and let them do the steps badly. Works for family businesses, cafes, gyms and retail teams.",
+  "risk": "The mash-up samples a track called She Twerkin, so listen to the full clip before posting. It is built from commercial music, so a business account may not have access to it.",
+  "examples": [
+   {
+    "url": "https://www.tiktok.com/@chriscrawford07/video/7701416205999033622",
+    "plays": 22100000,
+    "likes": 3900000,
+    "audio_verified": true,
+    "note": "top post, dad and daughter, 'How long have you been friends?' (27 Oct 2026)"
+   },
+   {
+    "url": "https://www.tiktok.com/@iproducedit/video/7687490255888403725",
+    "plays": 2000000,
+    "likes": 148300,
+    "audio_verified": true,
+    "note": "origin of the audio (20 Sep 2026)"
+   },
+   {
+    "url": "https://www.tiktok.com/@katieticebrown/video/7700095714650623246",
+    "plays": 6100000,
+    "likes": 908700,
+    "audio_verified": true,
+    "note": "wedding day version (24 Oct 2026)"
+   }
+  ],
+  "sources": [
+   "https://www.tiktok.com/music/original-sound-7687490376903052046",
+   "https://www.tiktok.com/discover/ba-ba-ba-dance"
+  ],
+  "weak": false,
+  "notes": "No round-up covers this one; it comes from the TikTok sound page, the discover page and post captions (#duodance, #dancestolearn, #2persondance). I saw cover frames and captions but did not watch or hear the clips, so the lyrics are unchecked. Status is read from post dates: the biggest posts are 27 and 28 Oct and new posts were still landing on 4 Nov. There is only one dated count, so no growth rate. @supersecretspammy021 (4.1M views) is a Halloween costume version, so it was left out as an example."
+ },
+ {
+  "n": 2,
+  "name": "Vlog timestamps",
+  "platforms": [
+   "Instagram"
+  ],
+  "status": "Steady",
+  "longevity": "evergreen",
+  "ends": null,
+  "sound": "Pump It, The Black Eyed Peas",
+  "sound_url": "https://www.instagram.com/reels/audio/1154559479569864/",
+  "what": "A quick run of clips from a day or a job, each labelled with a time or a step (the setting, the fuel, the tools), joined by swipe transitions with no voiceover.",
+  "origin": "An older track picked up by small businesses and runners from Sept 2026. Later listed the format on 23 Oct 2026 and Buffer on 3 Nov 2026. Original creator not found.",
+  "usage": "692K Instagram reels on the audio (5 Nov 2026), up from 682K on Postdom (2 Nov); top reel on the audio page 295K views",
+  "usage_n": 692000,
+  "brand_use": "A day in the life of the business: open up, coffee, tools, first customer, finished job. Suits salons, cafes, trades and studios, and any team with a behind-the-scenes story.",
+  "risk": "Major-label track, so it may be restricted on business accounts. Check in-app or run the same format on a cleared sound.",
+  "examples": [
+   {
+    "url": "https://www.instagram.com/reel/DezoYfII6LQ/",
+    "plays": 295000,
+    "likes": 6069,
+    "audio_verified": true,
+    "note": "top reel on the audio page, runner labelling coffee, shoes and fuel (@edmond.running, 22 Oct 2026)"
+   },
+   {
+    "url": "https://www.instagram.com/reel/Dd7O66vSUcy/",
+    "plays": 254000,
+    "likes": 4034,
+    "audio_verified": true,
+    "note": "hair stylist's working day (@hairby_kileychristine, 30 Sep 2026)"
+   },
+   {
+    "url": "https://www.instagram.com/reel/DehBOTLg2A8/",
+    "plays": 195000,
+    "likes": 4300,
+    "audio_verified": true,
+    "note": "behind the scenes of a designer, labelled 'The Architect' (@laledesign.me, 15 Oct 2026)"
+   }
+  ],
+  "sources": [
+   "https://www.instagram.com/reels/audio/1154559479569864/",
+   "https://later.com/blog/instagram-reels-trends/",
+   "https://buffer.com/resources/trending-audio-instagram/",
+   "https://postdom.com/blog/instagram-trends"
+  ],
+  "weak": false,
+  "notes": "Count is lifetime for a long-standing song, so many of the 692K reels will not be this format. Later describes timestamps, Buffer describes labels; the cover frames I saw show labels and no timestamps, and I could only view covers. No big posts: mainly a small-business format. Instagram shows only 12 reels logged out, so 'top' means top of those. Business-account access could not be checked logged out. Plays are the view counts on Instagram's audio page grid (5 Nov 2026); likes and the song on each reel come from its embed page, which also reports a lower video_view_count (about half), so plays depend on which Instagram figure you read."
+ },
+ {
+  "n": 3,
+  "name": "Someone's gotta hold it down",
+  "platforms": [
+   "TikTok"
+  ],
+  "status": "Steady",
+  "longevity": "evergreen",
+  "ends": null,
+  "sound": "Ain't In LA, ADÉLA",
+  "sound_url": "https://www.tiktok.com/music/Ain-t-In-LA-7662891797807205142",
+  "what": "One shot of the place or job that keeps running while everyone else is off somewhere better, with on-screen text. The song sends up the idea that you have to move to LA to make it.",
+  "origin": "ADÉLA started it in July 2026 with a clip joking that someone has to hold it down in Bratislava, Slovakia. Charli D'Amelio's post on 31 Jul is the biggest on the sound.",
+  "usage": "655.3K TikTok videos on the sound (5 Nov 2026); top post 42.3M views, 7.5M likes",
+  "usage_n": 655300,
+  "brand_use": "Film the shift, shop floor or support inbox that never stops: 'Someone's gotta hold it down in Wollongong.' Swapping in your own suburb makes it an easy local post for Australian businesses.",
+  "risk": "Major label track, so a business account may not have access to it. Check the Commercial Music Library first. The song is three months old, so use it for the local joke, not to look early.",
+  "examples": [
+   {
+    "url": "https://www.tiktok.com/@charlidamelio/video/7668817741490523405",
+    "plays": 42300000,
+    "likes": 7500000,
+    "audio_verified": true,
+    "note": "top post on the sound (31 Jul 2026)"
+   },
+   {
+    "url": "https://www.tiktok.com/@maeyoww_/video/7670824295446088981",
+    "plays": 2900000,
+    "likes": 391600,
+    "audio_verified": true,
+    "note": "small business version, the reality of running an iPhone business (6 Aug 2026)"
+   },
+   {
+    "url": "https://www.tiktok.com/@le_sserafim/video/7686834275605433608",
+    "plays": 13000000,
+    "likes": 2800000,
+    "audio_verified": true,
+    "note": "K-pop group LE SSERAFIM in LA (18 Sep 2026)"
+   }
+  ],
+  "sources": [
+   "https://napoleoncat.com/blog/tiktok-trends/",
+   "https://tokchart.com/news/top-tiktok-songs-october-2026",
+   "https://inmusicblog.com/analysis/adela-aint-in-la-tiktok-spotify-billboard-hot-100/",
+   "https://www.tiktok.com/music/Ain-t-In-LA-7662891797807205142"
+  ],
+  "weak": false,
+  "notes": "Tokchart ranks the song No. 10 for October with +46% growth, and says the current wave has moved on to pink CapCut lyric edits, so the job and hometown version is the older use. October posts are still large though (@fhtown14fdb 26.6M views, @iamurhope 22.6M), most of them general jokes, so I called it Steady. NapoleonCat quotes 384,000 likes for @maeyoww_; the post showed 391.6K on 5 Nov. Tokchart's 435,581 is an October figure for the song across sounds, not this page's count. The TikTok page title did not load, but its top posts and the music id on the Charli D'Amelio and maeyoww_ posts confirm the sound. The ADÉLA origin clip was not found on TikTok, so that detail rests on Tokchart."
+ },
+ {
+  "n": 4,
+  "name": "Small text zoom",
+  "platforms": [
+   "Instagram"
+  ],
+  "status": "Peaking",
+  "longevity": "evergreen",
+  "ends": null,
+  "sound": "DROP IT LIKE ITS HOT x STAYIN ALIVE (ALTÉGO MIX), altego_music (original audio)",
+  "sound_url": "https://www.instagram.com/reels/audio/35471216759159857/",
+  "what": "A tiny line of text sits in the scene, then the camera zooms in until it fills the frame: 'You're doing amazing sweetie', 'You're a good mama'. Usually an encouraging message aimed at one type of person.",
+  "origin": "Mash-up uploaded by altego_music; the biggest reels are from 7 to 9 Oct 2026, on parenting accounts. Later listed it on 30 Oct 2026 and Buffer on 3 Nov 2026. Original reel not found.",
+  "usage": "570K Instagram reels on the audio (5 Nov 2026); top reel 8.2M views, 534.6K likes",
+  "usage_n": 570000,
+  "brand_use": "Pick one audience and say something kind or cheeky to them: 'You're nearly at payday', 'Your dog thinks you're great'. Later also suggests it for hinting at an announcement. Cheap to make and built to be sent to a friend.",
+  "risk": "Tagged original audio, but it is a mash-up of two commercial songs, so don't assume it is cleared. Sincere messages from a brand can feel forced, so keep it light.",
+  "examples": [
+   {
+    "url": "https://www.instagram.com/reel/DeRmOiIpWmQ/",
+    "plays": 8200000,
+    "likes": 534643,
+    "audio_verified": true,
+    "note": "top reel on the audio page, 'You're doing amazing sweetie' (@mrsemilynicholas, 9 Oct 2026)"
+   },
+   {
+    "url": "https://www.instagram.com/reel/DeMV7YiBdu-/",
+    "plays": 5400000,
+    "likes": 194023,
+    "audio_verified": true,
+    "note": "'You're a good mama' (@tinanatwilson, 7 Oct 2026)"
+   },
+   {
+    "url": "https://www.instagram.com/reel/DeiPlykhOoI/",
+    "plays": 858000,
+    "likes": 26055,
+    "audio_verified": true,
+    "note": "'You're a cool Dad', the example Buffer uses (@dontdillydally_, 16 Oct 2026)"
+   }
+  ],
+  "sources": [
+   "https://www.instagram.com/reels/audio/35471216759159857/",
+   "https://later.com/blog/instagram-reels-trends/",
+   "https://buffer.com/resources/trending-audio-instagram/"
+  ],
+  "weak": false,
+  "notes": "Status is a judgement: there is no earlier dated count to measure growth, the biggest reels are about four weeks old, and the round-ups only listed it from 30 Oct. No brand example among the 12 reels Instagram shows logged out; Kerry Washington used it for a voting message (602K views, 49,266 likes), left out as political. No TikTok version checked. Plays are the view counts on Instagram's audio page grid (5 Nov 2026); likes and the song on each reel come from its embed page, which also reports a lower video_view_count (about half), so plays depend on which Instagram figure you read."
+ },
+ {
+  "n": 5,
+  "name": "Housewife POV",
+  "platforms": [
+   "TikTok"
+  ],
+  "status": "Peaking",
+  "longevity": "evergreen",
+  "ends": null,
+  "sound": "Housewife, Tate McRae",
+  "sound_url": "https://www.tiktok.com/music/Housewife-7697010651306838068",
+  "what": "An on-screen POV line about a busy or ordinary day, then a lip-sync or strut to the chorus as if it were a music video. Duo choreography and outfit reveals also run on the sound.",
+  "origin": "Tate McRae released the song on 15 Oct 2026 and posted the top clip herself on 16 Oct. Coverage on 20 Oct described 'housewife era' manifesting posts; the POV work jokes on the sound date from 20 to 30 Oct.",
+  "usage": "503.1K TikTok videos on the sound (5 Nov 2026); top post 22.3M views, 3.3M likes",
+  "usage_n": 503100,
+  "brand_use": "Show the job with full music video energy: 'POV: you close the shop at 5 and have dinner at 6.' Staff in uniform work best, and any 'POV: you started using [product]' line fits.",
+  "risk": "Major label track, so a business account may not have access to it. Gen Z is split on whether the song is a girl boss or trad wife anthem, so keep it about the work and avoid jokes about wives.",
+  "examples": [
+   {
+    "url": "https://www.tiktok.com/@tatemcrae/video/7697301244750073102",
+    "plays": 22300000,
+    "likes": 3300000,
+    "audio_verified": true,
+    "note": "top post and origin, Tate McRae (16 Oct 2026)"
+   },
+   {
+    "url": "https://www.tiktok.com/@tesselvbremen/video/7699608998982536481",
+    "plays": 7500000,
+    "likes": 1300000,
+    "audio_verified": true,
+    "note": "'Pov: u have surgery until 5 but dinner at 6' in scrubs (22 Oct 2026)"
+   },
+   {
+    "url": "https://www.tiktok.com/@liya.lovess/video/7702399309362269462",
+    "plays": 3100000,
+    "likes": 550500,
+    "audio_verified": true,
+    "note": "'i liked him and accidentally became an accountant' (30 Oct 2026)"
+   }
+  ],
+  "sources": [
+   "https://www.socialpilot.co/blog/tiktok-trends",
+   "https://napoleoncat.com/blog/tiktok-trends/",
+   "https://newengen.com/insights/tiktok-trends/",
+   "https://inmusicblog.com/news/tate-mcrae-housewife-tiktok-viral-trend/",
+   "https://tokchart.com/sounds/tate-mcrae-housewife_7697010651306838068",
+   "https://www.tiktok.com/music/Housewife-7697010651306838068"
+  ],
+  "weak": false,
+  "notes": "Counts seen: 309,000+ on 20 Oct (InMusicBlog), 430,000+ on 1 Nov (NapoleonCat), 503.1K on the sound page on 5 Nov. SocialPilot's 313.7K is out of date. Tokchart shows 481,700 and has it down to No. 128 worldwide after a best of No. 1, so daily growth has slowed since launch week. It is at the top end of Peaking and could tip to Past peak next week. Tokchart also lists a second Housewife sound (7697025325318441012), not counted here. I did not check the lyrics line by line."
+ },
+ {
+  "n": 6,
   "name": "Preparing for my Netflix documentary",
   "platforms": [
    "TikTok",
@@ -13,14 +257,14 @@
   "sound_url": "https://www.tiktok.com/music/On-a-Mission-7274043399086426113",
   "what": "Creator mimes clipping on a lapel mic and sits in an interview chair while on-screen text frames a petty or awkward life event as their Netflix documentary.",
   "origin": "Started by TikTok creator @borderbandittx on 16 Jun 2026; posts by @fombasyllah and @wassupa1ex on 30 Jun took it viral.",
-  "usage": "438.7K TikTok videos on the sound (20 Oct 2026); top post 35.7M views, 5.7M likes. Anijam says it crossed to Instagram in Oct 2026 (no reel count).",
-  "usage_n": 438700,
+  "usage": "455K TikTok videos on the sound (5 Nov 2026), up from 438.7K on 20 Oct; top post 35.8M views, 5.7M likes. Anijam says it crossed to Instagram in Oct 2026 (no reel count).",
+  "usage_n": 455000,
   "brand_use": "Frame a small brand drama as a documentary premise, e.g. 'Preparing for my Netflix documentary about the day we ran out of croissants by 7am.'",
   "risk": "Avoid Netflix logos or the Netflix sting; keep the parody generic.",
   "examples": [
    {
     "url": "https://www.tiktok.com/@suckafreekells/video/7657722881215958303",
-    "plays": 35700000,
+    "plays": 35800000,
     "likes": 5700000,
     "audio_verified": true,
     "note": "top post, 2 Jul 2026"
@@ -28,7 +272,7 @@
    {
     "url": "https://www.tiktok.com/@borderbandittx/video/7652140053812022559",
     "plays": 3900000,
-    "likes": 420000,
+    "likes": 420200,
     "audio_verified": true,
     "note": "origin, 16 Jun 2026"
    },
@@ -50,7 +294,59 @@
   "notes": "TikTok peaked Jun to Jul 2026; Instagram is the live second wave. Biggest IG post found: jnessa.r, 509K likes, 7 Jul 2026 (https://www.instagram.com/reel/DagSMXqvuGI/), audio not checkable on IG. Old example Dynamite Clothing used an original sound, not On a Mission (55.5K plays, 268 likes), so dropped. The old IG example sherlinanym has 25K likes."
  },
  {
-  "n": 16,
+  "n": 7,
+  "name": "Not every angel walks the runway",
+  "platforms": [
+   "Instagram",
+   "TikTok"
+  ],
+  "status": "Rising",
+  "longevity": "evergreen",
+  "ends": null,
+  "sound": "Angel Of My Dreams, JADE",
+  "sound_url": "https://www.instagram.com/reels/audio/496336559627131/",
+  "what": "On-screen text says not every angel gets the Victoria's Secret runway, over a clip of you at your desk or on your commute, walking like one anyway. A dreamier version sets the song over a too-pretty view or a glam look.",
+  "origin": "JADE's 2024 single came back after Kylie Jenner's Victoria's Secret show walk (18 Oct 2026, InMusicBlog). JADE's own TikTok about it (20 Oct) is the most-played post checked on the sound.",
+  "usage": "263K Instagram reels on the audio and 128.6K TikTok videos on the sound (5 Nov 2026); Instagram was 241K on Postdom (2 Nov) and 211K on SocialPilot; top post 23.7M plays",
+  "usage_n": 391600,
+  "brand_use": "The workplace joke suits any team: 'not every angel walks the runway, some of us do the BAS'. Tourism and hospitality can use the dreamy version, as @australia did for Melbourne: a hotel's best view, a ring box opening, a finished nail set.",
+  "risk": "Major-label track, so it may be restricted on business accounts. The joke leans on one celebrity moment, so it will date quicker than the dreamy version.",
+  "examples": [
+   {
+    "url": "https://www.tiktok.com/@jadethirlwall/video/7698681423989017858",
+    "plays": 23700000,
+    "likes": 3000000,
+    "audio_verified": true,
+    "note": "most-played TikTok checked on the sound, JADE on Kylie Jenner (20 Oct 2026)"
+   },
+   {
+    "url": "https://www.instagram.com/reel/Deu2w6UBd-1/",
+    "plays": 986000,
+    "likes": 75269,
+    "audio_verified": true,
+    "note": "joint top reel on the Instagram audio page, 'not all angels can be in the VSFS, I'm in Excel' (@kelsey_paul, 20 Oct 2026)"
+   },
+   {
+    "url": "https://www.instagram.com/reel/De_fGtRsNdX/",
+    "plays": 383048,
+    "likes": 23212,
+    "audio_verified": true,
+    "note": "brand use, Melbourne reel from @australia (27 Oct 2026); plays from Postdom, 2 Nov"
+   }
+  ],
+  "sources": [
+   "https://www.instagram.com/reels/audio/496336559627131/",
+   "https://www.tiktok.com/music/Angel-Of-My-Dreams-7393199330905262096",
+   "https://www.socialpilot.co/blog/instagram-reels-trends",
+   "https://postdom.com/blog/instagram-trends",
+   "https://creatordb.app/free-tools/trending-instagram-audio/",
+   "https://inmusicblog.com/analysis/jade-angel-of-my-dreams-tiktok-spotify-surge/"
+  ],
+  "weak": false,
+  "notes": "usage_n adds the Instagram and TikTok page counts, as the Money can't buy happiness entry does. TikTok counts disagree: the sound page showed 128.6K videos, Tokchart about 83.6K in late Oct, and InMusicBlog over 270,000 creations on 23 Oct. I used the sound page. Rising on Instagram's own counts: 241K to 263K in three days. The count covers all uses of the song, not just the angel joke. The name is mine, not an established trend name. @australia's embed page shows 83,792 views against Postdom's 383,048, and 23,212 likes against Postdom's 23,784; likes here are the embed figure. Business-account access could not be checked logged out. Plays are the view counts on Instagram's audio page grid (5 Nov 2026); likes and the song on each reel come from its embed page, which also reports a lower video_view_count (about half), so plays depend on which Instagram figure you read."
+ },
+ {
+  "n": 8,
   "name": "Money can't buy happiness, but...",
   "platforms": [
    "Instagram",
@@ -63,8 +359,8 @@
   "sound_url": "https://www.instagram.com/reels/audio/25300087489600407/",
   "what": "On-screen text reads 'Money can't buy happiness, but it can buy...' over a short clip of the thing that obviously makes you happy.",
   "origin": "The Instagram audio comes from an eresdigna reel posted 25 Nov 2025; the text format took off on it from September 2026.",
-  "usage": "316K Instagram reels on the audio and 18.1K TikTok videos on the main TikTok sound (20 Oct 2026); top reel 4.8M views",
-  "usage_n": 334100,
+  "usage": "354K Instagram reels on the audio and 23.1K TikTok videos on the main TikTok sound (5 Nov 2026), up from 316K and 18.1K on 20 Oct; top reel 4.8M views",
+  "usage_n": 377100,
   "brand_use": "A product shot with a punchline: 'but it can buy' then the hero product or a customer's reaction. Works for retail, food, beauty and experiences.",
   "risk": "It reads as an ad, so the reveal has to be genuinely appealing.",
   "examples": [
@@ -77,15 +373,15 @@
    },
    {
     "url": "https://www.tiktok.com/@blanca.dolll/video/7686882706029890830",
-    "plays": 2000000,
-    "likes": 230400,
+    "plays": 2100000,
+    "likes": 247800,
     "audio_verified": true,
     "note": "top TikTok on the sound (curly hair product, 18 Sep 2026)"
    },
    {
     "url": "https://www.tiktok.com/@xemmakate/video/7689160080176041238",
-    "plays": 635500,
-    "likes": 84200,
+    "plays": 700800,
+    "likes": 90800,
     "audio_verified": true,
     "note": "'best purchase I've ever made' skis (24 Sep 2026)"
    }
@@ -100,106 +396,104 @@
   "notes": "Instagram reel count is lifetime for the eresdigna audio, so not every reel is this text format. The eresdigna origin reel caption is just '.', so I couldn't confirm from text that it shows the 'but it can buy' line. The TikTok sound is a different clip; captions on it (cosynewbuild, bukii_makeup, stayinginstudio) confirm it carries the trend. Old example @arabellajewelry did not use either sound (it uses a stock jingle) and was dropped. Brand posts on TikTok: Fat Hippo burgers did it on its own original sound (151.7K plays)."
  },
  {
-  "n": 7,
-  "name": "I just want to be OK",
+  "n": 9,
+  "name": "Upside Down hand transition",
+  "platforms": [
+   "Instagram"
+  ],
+  "status": "Steady",
+  "longevity": "evergreen",
+  "ends": null,
+  "sound": "Upside Down, Diana Ross",
+  "sound_url": "https://www.instagram.com/reels/audio/2006821089449485/",
+  "what": "Mouth the lyric, hit the hand gesture and cut to the reveal: new hair, a day-to-night outfit or a big travel view.",
+  "origin": "Later listed it on 2 Oct 2026; the biggest reels are from 4 to 7 Oct 2026. Buffer still had it on 3 Nov and CreatorDB on 4 Nov. Original creator not found.",
+  "usage": "352K Instagram reels on the audio (5 Nov 2026); top reel 3.9M views, 272.8K likes",
+  "usage_n": 352000,
+  "brand_use": "A before-and-after with one hand gesture: the tired room to the styled room, day look to night look, raw ingredient to finished plate. Fashion, beauty, homewares and tourism fit best.",
+  "risk": "Major-label track, so it may be restricted on business accounts. The transition works on a cleared sound.",
+  "examples": [
+   {
+    "url": "https://www.instagram.com/reel/DeFeUtWBmVK/",
+    "plays": 3900000,
+    "likes": 272825,
+    "audio_verified": true,
+    "note": "top reel on the audio page, Victoria Falls travel reel (@abeunseen, 4 Oct 2026)"
+   },
+   {
+    "url": "https://www.instagram.com/reel/DeJohjwJNP4/",
+    "plays": 945000,
+    "likes": 36657,
+    "audio_verified": true,
+    "note": "second most-viewed reel, Thailand (@bohomeann, 6 Oct 2026)"
+   },
+   {
+    "url": "https://www.instagram.com/reel/DemmJK-CWpl/",
+    "plays": 660000,
+    "likes": 31773,
+    "audio_verified": true,
+    "note": "day-to-night outfit reveal tagging Cult Gaia and Alexander Wang (@valslooks, 17 Oct 2026)"
+   }
+  ],
+  "sources": [
+   "https://www.instagram.com/reels/audio/2006821089449485/",
+   "https://later.com/blog/instagram-reels-trends/",
+   "https://buffer.com/resources/trending-audio-instagram/",
+   "https://www.socialpilot.co/blog/instagram-reels-trends",
+   "https://creatordb.app/free-tools/trending-instagram-audio/"
+  ],
+  "weak": false,
+  "notes": "CreatorDB lists 127K reels and calls it Rising, but Instagram's page shows 352K, so its figure is out of date. Status is a judgement: no reel among the 12 shown is newer than 17 Oct, though round-ups still list it. Count is lifetime for a classic song, so not every reel is this format. I saw cover frames only, so the transition itself rests on Later and Buffer; the two biggest reels are travel clips and I could not confirm they show it. @valslooks' caption says 'day and night'. Business-account access could not be checked logged out. Plays are the view counts on Instagram's audio page grid (5 Nov 2026); likes and the song on each reel come from its embed page, which also reports a lower video_view_count (about half), so plays depend on which Instagram figure you read."
+ },
+ {
+  "n": 10,
+  "name": "Listening ears",
   "platforms": [
    "TikTok"
   ],
-  "status": "Past peak",
+  "status": "Peaking",
   "longevity": "evergreen",
   "ends": null,
-  "sound": "Be OK, Ingrid Michaelson",
-  "sound_url": "https://www.tiktok.com/music/Be-OK-6919908743442368513",
-  "what": "Creators dance or act cheerful to the 'I just want to be OK' chorus while the caption reveals the mess or stress they are ignoring.",
-  "origin": "A 2008 Ingrid Michaelson song, revived on TikTok around 20 to 22 Aug 2026; the earliest big posts found are @madozilla and @camilla.",
-  "usage": "204.5K TikTok videos on the sound (20 Oct 2026, includes pre-2026 use); top post 18.5M views, 5M likes",
-  "usage_n": 204500,
-  "brand_use": "Staff dance happily while the caption names a customer headache (tax time, hail claims, a full inbox), then cut to the product sorting it.",
-  "risk": "Some creators use it for sincere mental-health posts, so keep it light and never mock real distress.",
+  "sound": "original sound, vivi",
+  "sound_url": "https://www.tiktok.com/music/original-sound-7689585188598205198",
+  "what": "Creator mimes switching on their ears to 'Wait, let me just turn on my listening ears. Listening ears activated' while on-screen text lists the words that suddenly get their full attention.",
+  "origin": "The audio comes from an anime fan post by @visionofsae on 25 Sep 2026. School and uni creators took it viral from 7 Oct, with lines like 'fire drill' and 'this will be on the exam'.",
+  "usage": "63.2K TikTok videos on the sound (5 Nov 2026); top post 7.9M views, 1.3M likes",
+  "usage_n": 63200,
+  "brand_use": "List the words your customers can't ignore: 'free delivery', 'extra guac', 'staff discount'. Works for any category and needs one person and a phone. HeyOrca says it is usable across industries.",
+  "risk": "The sound's creator name includes sexual slang and shows on the sound page, so check the client is comfortable. Some clips run on to 'pissed me the hell off', so trim to the first five seconds.",
   "examples": [
    {
-    "url": "https://www.tiktok.com/@girlfromsomewhere06/video/7678903217236888845",
-    "plays": 18500000,
-    "likes": 5000000,
+    "url": "https://www.tiktok.com/@kaikixrox/video/7694004035677916430",
+    "plays": 7900000,
+    "likes": 1300000,
     "audio_verified": true,
-    "note": "most-liked post, 28 Aug 2026"
+    "note": "top post checked, 'this will be on the exam' (7 Oct 2026)"
    },
    {
-    "url": "https://www.tiktok.com/@kalefensty/video/7678137900940283167",
-    "plays": 19000000,
-    "likes": 4800000,
+    "url": "https://www.tiktok.com/@visionofsae/video/7689585145803803917",
+    "plays": 178300,
+    "likes": 9496,
     "audio_verified": true,
-    "note": "26 Aug 2026, used by SocialBee as the example"
+    "note": "origin of the audio (25 Sep 2026)"
    },
    {
-    "url": "https://www.tiktok.com/@haileigh.freeman/video/7679862883290795277",
-    "plays": 28900000,
-    "likes": 2400000,
+    "url": "https://www.tiktok.com/@dasia_things/video/7693971015184960782",
+    "plays": 6400000,
+    "likes": 884700,
     "audio_verified": true,
-    "note": "most-viewed post found, 30 Aug 2026"
+    "note": "'fire drill', 'substitute', 'half day' list (7 Oct 2026)"
    }
   ],
   "sources": [
-   "https://later.com/blog/tiktok-trends/",
-   "https://socialbee.com/blog/tiktok-trends-you-cant-miss/",
-   "https://newengen.com/insights/october-tiktok-trends/",
-   "https://www.tiktok.com/music/Be-OK-6919908743442368513",
-   "https://www.pastemagazine.com/music/ingrid-michaelson/ingrid-michaelson-be-ok"
+   "https://www.heyorca.com/blog/trending-audio-for-reels-tiktok",
+   "https://www.tiktok.com/music/original-sound-7689585188598205198"
   ],
   "weak": false,
-  "notes": "The 204.5K count covers all use of the sound since about 2021, so the 2026 share is unknown but clearly large. Biggest posts are late Aug and early Sep, so it is past peak even though round-ups still list it in Oct. Instagram use not verified. Old example @alfiebbrown (1.1M likes) is valid but smaller. Exact first post of the 2026 revival not confirmed."
+  "notes": "The quoted audio comes from TikTok's auto captions on the posts. The 'pissed me' line appeared in the captions on the @kaikixrox clip. Status is a judgement from post dates and HeyOrca's 30 Oct listing; there is only one dated count, so no growth rate. @ray_kenley (3.4M views, 799.7K likes, 22 Oct) shows the sound was still pulling big numbers late in October."
  },
  {
-  "n": 3,
-  "name": "Text message from -A",
-  "platforms": [
-   "TikTok",
-   "Instagram"
-  ],
-  "status": "Past peak",
-  "longevity": "evergreen",
-  "ends": null,
-  "sound": "pll purposes only ty, demi devito",
-  "sound_url": "https://www.tiktok.com/music/pll-purposes-only-ty-7296300151751379744",
-  "what": "On-screen 'text' signed '-A', Pretty Little Liars style, calls out a specific secret habit, over a clip of the creator looking caught out.",
-  "origin": "The sound dates to Nov 2023; the '-A' text wave started 19 Sep 2026 (@nia.lavine and others), and cast member Shay Mitchell joined on 23 Sep.",
-  "usage": "72.1K TikTok videos on the sound (20 Oct 2026), most from 19 to 29 Sep 2026; top post 11.8M views, 2.4M likes",
-  "usage_n": 72100,
-  "brand_use": "'-A' exposes a habit your customers share: 'I saw you add three more to cart at 1am. -A'. Pair it with a reaction shot of a staff member.",
-  "risk": "Most posts landed in late Sep, so it already feels dated; post now or skip.",
-  "examples": [
-   {
-    "url": "https://www.tiktok.com/@nia.lavine/video/7687395619169717534",
-    "plays": 11800000,
-    "likes": 2400000,
-    "audio_verified": true,
-    "note": "top post and one of the first of the wave, 19 Sep 2026"
-   },
-   {
-    "url": "https://www.tiktok.com/@user2969806776123/video/7689573065855945997",
-    "plays": 9300000,
-    "likes": 2000000,
-    "audio_verified": true,
-    "note": "second biggest, 25 Sep 2026"
-   },
-   {
-    "url": "https://www.tiktok.com/@shaymitchell/video/7688803683378760990",
-    "plays": 9600000,
-    "likes": 1800000,
-    "audio_verified": true,
-    "note": "PLL cast member Shay Mitchell, 23 Sep 2026"
-   }
-  ],
-  "sources": [
-   "https://www.tiktok.com/music/pll-purposes-only-ty-7296300151751379744",
-   "https://later.com/blog/tiktok-trends/",
-   "https://www.ramd.am/blog/trends-tiktok"
-  ],
-  "weak": false,
-  "notes": "72.1K includes older non-'-A' uses of the sound since Nov 2023, but the top posts on the page are almost all from the Sep 2026 wave. Later added it on 2 Oct 2026."
- },
- {
-  "n": 20,
+  "n": 11,
   "name": "The Process (process to result)",
   "platforms": [
    "Instagram"
@@ -211,8 +505,8 @@
   "sound_url": "https://www.instagram.com/reels/audio/27554386410835342/",
   "what": "A quick step-by-step of the tools, materials and work behind something, ending on the finished result.",
   "origin": "Original audio from Instagram creator @its_drfarah; Later listed the format on 18 Sep 2026. Original reel not found.",
-  "usage": "43K Instagram reels on the audio (20 Oct 2026); top reel 138K views",
-  "usage_n": 43000,
+  "usage": "49K Instagram reels on the audio (5 Nov 2026), up from 43K on 20 Oct",
+  "usage_n": 49000,
   "brand_use": "Show the making of something: a campaign shoot, a hand-finished product, a dish. Original audio, so it is safe for business accounts.",
   "risk": null,
   "examples": [
@@ -247,7 +541,7 @@
   "notes": "Decent volume but no big posts: the top reel (@jieminart, 138K views, a running recap rather than a process video) has hidden likes, and the rest are under 100K views. Mainly a small-business format. No TikTok version found. The original its_drfarah reel isn't among their recent posts."
  },
  {
-  "n": 17,
+  "n": 12,
   "name": "Pray For Me slow-mo entrance",
   "platforms": [
    "TikTok"
@@ -259,29 +553,29 @@
   "sound_url": "https://www.tiktok.com/music/pray-for-me-slo-mo-6866567781219846918",
   "what": "Friends run or walk into frame one at a time in exaggerated slow motion, with dramatic faces and poses, timed to the slowed beat.",
   "origin": "Dancer @lesgetitrell made the slowed sound and slow-mo routine on 30 Aug 2020; it resurfaced as a group trend in October 2026.",
-  "usage": "34.4K TikTok videos on the sound (20 Oct 2026); top post 38M views, top Oct 2026 post 4.2M views",
-  "usage_n": 34400,
+  "usage": "48.2K TikTok videos on the sound (5 Nov 2026), up 40% from 34.4K on 20 Oct; top post 38M views, top Oct 2026 post 13.6M views",
+  "usage_n": 48200,
   "brand_use": "Staff take turns making slow-mo hero entrances into the store, kitchen or office. Good for launch days or team culture posts.",
   "risk": "Built on a major-label track, so it may be unavailable to business accounts; use a creator partner.",
   "examples": [
    {
     "url": "https://www.tiktok.com/@lesgetitrell/video/6866606450672798982",
-    "plays": 14500000,
+    "plays": 14600000,
     "likes": 2700000,
     "audio_verified": true,
     "note": "origin (30 Aug 2020)"
    },
    {
     "url": "https://www.tiktok.com/@kemanirae_/video/7696933942196325635",
-    "plays": 4200000,
-    "likes": 998500,
+    "plays": 13600000,
+    "likes": 2600000,
     "audio_verified": true,
     "note": "top October 2026 group version (15 Oct 2026)"
    },
    {
     "url": "https://www.tiktok.com/@nadineeang/video/7696384429236751629",
-    "plays": 2900000,
-    "likes": 630100,
+    "plays": 8400000,
+    "likes": 1200000,
     "audio_verified": true,
     "note": "group version crediting lesgetitrell (14 Oct 2026)"
    }
@@ -295,203 +589,102 @@
   "notes": "Most-viewed post on the sound is @reboir (38M plays, 7.2M likes, Dec 2022), an older solo use, so the origin is listed first instead. Other Oct 2026 hits: @danya..119 1.5M plays / 226.5K likes, @kennedy_mil18 1.5M / 277.4K. The 34.4K count is lifetime since 2020; the October 2026 wave is a fraction of it but growing fast."
  },
  {
-  "n": 2,
-  "name": "Two fishes (Love Island)",
+  "n": 13,
+  "name": "Beautiful people are busy",
   "platforms": [
    "TikTok"
   ],
-  "status": "Past peak",
+  "status": "Steady",
   "longevity": "evergreen",
   "ends": null,
-  "sound": "Peacock_LoveIslandUSA_SincereFishQuote, Peacock",
-  "sound_url": "https://www.tiktok.com/music/PeacockLoveIslandUSASincereFishQuote-7647717385411758862",
-  "what": "Lip-sync Sincere's 'two fishes' speech under a caption like 'me explaining to my parents that...', defending a dodgy argument with total conviction.",
-  "origin": "Peacock posted the Love Island USA Season 8 clip of islander Sincere on 5 Jun 2026; the 'explaining to my parents' lip-sync took off from mid Jun.",
-  "usage": "33.9K TikTok videos on the official sound (20 Oct 2026); top post 8.8M views, 1.6M likes",
-  "usage_n": 33900,
-  "brand_use": "Social lead lip-syncs it defending a harmless, slightly unhinged take on the category, e.g. 'me explaining why two desserts is one meal'.",
-  "risk": "Reality TV audio from a US show many Australians missed; check clearance before using on a brand account.",
+  "sound": "original sound, ugc.drake",
+  "sound_url": "https://www.tiktok.com/music/original-sound-7670266367148378893",
+  "what": "Lip-sync to 'Do you know why beautiful people are always busy? I'll tell you later. I'm busy', then walk off or turn away from the camera.",
+  "origin": "The audio comes from a post by @ugc.drake on 4 Aug 2026. It took off from September with posts by @kkloey and K-pop group Hearts2Hearts.",
+  "usage": "44.5K TikTok videos on the sound (5 Nov 2026); top post 2.1M views, 400.9K likes",
+  "usage_n": 44500,
+  "brand_use": "Have the least likely person on the team deliver it, like the boss or the oldest staff member, then cut to them back at work. Toyota of Boerne's dealership version shows how little it needs. It also works for an outfit or menu item.",
+  "risk": "Low. It only lands if the person is in on the joke, so don't aim it at a customer.",
   "examples": [
    {
-    "url": "https://www.tiktok.com/@peacock/video/7647717331925273870",
-    "plays": 4400000,
-    "likes": 403700,
+    "url": "https://www.tiktok.com/@reav_4/video/7693804624289090823",
+    "plays": 2100000,
+    "likes": 400900,
     "audio_verified": true,
-    "note": "origin, Peacock, 5 Jun 2026"
+    "note": "top post checked (7 Oct 2026)"
    },
    {
-    "url": "https://www.tiktok.com/@sexysecret211/video/7652565637427940621",
-    "plays": 5800000,
-    "likes": 1200000,
+    "url": "https://www.tiktok.com/@ugc.drake/video/7670266248319520013",
+    "plays": 798500,
+    "likes": 54900,
     "audio_verified": true,
-    "note": "top post doing the 'explaining to my parents' format, 18 Jun 2026"
+    "note": "origin (4 Aug 2026)"
    },
    {
-    "url": "https://www.tiktok.com/@secretgyattohio/video/7652582942585244942",
-    "plays": 2700000,
-    "likes": 650300,
+    "url": "https://www.tiktok.com/@toyotaofboerne/video/7691836283810778382",
+    "plays": 148800,
+    "likes": 8585,
     "audio_verified": true,
-    "note": "same format, 18 Jun 2026"
+    "note": "brand version, Toyota of Boerne dealership (1 Oct 2026)"
    }
   ],
   "sources": [
-   "https://www.tiktok.com/music/PeacockLoveIslandUSASincereFishQuote-7647717385411758862",
-   "https://newengen.com/insights/october-tiktok-trends/"
+   "https://www.heyorca.com/blog/trending-audio-for-reels-tiktok",
+   "https://www.tiktok.com/music/original-sound-7670266367148378893"
   ],
   "weak": false,
-  "notes": "New Engen credits the clip to Corbin Mims (CorbinGPT), but the official Peacock sound is titled SincereFishQuote and top posts tag Sincere, so I went with Sincere. Most top posts are Jun to Jul 2026; the Oct bump is mostly Halloween costumes (e.g. @hashtagrealaf, 523K likes, 10 Oct). Re-uploaded copies of the audio exist, so 33.9K undercounts total use."
- },
- {
-  "n": 10,
-  "name": "Ceiling fan outfit transition",
-  "platforms": [
-   "TikTok",
-   "Instagram"
-  ],
-  "status": "Peaking",
-  "longevity": "evergreen",
-  "ends": null,
-  "sound": "Girls on Film, Duran Duran (Instagram; TikTok sounds vary)",
-  "sound_url": "https://www.instagram.com/reels/audio/424262874721114/",
-  "what": "Filmed from above while lying under a ceiling fan; each blade pass wipes to a new outfit, usually four looks in about 15 seconds, often AI-generated.",
-  "origin": "Went viral on TikTok in the week of 28 Sep 2026 (The Tab); a CapCut fan-transition template was circulating from late Aug. Original creator not confirmed.",
-  "usage": "33K Instagram Reels on 'Girls on Film' (SocialPilot, 12 to 25 Oct 2026); top TikTok post 3.3M views, 259K likes",
-  "usage_n": 33000,
-  "brand_use": "A fashion or homewares brand runs four products in one fan spin, ending on the price or shop link.",
-  "risk": "'Girls on Film' is restricted for business accounts, so use a cleared sound. Many viral versions are AI; label it if the client's is.",
-  "examples": [
-   {
-    "url": "https://www.tiktok.com/@amyrebeccaowen/video/7693635311154335008",
-    "plays": 3300000,
-    "likes": 259300,
-    "audio_verified": false,
-    "note": "most-liked post found, real (non-AI) version, 6 Oct 2026"
-   },
-   {
-    "url": "https://www.tiktok.com/@theodora7737/video/7696149999830207774",
-    "plays": 2500000,
-    "likes": 229600,
-    "audio_verified": false,
-    "note": "AI version, 13 Oct 2026"
-   },
-   {
-    "url": "https://www.tiktok.com/@elsanna6/video/7690221558354169118",
-    "plays": 2000000,
-    "likes": 92000,
-    "audio_verified": false,
-    "note": "AI version, 27 Sep 2026"
-   }
-  ],
-  "sources": [
-   "https://www.socialpilot.co/blog/instagram-reels-trends",
-   "https://later.com/blog/instagram-reels-trends/",
-   "https://thetab.com/2026/09/28/how-to-do-the-vibey-ai-ceiling-fan-trend-from-tiktok-where-your-outfit-changes",
-   "https://www.kavel.ai/blog/ceiling-fan-transition-trend",
-   "https://www.tiktok.com/discover/ceiling-fan-transition-trend"
-  ],
-  "weak": false,
-  "notes": "No single TikTok sound: the top posts use generic original sounds (locket4mads, prettylittlepryncess), so audio_verified is false; the trend is the visual format. No TikTok Girls on Film fan posts found in the sound's top list. usage_n is the Instagram audio count only, so true usage is higher. TikTok hashtag counts were blocked by a captcha. Old examples were small (@sessilygoo 6.1K likes, @nickytalksalot 17.6K likes, a tutorial)."
+  "notes": "Small but one of the most brand-ready on this list: original audio, clean script, and a real dealership example. The script is from TikTok's auto captions. HeyOrca listed it on 30 Oct, but the newest big post I checked is 7 Oct, so it may be slowing. Close second to the top post: @kkloey, 2M views, 420.5K likes, 10 Sep. There is only one dated count, so no growth rate."
  },
  {
   "n": 14,
-  "name": "\"Let's…\" Sean O'Pry snap edit",
+  "name": "Toggle on",
   "platforms": [
-   "TikTok",
    "Instagram"
   ],
-  "status": "Peaking",
+  "status": "Rising",
   "longevity": "evergreen",
   "ends": null,
-  "sound": "TRNDSTTR (Lucian Remix), Black Coast",
-  "sound_url": "https://www.tiktok.com/music/trndsttr-7588947022003374856",
-  "what": "Creator lies deadpan or asleep through dull prompts ('Let's play Fortnite'), then their favourite thing is named and it cuts to the Sean O'Pry finger-snap edit.",
-  "origin": "@.fwmatu's Sean O'Pry edit (a 2015 Paco Rabanne ad) on 9 Sep 2026 started it; the 'Let's…' skit version took off on TikTok in late Sep 2026.",
-  "usage": "24.9K TikTok videos on the main sound plus 5,777 on @.fwmatu's original (20 Oct 2026); top skit 22.9M views, 4.3M likes.",
-  "usage_n": 30700,
-  "brand_use": "'Let's meal prep' gets nothing, 'Let's go to the gym' gets nothing, 'Let's get [brand] gelato' gets the full snap edit.",
-  "risk": "The edit uses footage of a real model from a Paco Rabanne ad; brands should restage the hype half rather than use that clip.",
+  "sound": "Original audio, sviola_handmade (Mix: Kanye West, Touch The Sky, plus Instagram click sounds)",
+  "sound_url": "https://www.instagram.com/reels/audio/29285135541104810/",
+  "what": "An iPhone-style ON/OFF switch sits above a poster or photo. A finger flips it on and the news appears: a launch, an event, a new series.",
+  "origin": "Italian knitwear maker @sviola_handmade posted the audio with a pattern launch on 7 Oct 2026, which is also the top reel on it. Later listed it on 30 Oct 2026 and Buffer on 3 Nov 2026.",
+  "usage": "27K Instagram reels on the audio (5 Nov 2026); top reel 4.8M views",
+  "usage_n": 27000,
+  "brand_use": "Made for announcements: flip the switch to reveal a sale date, a new store, a menu or a booking window. Small brands are already doing this, and it needs only a static poster and a finger.",
+  "risk": "The audio's own title credits a Kanye West song, so check the client is comfortable, and don't assume it is cleared because it's tagged original audio. The switch works with a click sound alone.",
   "examples": [
    {
-    "url": "https://www.tiktok.com/@zhcyt/video/7695155140168338719",
-    "plays": 22900000,
-    "likes": 4300000,
+    "url": "https://www.instagram.com/reel/DeL0bVzt1As/",
+    "plays": 4800000,
+    "likes": 47363,
     "audio_verified": true,
-    "note": "top 'Let's' skit post, 10 Oct 2026 (ZHC, 'I failed history')"
+    "note": "origin of the audio and top reel on it, knitting pattern launch (@sviola_handmade, 7 Oct 2026)"
    },
    {
-    "url": "https://www.tiktok.com/@notfromco/video/7689971717946576141",
-    "plays": 14500000,
-    "likes": 2400000,
+    "url": "https://www.instagram.com/reel/DeaVIMfRDo5/",
+    "plays": 1100000,
+    "likes": 5924,
     "audio_verified": true,
-    "note": "'Lets play Fortnite' vs Roblox horror games, 26 Sep 2026"
+    "note": "brand use, shoe shop trunk show announcement (@chattanoogashoe, 12 Oct 2026)"
    },
    {
-    "url": "https://www.tiktok.com/@.fwmatu/video/7683476721953230102",
-    "plays": 22700000,
-    "likes": 5200000,
+    "url": "https://www.instagram.com/reel/DeYyl_vNtcc/",
+    "plays": 484000,
+    "likes": 3105,
     "audio_verified": true,
-    "note": "origin of the edit, 9 Sep 2026; same song uploaded as 'original sound - matu'"
+    "note": "brand use, skincare event announcement (@infyve.beauty, 12 Oct 2026)"
    }
   ],
   "sources": [
-   "https://knowyourmeme.com/memes/sean-opry-edit",
-   "https://socialbee.com/blog/latest-instagram-trends/",
-   "https://www.tiktok.com/music/trndsttr-7588947022003374856",
-   "https://www.tiktok.com/music/original-sound-7683476752341142294"
+   "https://www.instagram.com/reels/audio/29285135541104810/",
+   "https://later.com/blog/instagram-reels-trends/",
+   "https://buffer.com/resources/trending-audio-instagram/"
   ],
   "weak": false,
-  "notes": "SocialBee's 'Let's…' (14 Oct) is this trend; its IG example ayo.ogunajala 'Let's go to Lidl' has 397K likes, 1 Oct 2026 (https://www.instagram.com/reel/Dd-OHxPoFWQ/), tagged #seanopry. Format confirmed from screenshots of the two skit examples. The song is split across several uploads, so usage_n (sum of two sound pages) undercounts. Origin is the plain edit, not the skit format."
+  "notes": "Smallest count here but the most brand-ready format: the reels I checked on the audio are businesses announcing something. Status rests on round-ups adding it from 30 Oct; there is no earlier dated count. Views are high against likes on the brand posts, and I can't say why. @sviola_handmade is the earliest of the 12 reels shown logged out and the audio is theirs, but I can't rule out an earlier one. No TikTok version checked. Plays are the view counts on Instagram's audio page grid (5 Nov 2026); likes and the song on each reel come from its embed page, which also reports a lower video_view_count (about half), so plays depend on which Instagram figure you read."
  },
  {
-  "n": 8,
-  "name": "Look, a spider (couples)",
-  "platforms": [
-   "TikTok"
-  ],
-  "status": "Past peak",
-  "longevity": "evergreen",
-  "ends": null,
-  "sound": "sonido original, user077983456",
-  "sound_url": "https://www.tiktok.com/music/sonido-original-7483638726938905366",
-  "what": "One person says 'look, a spider' and their partner or friend leaps into their arms in panic; variations swap in a scarier or more personal fear.",
-  "origin": "Spanish-language TikTok user @user077983456 posted the original friends clip on 19 Mar 2025; it was revived by couples in Aug and Sep 2026.",
-  "usage": "6,661 TikTok videos on the sound (20 Oct 2026); top post 21.6M views, 1.9M likes",
-  "usage_n": 6661,
-  "brand_use": "Swap the spider for a customer fear: 'look, a parking fine' gets the leap, 'look, the app paid it' gets a calm shrug. Suits apps and services.",
-  "risk": null,
-  "examples": [
-   {
-    "url": "https://www.tiktok.com/@piperrockelle/video/7682279750131404046",
-    "plays": 21600000,
-    "likes": 1900000,
-    "audio_verified": true,
-    "note": "most-liked post, 2026"
-   },
-   {
-    "url": "https://www.tiktok.com/@makayla_secret0/video/7675543442696572190",
-    "plays": 12500000,
-    "likes": 1700000,
-    "audio_verified": true,
-    "note": "couple version, 19 Aug 2026"
-   },
-   {
-    "url": "https://www.tiktok.com/@user077983456/video/7483624569606114582",
-    "plays": 2800000,
-    "likes": 327900,
-    "audio_verified": true,
-    "note": "origin, 19 Mar 2025"
-   }
-  ],
-  "sources": [
-   "https://www.tiktok.com/music/sonido-original-7483638726938905366",
-   "https://www.ramd.am/blog/trends-tiktok",
-   "https://socialbee.com/blog/tiktok-trends-you-cant-miss/"
-  ],
-  "weak": false,
-  "notes": "Low video count (6.7K) but several posts over 1M likes, so it is a views-heavy, low-participation trend. Old example @lottekln (17.4K likes) uses the sound but is small, so it was dropped. Ramdam's app version (panic at a manual task, calm with the app) is a niche spin, not the main format."
- },
- {
-  "n": 13,
+  "n": 15,
   "name": "GRWM loading 0% to 100%",
   "platforms": [
    "TikTok",
@@ -504,29 +697,22 @@
   "sound_url": "https://www.tiktok.com/music/original-sound-7692018714292112150",
   "what": "A get-ready-with-me that starts at '0%' in robe and eye patches, with a loading percentage climbing each cut until the finished look at 100%.",
   "origin": "TikTok creator @saffknight posted the first version with her original sound on 2 Oct 2026; Later listed the Instagram version the same day.",
-  "usage": "5,687 TikTok videos on the sound (20 Oct 2026), up from zero on 2 Oct; top post 8.2M views, 684K likes.",
-  "usage_n": 5687,
+  "usage": "10.3K TikTok videos on the sound (5 Nov 2026), up from 5,687 on 20 Oct",
+  "usage_n": 10300,
   "brand_use": "Load a product build from 0% to 100%: a cafe plating its signature dish, or a detailer taking a muddy ute to showroom finish.",
   "risk": null,
   "examples": [
    {
-    "url": "https://www.tiktok.com/@stylewithbillie/video/7694589062732107028",
-    "plays": 8200000,
-    "likes": 683800,
-    "audio_verified": true,
-    "note": "top post, 9 Oct 2026"
-   },
-   {
     "url": "https://www.tiktok.com/@saffknight/video/7692018708813729046",
-    "plays": 409400,
-    "likes": 32200,
+    "plays": 436900,
+    "likes": 33500,
     "audio_verified": true,
     "note": "origin, 2 Oct 2026"
    },
    {
     "url": "https://www.tiktok.com/@kaynatt.m/video/7693880139179953440",
-    "plays": 3600000,
-    "likes": 407000,
+    "plays": 3800000,
+    "likes": 426600,
     "audio_verified": true,
     "note": "high-engagement post, 7 Oct 2026"
    }
@@ -537,250 +723,196 @@
    "https://www.anijam.ai/blog/instagram-reels-trends/"
   ],
   "weak": false,
-  "notes": "Two audios: TikTok runs on saff's original sound; Later and Anijam name 'Windows in Brazil (Sped Up)' for Reels (https://www.instagram.com/reels/audio/1094115923496866/), but I could not load the IG audio page for a reel count. IG example raychen.lei, 65K likes, 2 Oct 2026 (https://www.instagram.com/reel/DeAmc__TMqX/). Old TikTok examples danaarose (4.5K likes) and imabbysigua (1.4K likes) do use the right sound but are small. Fast growth: 5.7K videos in 18 days."
+  "notes": "Two audios: TikTok runs on saff's original sound; Later and Anijam name 'Windows in Brazil (Sped Up)' for Reels (https://www.instagram.com/reels/audio/1094115923496866/), but I could not load the IG audio page for a reel count. IG example raychen.lei, 65K likes, 2 Oct 2026 (https://www.instagram.com/reel/DeAmc__TMqX/). Old TikTok examples danaarose (4.5K likes) and imabbysigua (1.4K likes) do use the right sound but are small. Fast growth: 5.7K videos in 18 days. Former top post by @stylewithbillie (8.2M) no longer loads as of 5 Nov 2026, removed."
+ },
+ {
+  "n": 16,
+  "name": "All I Want for Christmas Is You, the November 1 switch",
+  "platforms": [
+   "TikTok",
+   "Instagram"
+  ],
+  "status": "Peaking",
+  "longevity": "seasonal",
+  "ends": "25 Dec 2026",
+  "sound": "All I Want for Christmas Is You, Mariah Carey",
+  "sound_url": "https://www.tiktok.com/music/All-I-Want-for-Christmas-Is-You-222454852260487168",
+  "what": "The sound comes back on 1 Nov and creators use it to mark the switch from Halloween to Christmas: decorating, 'people on November 1st' jokes and booking pushes from service businesses.",
+  "origin": "Released in 1994. The yearly 1 Nov return is tied to Mariah Carey's 'It's Time' post, and big early November posts sit on this sound from 2023, 2024 and 2025.",
+  "usage": "16.2M TikTok videos on the sound, lifetime, all years (5 Nov 2026), plus 4.7M on a second official sound id; 5.8M Reels all time per Postdom (2 Nov 2026); top post 126.6M views",
+  "usage_n": 16200000,
+  "brand_use": "Salons, restaurants and gift shops show a December calendar filling up or a room being set for a party, ending on the date bookings close.",
+  "risk": "The count covers every year, so it does not measure this season. Australian Christmas is in summer: swap snow and cosy scenes for heat, beach or backyard. Check the track is cleared for brand accounts.",
+  "examples": [
+   {
+    "url": "https://www.tiktok.com/@yitan.22/video/7586439937860439317",
+    "plays": 126600000,
+    "likes": 13500000,
+    "audio_verified": true,
+    "note": "top post on the sound, older post from 21 Dec 2025"
+   },
+   {
+    "url": "https://www.tiktok.com/@jeroens0/video/7702899685844995361",
+    "plays": 6300000,
+    "likes": 1300000,
+    "audio_verified": true,
+    "note": "biggest 2026 post found on the sound page, 31 Oct 2026"
+   },
+   {
+    "url": "https://www.tiktok.com/@balleronibolonga/video/7703431863318105357",
+    "plays": 6000000,
+    "likes": 923000,
+    "audio_verified": true,
+    "note": "posted 2 Nov 2026, 'tis the season' joke"
+   }
+  ],
+  "sources": [
+   "https://www.tiktok.com/music/All-I-Want-for-Christmas-Is-You-222454852260487168",
+   "https://www.tiktok.com/music/All-I-Want-for-Christmas-Is-You-6696419964074592258",
+   "https://www.socialpilot.co/blog/instagram-reels-trends",
+   "https://postdom.com/blog/instagram-trends",
+   "https://buffer.com/resources/trending-audio-instagram/"
+  ],
+  "weak": false,
+  "notes": "Counts read off the rendered sound pages on 5 Nov 2026. usage_n uses the larger sound id only; the two ids are not added together. Status follows SocialPilot's Reels stage ('Peak'); there is no earlier dated TikTok count to measure this season's growth. 2026 examples come from the 60 posts the sound page loaded, so a bigger 2026 post may exist. @glamour.au posted an 'it's timeeee' Australian version on 1 Nov (44.6K plays) but on its own original sound, so it is not listed."
+ },
+ {
+  "n": 17,
+  "name": "November Rain",
+  "platforms": [
+   "TikTok",
+   "Instagram"
+  ],
+  "status": "Peaking",
+  "longevity": "seasonal",
+  "ends": "30 Nov 2026",
+  "sound": "November Rain, Guns N' Roses",
+  "sound_url": "https://www.tiktok.com/music/November-Rain-222631024122605568",
+  "what": "The song sits under moody clips with a short caption on TikTok. On Reels it runs under cinematic travel edits and 90s then-and-now memory montages.",
+  "origin": "1992 single. SocialPilot and Buffer both list it as a November sound, and SocialPilot says it returns every year. On TikTok the biggest 2026 posts started before the month, from late Sep.",
+  "usage": "282.8K TikTok videos on the sound, lifetime, all years (5 Nov 2026); 322K Reels per SocialPilot (Oct 31 to Nov 10 list); top post 11.3M views",
+  "usage_n": 282800,
+  "brand_use": "A year-in-review cut to the guitar solo, or a heritage brand showing old and new with the year on screen. Car, travel and vintage retail suit it best.",
+  "risk": "The month joke ends on 30 Nov. Top TikTok posts lean sad and relationship-themed and many have no link to November, so the mood may not fit a cheerful brand. Rainy-window edits read oddly going into an Australian summer. Check the track is cleared for brand accounts.",
+  "examples": [
+   {
+    "url": "https://www.tiktok.com/@mell.bln/video/7689908087469149472",
+    "plays": 11300000,
+    "likes": 3200000,
+    "audio_verified": true,
+    "note": "top post on the sound, 26 Sep 2026"
+   },
+   {
+    "url": "https://www.tiktok.com/@overthinkingagain.2/video/7693706110137650454",
+    "plays": 7500000,
+    "likes": 1500000,
+    "audio_verified": true,
+    "note": "6 Oct 2026"
+   }
+  ],
+  "sources": [
+   "https://www.tiktok.com/music/November-Rain-222631024122605568",
+   "https://www.socialpilot.co/blog/instagram-reels-trends",
+   "https://buffer.com/resources/trending-audio-instagram/"
+  ],
+  "weak": false,
+  "notes": "Count read off the rendered sound page on 5 Nov 2026. Status follows SocialPilot's Reels stage ('Peak'). The sound page shows use through 2026 from Feb, so TikTok use is less tied to November than the round-ups suggest."
  },
  {
   "n": 18,
-  "name": "we fell in love in october",
+  "name": "Santa Tell Me countdown",
   "platforms": [
    "TikTok",
    "Instagram"
   ],
   "status": "Peaking",
   "longevity": "seasonal",
-  "ends": "31 Oct 2026",
-  "sound": "we fell in love in october, girl in red",
-  "sound_url": "https://www.tiktok.com/music/we-fell-in-love-in-october-6711980022204205826",
-  "what": "Soft autumn montages set to the song: cosy outfits, baking, pumpkins, coffee, pets and slow afternoons.",
-  "origin": "girl in red released the song in 2018; it returns as the go-to October sound every year.",
-  "usage": "2.1M TikTok videos and 1M Instagram reels on the sound (20 Oct 2026); top Oct 2026 post 45.4M views",
-  "usage_n": 3100000,
-  "brand_use": "A cafe or homewares brand can cut a mood piece of its seasonal range. In Australia, flip it to spring: jacarandas, iced coffee, first swims.",
-  "risk": "The autumn look is northern hemisphere, so localise it for spring.",
+  "ends": "25 Dec 2026",
+  "sound": "Santa Tell Me, Ariana Grande",
+  "sound_url": "https://www.tiktok.com/music/Santa-Tell-Me-6791240601619662849",
+  "what": "The early countdown sound, used for 'it's nearly time' clips, gift ideas, advent calendar unboxings and Christmas hair and decorating.",
+  "origin": "Released in 2014. SocialPilot counted ten Reels on its audio page posted 26 to 29 Oct 2026, mostly countdown clips.",
+  "usage": "237.5K TikTok videos on the sound, lifetime, all years (5 Nov 2026); 571K Reels per SocialPilot (Oct 31 to Nov 10 list); top post 125.2M views",
+  "usage_n": 237500,
+  "brand_use": "Cafes, candle shops and beauty brands film the first Christmas drink or gift set in close-up, or open an advent calendar on the beat.",
+  "risk": "The count covers every year. Winter-styled versions do not fit an Australian summer, so use light, heat and outdoor settings. Check the track is cleared for brand accounts.",
   "examples": [
    {
-    "url": "https://www.tiktok.com/@kittyelliss/video/7694021995192798497",
-    "plays": 45400000,
-    "likes": 4400000,
+    "url": "https://www.tiktok.com/@alyssairish/video/7586708527683472658",
+    "plays": 125200000,
+    "likes": 979500,
     "audio_verified": true,
-    "note": "top post on the sound (7 Oct 2026)"
+    "note": "top post on the sound, older post from 22 Dec 2025"
    },
    {
-    "url": "https://www.tiktok.com/@theemilyrangel/video/7663597162609118478",
-    "plays": 19400000,
-    "likes": 1300000,
+    "url": "https://www.tiktok.com/@missmillierock/video/7694443516969225486",
+    "plays": 4600000,
+    "likes": 606700,
     "audio_verified": true,
-    "note": "pumpkin sourdough bake, food angle (17 Jul 2026)"
+    "note": "biggest 2026 post found, gift idea, 8 Oct 2026"
    },
    {
-    "url": "https://www.tiktok.com/@usergaqvaw7yl8/video/7695060105418575125",
-    "plays": 3900000,
-    "likes": 1300000,
+    "url": "https://www.tiktok.com/@rebeccaleal71/video/7702627442275454239",
+    "plays": 4100000,
+    "likes": 542500,
     "audio_verified": true,
-    "note": "October aesthetic montage (10 Oct 2026)"
+    "note": "Pandora advent calendar reveal, 31 Oct 2026"
    }
   ],
   "sources": [
-   "https://www.tiktok.com/music/we-fell-in-love-in-october-6711980022204205826",
-   "https://www.instagram.com/reels/audio/948410245353374/",
-   "https://www.socialpilot.co/blog/instagram-reels-trends",
-   "https://newengen.com/insights/tiktok-trends/"
-  ],
-  "weak": false,
-  "notes": "Counts are lifetime for the sound (it gets reused every year), not just 2026. New Engen (14 Oct 2026) cites it as #1 on MusicMaestro's US TikTok trending sounds chart for week 40. Major-label track, may be restricted for business accounts."
- },
- {
-  "n": 9,
-  "name": "Pumpkin Head trend",
-  "platforms": [
-   "TikTok"
-  ],
-  "status": "Peaking",
-  "longevity": "seasonal",
-  "ends": "31 Oct 2026",
-  "sound": "Oh Klahoma, Jack Stauber (most common; many use other sounds)",
-  "sound_url": "https://www.tiktok.com/music/Oh-Klahoma-6820104231995919109",
-  "what": "Friends, couples or families wear hollowed carved pumpkins over their heads and stage an everyday scene or photoshoot, set to 'Oh Klahoma'.",
-  "origin": "Began as the pumpkin head photoshoot in autumn 2020 (Know Your Meme); returns every October, with a 2026 wave led by @the_life_of_aivax on 25 Sep.",
-  "usage": "548.6K TikTok videos on 'Oh Klahoma' (20 Oct 2026, all years since 2020); top 2026 post 8.1M views, 1.8M likes",
-  "usage_n": 548600,
-  "brand_use": "Staff wear pumpkin heads while doing their normal jobs (barista, mechanic, receptionist) for a one-off Halloween post.",
-  "risk": "Halloween-only and a weaker moment in Australia, where it is spring.",
-  "examples": [
-   {
-    "url": "https://www.tiktok.com/@the_life_of_aivax/video/7689255818146958622",
-    "plays": 8100000,
-    "likes": 1800000,
-    "audio_verified": true,
-    "note": "top 2026 post, family kitchen scene, 25 Sep 2026"
-   },
-   {
-    "url": "https://www.tiktok.com/@elizabethtaelor/video/7697598961196076301",
-    "plays": 1400000,
-    "likes": 213800,
-    "audio_verified": false,
-    "note": "besties photoshoot, own original sound, 17 Oct 2026"
-   },
-   {
-    "url": "https://www.tiktok.com/@samenamecouple/video/7680887697539370262",
-    "plays": 17500,
-    "likes": 177,
-    "audio_verified": true,
-    "note": "couple photoshoot on Oh Klahoma, 2 Sep 2026"
-   }
-  ],
-  "sources": [
-   "https://www.tiktok.com/music/Oh-Klahoma-6820104231995919109",
-   "https://knowyourmeme.com/memes/pumpkin-challenge-pumpkin-head-photoshoot",
-   "https://newengen.com/insights/halloween-tiktok-reels-trends/",
-   "https://www.tiktok.com/discover/pumpkin-head-trend"
-  ],
-  "weak": false,
-  "notes": "Renamed from 'Pumpkin Head Illusion'. The forced-perspective illusion New Engen describes is weak: the only post found (@eb_ness_x, via vadbav.com) has 60 likes, and no named sound or count exists. The old examples were poor (@htx.abby115 had 39 likes). The real 2026 trend is the wearable pumpkin head version. The 548.6K sound count is all-time, so the 2026 figure is much lower and unknown. Sound varies a lot; only 'Oh Klahoma' recurs."
- },
- {
-  "n": 19,
-  "name": "Goo Goo Muck Halloween reels",
-  "platforms": [
-   "Instagram",
-   "TikTok"
-  ],
-  "status": "Peaking",
-  "longevity": "seasonal",
-  "ends": "31 Oct 2026",
-  "sound": "Goo Goo Muck, The Cramps",
-  "sound_url": "https://www.tiktok.com/music/Goo-Goo-Muck-6926414920577878018",
-  "what": "Spooky clips cut to the beat: bedsheet ghost photoshoots, Halloween decor and props, and costume shots.",
-  "origin": "The Cramps song (1981) went viral with the Wednesday Addams dance from Netflix's Wednesday in late 2022 and now returns every Halloween.",
-  "usage": "316K Instagram reels and 204.2K TikTok videos on the sound (20 Oct 2026, lifetime); top Oct 2026 reel 347K views",
-  "usage_n": 520200,
-  "brand_use": "Put the team under bedsheets for a ghost photoshoot in the store or office, cut to the beat. Easy for salons, bars and retail.",
-  "risk": "Major-label track, restricted for business accounts, so use a creator partner.",
-  "examples": [
-   {
-    "url": "https://www.instagram.com/reel/DdyzKR4TlbC/",
-    "plays": 347000,
-    "likes": 21000,
-    "audio_verified": true,
-    "note": "top recent reel on the audio, ghost photoshoot (27 Sep 2026)"
-   },
-   {
-    "url": "https://www.instagram.com/reel/Dd9PK0aAY4a/",
-    "plays": 218000,
-    "likes": 9706,
-    "audio_verified": true,
-    "note": "Halloween cartoon montage (1 Oct 2026)"
-   },
-   {
-    "url": "https://www.instagram.com/reel/Dd8bOSMqfKk/",
-    "plays": 131000,
-    "likes": 3146,
-    "audio_verified": true,
-    "note": "hair salon brand use, 'spooky habits' (1 Oct 2026)"
-   }
-  ],
-  "sources": [
-   "https://www.instagram.com/reels/audio/248340945718949/",
-   "https://www.tiktok.com/music/Goo-Goo-Muck-6926414920577878018",
+   "https://www.tiktok.com/music/Santa-Tell-Me-6791240601619662849",
    "https://www.socialpilot.co/blog/instagram-reels-trends"
   ],
   "weak": false,
-  "notes": "SocialPilot frames it as 'POV: your Halloween decoration is alive', but the top 2026 reels on the audio are ghost photoshoots and Halloween montages; I found no big 'decoration comes alive' post, so I renamed it. Counts are lifetime and include the 2022 Wednesday dance wave. This year's posts are modest (best ~21K likes). TikTok 2026 posts on the official sound were small (e.g. @buttercranecentre office ghost shoot, 1.6K plays); bigger TikToks use lyric edits on other 'original sound' uploads, so they were excluded. Plays for Instagram are the view counts shown on the audio page."
+  "notes": "Count read off the rendered sound page on 5 Nov 2026. Status follows SocialPilot's Reels stage ('Peak'). TikTok has user re-uploads of the song on original sounds; those are not counted. 2026 examples come from the 60 posts the sound page loaded."
  },
  {
-  "n": 1,
-  "name": "Ramalama costume walk",
+  "n": 19,
+  "name": "Underneath the Tree reveals",
   "platforms": [
    "TikTok",
    "Instagram"
   ],
   "status": "Peaking",
   "longevity": "seasonal",
-  "ends": "31 Oct 2026",
-  "sound": "Ramalama (Bang Bang), Róisín Murphy",
-  "sound_url": "https://www.tiktok.com/music/Ramalama-Bang-Bang-6919100601457215489",
-  "what": "Camera low on the creator's legs as they strut slowly towards the lens, then on the beat it cuts to reveal the full Halloween costume.",
-  "origin": "Walk versions appeared in late Jul 2025; @swaggy_cucumber's Hocus Pocus group walk on 1 Oct 2025 made it the Halloween costume-reveal format. Revived Oct 2026.",
-  "usage": "473.9K TikTok videos on the sound (20 Oct 2026, up from about 430.7K quoted by RouteNote earlier in Oct); top post 94.3M views",
-  "usage_n": 473900,
-  "brand_use": "Swap the costume for a product or a staff uniform: slow walk-up on the shoes, cut to the full reveal of a new range or fit-out.",
-  "risk": "Halloween is smaller in Australia and the window closes 31 Oct; check the track is cleared for brand accounts.",
+  "ends": "25 Dec 2026",
+  "sound": "Underneath the Tree, Kelly Clarkson",
+  "sound_url": "https://www.tiktok.com/music/Underneath-the-Tree-6714732420068804610",
+  "what": "The upbeat Christmas launch sound: tree reveals, decor going up and venue openings on Reels, with days-until-Christmas posts on TikTok.",
+  "origin": "Released in 2013. SocialPilot calls it the brand-launch sound of the season, with the hook 'Christmas starts November 1'. On TikTok, big 2026 posts began in mid Sep.",
+  "usage": "49.4K TikTok videos on the sound, lifetime, all years (5 Nov 2026); 451K Reels per SocialPilot (Oct 31 to Nov 10 list); top post 40M views",
+  "usage_n": 49400,
+  "brand_use": "Show a bare shop floor or tree going to fully styled in five cuts, ending on the opening date or a comment keyword for the link.",
+  "risk": "The count covers every year. The sound is far bigger on Reels than TikTok, so lead there. Keep reveals bright and summery for Australia. Check the track is cleared for brand accounts.",
   "examples": [
    {
-    "url": "https://www.tiktok.com/@swaggy_cucumber/video/7556345679170309389",
-    "plays": 94300000,
-    "likes": 13100000,
+    "url": "https://www.tiktok.com/@heschatt/video/7450191292337835295",
+    "plays": 40000000,
+    "likes": 6500000,
     "audio_verified": true,
-    "note": "top post, 1 Oct 2025, the post that set the Halloween version"
+    "note": "top post on the sound, older post from 19 Dec 2024, shelter dogs picking toys"
    },
    {
-    "url": "https://www.tiktok.com/@nataliireynoldss/video/7692957276587429150",
-    "plays": 61500000,
-    "likes": 9600000,
+    "url": "https://www.tiktok.com/@camtworealatable/video/7687672590994869534",
+    "plays": 8800000,
+    "likes": 1200000,
     "audio_verified": true,
-    "note": "top 2026 post, 4 Oct 2026 (Coraline Other Mother)"
+    "note": "biggest 2026 post found, 20 Sep 2026"
    },
    {
-    "url": "https://www.tiktok.com/@haleyybaylee/video/7567576667166608654",
-    "plays": 87200000,
-    "likes": 13000000,
+    "url": "https://www.tiktok.com/@mistermainer/video/7698062112047877407",
+    "plays": 4900000,
+    "likes": 536700,
     "audio_verified": true,
-    "note": "second biggest post, 1 Nov 2025"
+    "note": "days-until-Christmas post, 18 Oct 2026"
    }
   ],
   "sources": [
-   "https://www.tiktok.com/music/Ramalama-Bang-Bang-6919100601457215489",
-   "https://routenote.com/radar/what-is-the-ramalama-tiktok-song/",
-   "https://newengen.com/insights/october-tiktok-trends/"
+   "https://www.tiktok.com/music/Underneath-the-Tree-6714732420068804610",
+   "https://www.socialpilot.co/blog/instagram-reels-trends",
+   "https://buffer.com/resources/trending-audio-instagram/"
   ],
   "weak": false,
-  "notes": "Video count read off the rendered TikTok sound page on 20 Oct 2026. No source names a single originator of the walk; RouteNote says early walk versions date to late Jul 2025. Swaggy_cucumber's post is the earliest of the top posts on the sound page."
- },
- {
-  "n": 6,
-  "name": "October is all about me",
-  "platforms": [
-   "TikTok"
-  ],
-  "status": "Peaking",
-  "longevity": "seasonal",
-  "ends": "31 Oct 2026",
-  "sound": "alkuperäinen ääni (Drake 'Slime You Out' line), J",
-  "sound_url": "https://www.tiktok.com/music/alkuper%C3%A4inen-%C3%A4%C3%A4ni-7687936449354402582",
-  "what": "Creators lip-sync the Drake 'October is all about me' line to camera, often with birthday-month or Libra-season text on screen.",
-  "origin": "The sound clip was posted by TikTok user J (@user2267783) on 21 Sep 2026 in a Libra birthday-month video.",
-  "usage": "14.3K TikTok videos on the sound (20 Oct 2026); top post 929K views, 160K likes",
-  "usage_n": 14300,
-  "brand_use": "A brand with an October launch or birthday posts a staff member lip-syncing the line over the new product. It only works until 31 Oct.",
-  "risk": "Dead on 1 Nov. Uses a Drake recording, so check commercial clearance before a business account posts it.",
-  "examples": [
-   {
-    "url": "https://www.tiktok.com/@_emilyha25/video/7691894264804003102",
-    "plays": 929000,
-    "likes": 160100,
-    "audio_verified": true,
-    "note": "top post, 2 Oct 2026"
-   },
-   {
-    "url": "https://www.tiktok.com/@grwmia.o/video/7693515453204794638",
-    "plays": 576500,
-    "likes": 93800,
-    "audio_verified": true,
-    "note": "lip-sync with caption, 6 Oct 2026"
-   },
-   {
-    "url": "https://www.tiktok.com/@user2267783/video/7687936435617369366",
-    "plays": 12700,
-    "likes": 827,
-    "audio_verified": true,
-    "note": "origin of the sound, 21 Sep 2026"
-   }
-  ],
-  "sources": [
-   "https://later.com/blog/tiktok-trends/",
-   "https://www.tiktok.com/music/alkuper%C3%A4inen-%C3%A4%C3%A4ni-7687936449354402582"
-  ],
-  "weak": false,
-  "notes": "Small but real: 14.3K videos, biggest post 160K likes. Old example @ciaralillyyy (66.5K likes) does use the sound but is smaller, so it was dropped. Other re-uploads of the Drake line may exist on other sound ids; not counted."
+  "notes": "Count read off the rendered sound page on 5 Nov 2026. Status follows SocialPilot's Reels stage ('Peak'). The brand-launch uses are SocialPilot's description of Reels and were not confirmed post by post. 2026 examples come from the 59 posts the sound page loaded."
  }
 ]

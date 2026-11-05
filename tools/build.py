@@ -160,7 +160,7 @@ footer{{padding:40px 0 64px;color:var(--muted);font-size:14px;display:grid;gap:1
 <div class="section-break"></div>
 <main>{"".join(card(i, t) for i, t in enumerate(trends, 1))}</main>
 <footer id="how">
-  <p>How this works: each Monday the latest round-ups (New Engen, Later, SocialPilot, Ramdam and others) are checked against the live TikTok sound pages. Video counts come from the sound page or the round-up quoting them, as of the date shown. Plays and likes on the examples come from TikTok's own post data at the time of checking.</p>
+  <p>How this works: each Monday the latest round-ups (New Engen, SocialPilot, Buffer, Postdom and others) are checked against the live TikTok sound pages. Video counts come from the sound page or the round-up quoting them, as of the date shown. Plays and likes on the examples come from TikTok's own post data at the time of checking.</p>
   <p>Example images are the cover frames of the linked posts, shown for reference. Check a sound's licensing before using it on a brand account.</p>
   <p>Compiled {today.day} {today:%B %Y}.</p>
 </footer>
