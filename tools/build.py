@@ -1,4 +1,5 @@
-"""data/trends.json + data/shots.json -> index.html (and an archive copy in data/weeks/).
+"""data/trends.json + data/shots.json -> index.html, a frozen copy in archive/<monday>/, and archive/index.html
+(all past reports plus each trend's history). Raw data is kept in data/weeks/.
 
 trends.json is kept in rank order: evergreen trends first, then seasonal, each by usage_n (videos made).
 """
@@ -12,6 +13,16 @@ monday = today - datetime.timedelta(days=today.weekday())
 wk = f"{monday.day} {monday:%B %Y}"
 e = lambda s: html.escape(str(s or ""))
 STATUS = {"Rising": "rise", "Peaking": "peak", "Steady": "flat", "Past peak": "fade"}
+day = lambda d: f"{d.day} {d:%b %Y}"
+
+# Every week each trend was listed. ponytail: matched by exact name, so keep a trend's name the same between weeks.
+(ROOT / "data/weeks").mkdir(exist_ok=True)
+shutil.copy(ROOT / "data/trends.json", ROOT / f"data/weeks/{monday}.json")
+weeks = {datetime.date.fromisoformat(p.stem): json.loads(p.read_text("utf-8")) for p in sorted((ROOT / "data/weeks").glob("*.json"))}
+hist = {}
+for w, ts in weeks.items():
+    for i, t in enumerate(ts, 1):
+        hist.setdefault(t["name"], []).append((w, i, t))
 
 
 def host(u):
@@ -61,6 +72,9 @@ def card(i, t):
     sound = (f'<a href="{e(t["sound_url"])}" target="_blank" rel="noopener">{e(t["sound"])}</a>' if t.get("sound_url") else e(t.get("sound"))) or "No set sound. It's a format."
     risk = f'<dt>Watch out</dt><dd>{e(t["risk"])}</dd>' if t.get("risk") else ""
     srcs = ", ".join(f'<a href="{e(u)}" target="_blank" rel="noopener">{e(host(u))}</a>' for u in t["sources"])
+    first = hist[t["name"]][0]
+    was = f", {short(first[2].get('usage_n'))} videos then" if first[2].get("usage_n") else ""
+    listed = f"Since the week of {day(first[0])}{was}" if first[0] < monday else "New this week"
     when = "Works any week" if t["longevity"] == "evergreen" else f"Time-bound, runs until {e(t.get('ends'))}"
     return f"""
 <article class="trend" id="t{i}">
@@ -72,6 +86,7 @@ def card(i, t):
     <dl>
       <dt>Usage</dt><dd>{e(t["usage"])}</dd>
       <dt>Origin</dt><dd>{e(t["origin"])}</dd>
+      <dt>On this list</dt><dd>{e(listed)}</dd>
       <dt>Sound</dt><dd>{sound}</dd>
       <dt>Brand idea</dt><dd>{e(t["brand_use"])}</dd>
       {risk}
@@ -135,6 +150,7 @@ dt{{color:var(--muted);font-size:14px}}
 .ex li{{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}}
 .ex a{{font-weight:500}} .ex span{{color:var(--muted)}}
 .src{{margin-top:16px;color:var(--muted);font-size:11.5px}}
+.intro .past{{margin-top:14px;font-size:15px}}
 footer{{padding:40px 0 64px;color:var(--muted);font-size:14px;display:grid;gap:10px;max-width:72ch}}
 @media (max-width:760px){{
   .wrap{{padding:0 16px}} .intro{{padding:36px 0 24px}}
@@ -150,6 +166,7 @@ footer{{padding:40px 0 64px;color:var(--muted);font-size:14px;display:grid;gap:1
 <section class="intro">
   <h1>Social trend report</h1>
   <p>{len(trends)} TikTok and Reels trends, ranked by how many videos use them. Trends a brand can run any week sit at the top. Ones tied to a date sit lower.</p>
+  <p class="past"><a href="archive/">Past reports and trend history</a></p>
 </section>
 <h2>Works any week</h2>
 <p>Not tied to a date. Ranked by videos made.</p>
@@ -169,6 +186,60 @@ footer{{padding:40px 0 64px;color:var(--muted);font-size:14px;display:grid;gap:1
 </html>
 """
 (ROOT / "index.html").write_text(page, "utf-8")
-(ROOT / "data/weeks").mkdir(exist_ok=True)
-shutil.copy(ROOT / "data/trends.json", ROOT / f"data/weeks/{monday}.json")
-print("built", len(trends), "trends")
+
+# Freeze this week. Images are numbered and reused every week, so each report keeps its own copy.
+snap = ROOT / "archive" / str(monday)
+snap.mkdir(parents=True, exist_ok=True)
+(snap / "index.html").write_text(page.replace('href="archive/"', 'href="../"').replace('href="./"', 'href="../../"'), "utf-8")
+shutil.copytree(ROOT / "img", snap / "img", dirs_exist_ok=True)
+
+# archive/index.html: every report, then every trend with when it first showed up.
+reports = "".join(f'<tr><td><a href="{w}/">Week of {w.day} {w:%B %Y}</a></td><td class="num">{len(ts)} trends</td></tr>'
+                  for w, ts in sorted(weeks.items(), reverse=True))
+
+
+def hist_row(seen):
+    (w0, _, t0), (w1, i1, t1) = seen[0], seen[-1]
+    a, b = short(t0.get("usage_n")) or "n/a", short(t1.get("usage_n")) or "n/a"
+    return (f'<tr><td><a href="{w1}/#t{i1}">{e(t1["name"])}</a><span class="origin">{e(t1["origin"])}</span></td>'
+            f'<td class="first">{day(w0)}</td><td class="when">{"This week" if w1 == monday else day(w1)}</td>'
+            f'<td class="num">{a if w0 == w1 else a + " → " + b}</td></tr>')
+
+
+rows = "".join(hist_row(s) for s in sorted(hist.values(), key=lambda s: (s[0][0], s[-1][2].get("usage_n") or 0), reverse=True))
+style = re.search(r"<style>.*?</style>", page, re.S).group(0).replace("</style>", """.first{font-family:"Geist Mono",monospace;font-size:12.5px;color:var(--muted);white-space:nowrap}
+.origin{display:block;color:var(--muted);font-size:14px;margin-top:2px}
+.num{width:auto;white-space:nowrap}
+th{white-space:nowrap}
+@media (max-width:760px){.num{white-space:normal;padding-right:0}.first{white-space:normal}}
+</style>""")
+fonts = re.search(r'<link rel="preconnect".*?rel="stylesheet">', page, re.S).group(0)
+(ROOT / "archive/index.html").write_text(f"""<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Past Trend Reports</title>
+{fonts}
+{style}
+</head>
+<body>
+<div class="wrap">
+<header><a class="mark" href="../"><i></i>apparent</a><span>Past reports</span></header>
+<section class="intro">
+  <h1>Past reports</h1>
+  <p>Every weekly report as it ran, and when each trend first made the list.</p>
+</section>
+<h2>Weekly reports</h2>
+<p>Each one is frozen as it was published.</p>
+<table><tbody>{reports}</tbody></table>
+<h2>Trend history</h2>
+<p>Newest to the list first. The line under each name says when the trend actually began. Videos show the count when first listed, then when last listed.</p>
+<table><thead><tr><th>Trend</th><th>First listed</th><th class="when whenh">Last listed</th><th class="num">Videos</th></tr></thead><tbody>{rows}</tbody></table>
+<footer></footer>
+</div>
+</body>
+</html>
+""", "utf-8")
+assert all((ROOT / f"archive/{w}/index.html").exists() for w in weeks), "a week in data/weeks has no archived page"
+print("built", len(trends), "trends,", len(weeks), "weeks archived")

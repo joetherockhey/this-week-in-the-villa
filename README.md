@@ -13,4 +13,4 @@ Weekly run (Mondays):
    `tools/research.py` is the older free-LLM (FreeLLMAPI) extraction pass, kept as an optional first sweep.
 2. `node tools/shots.cjs` grabs one example image per trend (TikTok cover frame / Instagram embed).
 3. `python tools/ai_images.py` fills any gaps with a labelled AI illustration (Cloudflare Workers AI, free tier).
-4. `python tools/build.py` writes `index.html` and archives the week in `data/weeks/`. Review, then push.
+4. `python tools/build.py` writes `index.html`, freezes the week in `archive/<monday>/` and rebuilds `archive/index.html` (past reports + trend history; trends match across weeks by exact name, so keep names stable). Review, then push.
