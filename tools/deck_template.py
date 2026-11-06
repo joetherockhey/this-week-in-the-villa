@@ -68,7 +68,7 @@ def table(page, oid, x, y, widths, head, tokens, rows, size, row_h, right=()):
             r.append({"updateTextStyle": {"objectId": oid, "cellLocation": cell, "textRange": {"type": "ALL"}, "fields": "fontFamily,fontSize,bold,foregroundColor",
                       "style": {"fontFamily": MONO if i == 0 else BODY, "fontSize": pt(size - 1 if i == 0 else size), "bold": i == 1 and c == 0, "foregroundColor": {"opaqueColor": {"rgbColor": rgb(MUTE if i == 0 else INK)}}}}})
     edge = {"tableBorderFill": {"solidFill": {"color": {"rgbColor": rgb(PLASTER)}}}, "weight": pt(.25)}
-    line = {"tableBorderFill": {"solidFill": {"color": {"rgbColor": rgb("D3C6AE")}}}, "weight": pt(.75)}
+    line = {"tableBorderFill": {"solidFill": {"color": {"rgbColor": rgb("DDD3F2")}}}, "weight": pt(.75)}
     for pos, props in (("ALL", edge), ("INNER_HORIZONTAL", line), ("BOTTOM", line)):
         r.append({"updateTableBorderProperties": {"objectId": oid, "borderPosition": pos, "tableBorderProperties": props, "fields": "tableBorderFill,weight"}})
     r.append({"insertTableRows": {"tableObjectId": oid, "cellLocation": {"rowIndex": 1, "columnIndex": 0}, "insertBelow": True, "number": rows - 1}})
