@@ -191,10 +191,11 @@ page = f"""<!doctype html>
 </head>
 <body>
 <header class="a-hero">
- <div class="a-nav"><b>Week of {wk}</b><span><a href="#words">Words</a><a href="slides/">Weekly slides</a><a href="archive/">Past reports</a></span></div>
+ <div class="a-nav"><b>Week of {wk}</b><span><a href="#words">Words</a><a href="slides/">Weekly slides</a><a href="archive/">Past reports</a><a href="how/">How it works</a></span></div>
  <p class="a-mast">This Week <br>in the Villa</p>
+ <div class="a-what"><p>A weekly guide to what's trending on TikTok and Instagram. It ranks the biggest trends, shows which are rising or fading, tracks the slang people are looking up, and gives brands an idea for each one.</p><a class="a-btn" href="how/">See how it works</a></div>
  <div class="a-arch"><div class="s1"></div><div class="s2"></div><figure>{cover(idx[deck["story_trend"]], False)}</figure></div>
- <div class="a-lead"><h1>{e(deck["glance_title"])}</h1><p>{e(lede)}</p></div>
+ <div class="a-lead"><p class="a-kick">This week</p><h1>{e(deck["glance_title"])}</h1><p>{e(lede)}</p></div>
 </header>
 <section class="a-feature"><div class="wrap"><h2>{e(deck["story_title"])}</h2>
  <div class="a-fgrid"><ul class="a-facts">{"".join(f"<li>{e(b)}</li>" for b in deck["story_bullets"])}</ul><ul class="a-arcade">{"".join(arcade(n) for n in deck["story_trends"])}</ul></div></div></section>
@@ -205,7 +206,7 @@ page = f"""<!doctype html>
  <div class="a-rows">{"".join(list_row(i, t) for i, t in ever[5:])}</div>
  {dated}
 </div></section>
-<section class="a-words" id="words"><div class="wrap"><h2>{e(deck["lang_title"])}</h2><div class="a-wtop">{"".join(top_word(w) for w in words[:2])}</div><div class="a-wall">{"".join(wall_word(w) for w in words[2:])}</div>
+<section class="a-words" id="words"><div class="wrap"><p class="a-kick">What Gen Z is saying</p><h2>{e(deck["lang_title"])}</h2><div class="a-wtop">{"".join(top_word(w) for w in words[:2])}</div><div class="a-wall">{"".join(wall_word(w) for w in words[2:])}</div>
  <ul class="a-phr">{phrase_list}</ul><p class="a-wnote">Status compares the last 14 days of Wiktionary lookups with the 14 before, and with each word's best stretch in 26 weeks. Lookups show curiosity about a word, so read them as a sign of use. Data runs to {through}. Each line is 26 weeks, scaled to that word's own peak. Phrases have no dictionary page, so their status is read by hand.</p></div></section>
 <section class="a-full"><div class="wrap"><h2>Full write-ups</h2>
 <main>{"".join(card(i, t) for i, t in enumerate(trends, 1))}</main></div></section>
@@ -223,7 +224,7 @@ page = f"""<!doctype html>
 # Freeze this week. Images are numbered and reused every week, so each report keeps its own copy.
 snap = ROOT / "archive" / str(monday)
 snap.mkdir(parents=True, exist_ok=True)
-(snap / "index.html").write_text(page.replace('href="archive/"', 'href="../"').replace('href="slides/"', 'href="../../slides/"').replace('href="./"', 'href="../../"'), "utf-8")
+(snap / "index.html").write_text(page.replace('href="archive/"', 'href="../"').replace('href="slides/"', 'href="../../slides/"').replace('href="how/"', 'href="../../how/"').replace('href="./"', 'href="../../"'), "utf-8")
 shutil.copytree(ROOT / "img", snap / "img", dirs_exist_ok=True)
 
 # archive/index.html: every report, then every trend with when it first showed up.
@@ -269,6 +270,18 @@ def shell(title, crumb, home, h1, lead, body):
 <p>Newest to the list first. The line under each name says when the trend actually began. Videos show the count when first listed, then when last listed.</p>
 <table><thead><tr><th>Trend</th><th>First listed</th><th class="when">Last listed</th><th class="num">Videos</th></tr></thead><tbody>{rows}</tbody></table>
 """), "utf-8")
+
+# how/index.html: the explainer. Its pictures and numbers come from this week's data, so it never goes stale.
+how_data = {"trends": [{"r": i, "name": label(t), "n": short(t.get("usage_n")) or "n/a", "ev": t["longevity"] == "evergreen"} for i, t in enumerate(trends, 1)],
+            "counts": {k: sum(t["status"] == k for t in trends) for k in order},
+            "word": {"word": words[0]["word"], "weekly": words[0]["weekly"], "pct": pct(words[0]["change"])},
+            "real": sum(v["kind"] != "ai" for v in shots.values()), "ai": sum(v["kind"] == "ai" for v in shots.values()),
+            "weeks": len(weeks), "v": str(today)}
+(ROOT / "how").mkdir(exist_ok=True)
+how = (ROOT / "tools/how.html").read_text("utf-8")
+for k, v in (("__FONTS__", fonts), ("__CSS__", css), ("__DATA__", json.dumps(how_data, ensure_ascii=False))):
+    how = how.replace(k, v)
+(ROOT / "how/index.html").write_text(how, "utf-8")
 
 # slides/index.html: one link per week's Google Slides deck (data/decks.json, written by the trend-report skill).
 decks = json.loads((ROOT / "data/decks.json").read_text("utf-8"))

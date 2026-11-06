@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How This Week in the Villa works</title>
+<meta name="description" content="The seven steps behind each weekly report, from the button press to the live site and slides.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400..700&display=swap" rel="stylesheet">
+<style>
+:root{--deep:#3A2C7A;--paper:#FBF8FF;--accent:#6D45D1;--pop:#F7C9DC;--tint:#B9A8F2;--ink:#211847;--soft:#ECE5FA;
+--head:"Bricolage Grotesque",system-ui,sans-serif;--body:"DM Sans",system-ui,sans-serif;--mono:"DM Mono",ui-monospace,monospace;--bar:0px;--arch:999px 999px 0 0}
+*{box-sizing:border-box;margin:0;padding:0}
+html{color-scheme:light;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.5 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{display:block;width:100%;height:100%;object-fit:cover;background:var(--soft)}
+ul,ol{list-style:none}
+h1,h2,h3{font-family:var(--head);font-weight:700;letter-spacing:-.025em;line-height:1.02;text-wrap:balance}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;text-align:left}
+:focus-visible{outline:3px solid var(--pop);outline-offset:2px}
+.num{font-family:var(--mono);font-size:.82em;letter-spacing:-.01em}
+.spark{display:block;width:100%;height:auto;overflow:visible}
+
+/* status mark: the arch itself, filled with the status colour */
+.st{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:12.5px;white-space:nowrap}
+.st i{width:10px;height:13px;border-radius:5px 5px 0 0;flex:none}
+.st.rise i{background:#D9518A}.st.peak i{background:var(--accent)}.st.flat i{background:var(--tint)}.st.fade i{background:transparent;box-shadow:inset 0 0 0 1.5px currentColor}
+
+/* ============ A: magazine ============ */
+.wrap{max-width:1320px;margin:0 auto;padding:0 40px}
+.a-hero{position:relative;background:var(--deep);color:var(--paper);min-height:min(calc(100dvh - var(--bar)),860px);overflow:hidden;display:flex;flex-direction:column;padding:18px 40px 44px}
+.a-nav{position:relative;z-index:2;display:flex;justify-content:space-between;gap:16px;font-size:15px}
+.a-nav span{display:flex;gap:22px}
+.a-mast{position:relative;z-index:2;font:800 clamp(52px,8.5vw,136px)/.95 var(--head);font-stretch:75%;letter-spacing:-.012em;margin:12px 0 0;white-space:nowrap}
+.a-mast br{display:none}
+.a-what{position:relative;z-index:2;max-width:min(52%,640px);margin-top:18px}
+.a-what p{font-size:clamp(17px,1.5vw,20px);line-height:1.4}
+.a-btn{display:inline-flex;align-items:center;min-height:46px;margin-top:14px;padding:0 22px;border-radius:999px;background:var(--pop);color:var(--ink);font-weight:600;text-decoration:none}
+.a-btn:hover{background:var(--paper)}
+.a-kick{font:600 15px var(--body);color:var(--pop);margin-bottom:8px}
+.a-lead{position:relative;z-index:2;max-width:min(55%,700px);margin-top:auto;padding-top:40px}
+.a-lead h1{font-size:clamp(38px,4.9vw,70px);font-weight:600}
+.a-lead p:not(.a-kick){margin-top:18px;font-size:19px;max-width:40ch;color:var(--soft)}
+.a-arch{position:absolute;right:5%;bottom:0;top:30px;width:min(40%,520px)}
+.a-arch .s1,.a-arch .s2,.a-arch figure{position:absolute;left:50%;bottom:0;translate:-50% 0;border-radius:var(--arch)}
+.a-arch .s1{width:100%;height:100%;background:var(--accent)}
+.a-arch .s2{width:84%;height:calc(100% - clamp(120px,14vw,216px));background:var(--pop)}
+.a-arch figure{width:68%;height:calc(100% - clamp(160px,17.5vw,270px));overflow:hidden}
+.a-arch img{object-position:50% 30%}
+
+.a-feature{background:var(--pop);padding:88px 0 96px}
+.a-feature h2{font-size:clamp(40px,6.6vw,96px);max-width:20ch;font-weight:800;font-stretch:85%;letter-spacing:-.015em}
+.a-fgrid{display:grid;grid-template-columns:5fr 7fr;gap:64px;margin-top:56px;align-items:end}
+.a-facts li{font-size:20px;line-height:1.35;padding:14px 0;border-top:2px solid var(--ink)}
+.a-arcade{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.a-arcade .pic,.a-five .pic{aspect-ratio:3/4.4;border-radius:var(--arch);overflow:hidden;display:block}
+.a-arcade h3{font-size:18px;font-weight:600;letter-spacing:-.01em;line-height:1.12;margin-top:10px}
+.a-arcade p{font-size:13.5px;margin-top:4px}
+
+.a-moments{padding:96px 0 40px}
+.a-moments>.wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px 72px}
+.a-moments h2{grid-column:1/-1;font-size:clamp(32px,3.6vw,48px)}
+.a-moments article:nth-of-type(even){translate:0 48px}
+.a-moments h3{font-size:clamp(26px,2.7vw,38px);font-weight:600}
+.a-moments p{margin-top:10px;font-size:17px;max-width:44ch}
+.a-moments a{display:inline-block;margin-top:8px;font-size:14.5px}
+
+.a-list{padding:128px 0 96px}
+.a-list>.wrap>h2{font-size:clamp(44px,7vw,104px);font-weight:800;font-stretch:85%;letter-spacing:-.015em}
+.a-list>.wrap>p{font-size:19px;margin-top:10px;max-width:56ch}
+.a-one{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:56px;align-items:end;margin-top:56px}
+.a-one .pic{display:block;aspect-ratio:3/4;border-radius:var(--arch);overflow:hidden}
+.a-one .rk{font:800 clamp(96px,14vw,200px)/.8 var(--head);color:var(--accent);letter-spacing:-.05em}
+.a-one h3{font-size:clamp(36px,5vw,72px);font-weight:700;margin-top:18px}
+.a-one .meta{display:flex;flex-wrap:wrap;gap:6px 20px;margin-top:14px;align-items:center;font-size:17px}
+.a-one .tx{margin-top:14px;font-size:18px;max-width:54ch}
+.a-five{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:72px}
+.a-five a{text-decoration:none}
+.a-five h3{font-size:24px;font-weight:600;line-height:1.08;margin-top:14px}
+.a-five h3 span{color:var(--accent);font-weight:800;margin-right:6px}
+.a-five .meta{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-top:8px;font-size:17px}
+.a-rows{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 56px;margin-top:64px}
+.a-row{display:grid;grid-template-columns:48px 34px minmax(0,1fr) auto;gap:12px;align-items:center;padding:12px 0;text-decoration:none;border-bottom:1px solid var(--soft)}
+.a-row .th{width:48px;height:62px;border-radius:var(--arch);overflow:hidden}
+.a-row .rk{font:700 20px/1 var(--head)}
+.a-row h4{font:600 17.5px/1.15 var(--head);letter-spacing:-.01em}
+.a-row small{display:block;font-size:13.5px;line-height:1.3;margin-top:3px}
+.a-row .r{text-align:right;display:grid;gap:3px;justify-items:end;font-size:16px}
+.a-row:hover h4{text-decoration:underline}
+.a-dated{background:var(--soft);margin-top:72px;padding:40px 44px 32px;border-radius:220px 220px 0 0}
+.a-dated h3{font-size:clamp(28px,3.2vw,44px);text-align:center}
+.a-dated>p{text-align:center;margin-top:6px}
+.a-dated .a-rows{margin-top:20px}
+.a-dated .a-row{border-bottom-color:var(--paper)}
+
+.a-words{background:var(--deep);color:var(--paper);padding:88px 0}
+.a-words .a-kick{font-size:16px}
+.a-words h2{font-size:clamp(36px,5vw,72px);max-width:17ch;font-weight:700}
+.a-wtop{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;margin-top:48px}
+.a-wtop h3{font-size:clamp(44px,6vw,84px);font-weight:800;color:var(--pop)}
+.a-wtop p{margin:6px 0 16px;font-size:17px}
+.a-wtop .st{font-size:14px;margin-right:14px}
+.a-wtop .spark{color:var(--pop);margin-top:12px}
+.a-wall{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px 32px;margin-top:64px}
+.a-wall h4{font:600 19px/1.1 var(--head)}
+.a-wall .ln{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:5px 0 8px;font-size:15px}
+.a-wall .st{font-size:12px}
+.a-wall .spark{color:var(--tint)}
+.a-wnote{margin-top:32px;font-size:14.5px;max-width:72ch;color:var(--soft)}
+.a-phr{display:flex;flex-wrap:wrap;gap:14px 36px;margin-top:48px;font:500 20px/1.25 var(--head)}
+.a-phr li{display:grid;gap:3px}
+
+.a-foot{background:var(--accent);color:var(--paper);padding:64px 0 44px}
+.a-foot .big{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.a-foot a.lk{font:800 clamp(40px,6.4vw,92px)/1 var(--head);font-stretch:85%;letter-spacing:-.015em;text-underline-offset:8px;text-decoration-thickness:3px}
+.a-foot p{margin-top:12px;font:700 20px/1.3 var(--body);max-width:30ch}
+
+@media (max-width:980px){
+ .a-fgrid,.a-one{grid-template-columns:minmax(0,1fr);gap:36px}
+ .a-rows{grid-template-columns:minmax(0,1fr)}
+ .a-wall{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width:760px){
+ .wrap{padding:0 16px}
+ .a-hero{min-height:0;padding:14px 16px 0}
+ .a-nav{font-size:13px;flex-wrap:wrap;gap:4px 8px}.a-nav span{gap:12px;flex-wrap:wrap}
+ .a-mast{white-space:normal;font-size:clamp(52px,19vw,104px);line-height:.9}
+ .a-mast br{display:inline}
+ .a-what{max-width:none}
+ .a-lead{max-width:none;padding-top:20px;margin-top:0;order:1}
+ .a-lead p{font-size:17px}
+ .a-arch{position:relative;inset:auto;width:100%;max-width:340px;aspect-ratio:1/1.12;margin:28px auto 0;order:2}
+ .a-arch .s2{height:88%}.a-arch figure{height:76%}
+ .a-feature{padding:56px 0 60px}
+ .a-arcade{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 14px}
+ .a-facts li{font-size:18px}
+ .a-moments{padding:60px 0 8px}
+ .a-moments>.wrap{grid-template-columns:minmax(0,1fr);gap:30px}
+ .a-moments article:nth-of-type(even){translate:none}
+ .a-list{padding:60px 0 56px}
+ .a-five{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 14px;margin-top:44px}
+ .a-five h3{font-size:20px}
+ .a-five .meta{flex-direction:column;align-items:flex-start;gap:2px}
+ .a-row{grid-template-columns:44px 26px minmax(0,1fr);gap:4px 10px}
+ .a-row .th{width:44px;height:58px;grid-row:span 2}
+ .a-row .rk{grid-row:span 2}
+ .a-row .r{grid-column:3;display:flex;justify-content:space-between;align-items:center;gap:10px;text-align:left}
+ .a-dated{padding:36px 16px 16px;border-radius:120px 120px 0 0;margin-left:-16px;margin-right:-16px}
+ .a-words{padding:56px 0}
+ .a-wtop{grid-template-columns:minmax(0,1fr);gap:32px}
+ .a-wall{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 18px;margin-top:40px}
+ .a-foot .big{grid-template-columns:minmax(0,1fr)}
+}
+
+
+/* full write-ups */
+.a-full{padding:88px 0 40px}
+.a-full>.wrap>h2{font-size:clamp(44px,7vw,104px);font-weight:800;font-stretch:85%;letter-spacing:-.015em}
+.trend{display:grid;grid-template-columns:240px minmax(0,1fr);gap:40px;padding:40px 0;border-bottom:1px solid var(--soft);scroll-margin-top:12px}
+.trend figure .pic,.trend figure>img{display:block;aspect-ratio:3/4.4;border-radius:var(--arch);overflow:hidden}
+.trend figcaption{margin-top:8px;font:400 12.5px var(--mono)}
+.trend .meta{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;font:400 12.5px var(--mono)}
+.trend .rk{font:800 24px/1 var(--head);color:var(--accent)}
+.trend h3{font-size:clamp(28px,3.4vw,42px);margin:10px 0}
+.trend .what{font-size:18px;max-width:62ch}
+.trend dl{display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:10px 16px;margin:22px 0;max-width:68ch;font-size:15.5px}
+.trend dt{font:500 12.5px/1.8 var(--mono)}
+.ex{display:grid;gap:6px;font-size:15px}
+.ex li{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}
+.ex a{font-weight:500}.ex span{font:400 12.5px var(--mono)}
+.src{margin-top:16px;font:400 11.5px var(--mono)}
+.how{padding-top:24px;padding-bottom:64px;display:grid;gap:10px;font-size:14px}
+.how p{max-width:72ch}
+.a-foot a.lk:hover,.a-row:hover h4{text-decoration-thickness:2px}
+
+/* past reports and slides pages */
+.sub-top{background:var(--deep);color:var(--paper);padding:18px 0 48px}
+.sub-top .a-nav{margin-bottom:40px}
+.sub-top h1{font:800 clamp(48px,8vw,104px)/.95 var(--head);font-stretch:75%;letter-spacing:-.012em}
+.sub-top p.lead{margin-top:14px;font-size:19px;max-width:48ch;color:var(--soft)}
+.sub h2{font-size:clamp(28px,3.2vw,40px);margin:48px 0 6px}
+.sub h2+p{font-size:15.5px;margin-bottom:12px;max-width:72ch}
+.sub table{width:100%;border-collapse:collapse;margin-bottom:40px}
+.sub th{text-align:left;font:400 12.5px var(--mono);padding:8px 12px 8px 0;border-bottom:1px solid var(--ink);white-space:nowrap}
+.sub td{padding:12px 12px 12px 0;border-bottom:1px solid var(--soft);vertical-align:baseline}
+.sub td a{font-weight:500;text-decoration:none}.sub td a:hover{text-decoration:underline}
+.sub .origin{display:block;font-size:14px;margin-top:2px}
+.sub .num,.sub .first,.sub .when{font:400 12.5px var(--mono);white-space:nowrap}
+.sub .num{text-align:right}
+@media (max-width:760px){
+ .trend{grid-template-columns:minmax(0,1fr);gap:20px}.trend figure{max-width:220px}
+ .trend dl{grid-template-columns:minmax(0,1fr);gap:2px}.trend dd{margin-bottom:10px}
+ .sub .num,.sub .first,.sub .when{white-space:normal}.sub td.when,.sub th.when{display:none}
+}
+
+html{scroll-behavior:smooth}
+.h-top{background:var(--deep);color:var(--paper);padding:18px 0 64px;overflow:hidden}
+.h-top h1{font:800 clamp(64px,12vw,176px)/.92 var(--head);font-stretch:75%;letter-spacing:-.012em;margin-top:36px}
+.h-top .lead{margin-top:18px;font-size:clamp(19px,2vw,24px);line-height:1.35;max-width:36em;color:var(--soft)}
+.arcade{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:12px;margin-top:56px}
+.bay{display:block;text-decoration:none}
+.bay i{position:relative;display:block;aspect-ratio:3/4;border-radius:var(--arch);overflow:hidden;box-shadow:inset 0 0 0 2px var(--tint)}
+.bay i::before{content:"";position:absolute;inset:0;background:var(--c);transform-origin:bottom;animation:fill .7s cubic-bezier(.3,.7,.2,1) both;animation-delay:calc(.35s + var(--i) * .22s)}
+.bay b{position:absolute;inset:auto 0 12px;text-align:center;font:800 clamp(26px,3.6vw,52px)/1 var(--head);color:var(--t)}
+.bay span{display:block;margin-top:10px;font:600 clamp(14px,1.3vw,17px)/1.15 var(--head)}
+.bay:hover span{text-decoration:underline}
+@keyframes fill{from{transform:scaleY(0)}}
+
+.steps{position:relative}
+.thread{position:absolute;left:max(40px,calc(50% - 620px));top:96px;bottom:96px;width:3px;background:var(--soft)}
+.thread i{position:absolute;inset:0 0 auto;height:calc(var(--p,0) * 100%);background:var(--accent)}
+.thread b{position:absolute;left:50%;top:calc(var(--p,0) * 100%);width:18px;height:23px;margin:-11px 0 0 -9px;border-radius:9px 9px 0 0;background:var(--accent)}
+.step{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:72px;align-items:center;max-width:1320px;margin:0 auto;padding:96px 40px 96px 96px;scroll-margin-top:0}
+.step .n{font:800 clamp(72px,8vw,120px)/.85 var(--head);color:var(--accent);letter-spacing:-.04em}
+.step h2{font-size:clamp(34px,4vw,58px);margin-top:14px}
+.step p{margin-top:16px;font-size:18px;line-height:1.5;max-width:34em}
+.step p.under{font-size:15.5px;padding-top:14px;border-top:2px solid var(--soft)}
+.step code{font:500 .9em var(--mono);white-space:nowrap}
+.rules{margin-top:18px;max-width:34em;display:grid;gap:10px}
+.rules div{display:grid;grid-template-columns:6em minmax(0,1fr);gap:12px;align-items:baseline;font-size:16px;line-height:1.35}
+.rules dt{white-space:nowrap}
+.rules .st{font-size:13.5px}
+
+.win{position:relative;padding:14px 14px 0;background:var(--pop);border-radius:var(--arch);max-width:460px;width:100%;justify-self:center}
+.win>div{padding:14px 14px 0;background:var(--accent);border-radius:var(--arch)}
+.in{position:relative;background:var(--deep);color:var(--paper);border-radius:var(--arch);aspect-ratio:392/580;overflow:hidden}
+.head{position:absolute;inset:11% 0 auto;text-align:center}
+.head b{display:block;font:800 clamp(34px,5.6vw,56px)/1 var(--head);font-stretch:85%;color:var(--pop)}
+.head span{display:block;margin-top:4px;font-size:clamp(13px,1.3vw,15px);line-height:1.2;padding:0 16%}
+.in svg{position:absolute;left:6%;right:6%;width:88%;bottom:3%;height:auto;overflow:visible}
+.in text{font:500 13px var(--body);fill:var(--paper)}
+.in text.h{font:700 15px var(--head)}
+.in text.m{font:500 12.5px var(--mono)}
+.again{position:absolute;right:0;bottom:-34px;font-size:14.5px;font-weight:500;text-decoration:underline;text-underline-offset:3px;min-height:30px}
+
+/* scene motion: each part waits for --d after the scene starts */
+.a,.pop,.up,.row{transition:opacity .45s var(--d,0s),transform .6s cubic-bezier(.25,.8,.25,1) var(--d,0s)}
+.a,.pop,.up{opacity:0}
+.pop{transform:scale(.3);transform-box:fill-box;transform-origin:center}
+.up{transform:translateY(16px)}
+.draw{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset var(--t,1s) ease-in-out var(--d,0s)}
+.row{transform:translateY(var(--y0));transition-duration:.45s,.9s}
+.win.on .a,.win.on .pop,.win.on .up{opacity:1;transform:none}
+.win.on .draw{stroke-dashoffset:0}
+.win.on .row{transform:translateY(var(--y1))}
+.win.on .press{animation:press .5s .35s both}
+.win.on .ring{animation:ring 1s .55s both}
+.win:not(.on) *{transition:none!important}
+@keyframes press{40%{transform:scale(.9)}}
+@keyframes ring{from{opacity:.9;transform:scale(1)}to{opacity:0;transform:scale(1.5)}}
+.press,.ring{transform-box:fill-box;transform-origin:center}
+.ring{opacity:0}
+
+.limits{background:var(--soft);padding:88px 0}
+.limits h2{font-size:clamp(36px,5vw,72px);max-width:14em}
+.limits ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 56px;margin-top:40px}
+.limits h3{font-size:24px;font-weight:600}
+.limits p{margin-top:6px;font-size:17px;max-width:32em}
+
+@media (max-width:980px){
+ .step{grid-template-columns:minmax(0,1fr);gap:44px;padding:64px 40px 88px 72px}
+ .win{max-width:400px;justify-self:start}
+}
+@media (max-width:760px){
+ .arcade{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px 10px;margin-top:40px}
+ .thread{left:16px}
+ .step{padding:56px 16px 80px 36px}
+ .limits{padding:56px 0}
+ .limits ul{grid-template-columns:minmax(0,1fr)}
+ .step code{white-space:normal;overflow-wrap:anywhere}
+}
+@media (prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ .bay i::before{animation:none}
+ .win *{transition:none!important;animation:none!important}
+ .again{display:none}
+}
+</style>
+</head>
+<body>
+<header class="h-top"><div class="wrap">
+ <div class="a-nav"><a href="../"><b>This Week in the Villa</b></a><span><a href="../">Back to the report</a></span></div>
+ <h1>How it works</h1>
+ <p class="lead">Every Wednesday an AI works through the same seven steps. It finds what's trending, checks the numbers, and builds the site and the slides. Here's each step, using this week's real data.</p>
+ <nav class="arcade" aria-label="The seven steps">
+  <a class="bay" href="#s1" style="--i:0;--c:var(--accent);--t:var(--paper)"><i><b>1</b></i><span>The button</span></a>
+  <a class="bay" href="#s2" style="--i:1;--c:var(--pop);--t:var(--ink)"><i><b>2</b></i><span>Research</span></a>
+  <a class="bay" href="#s3" style="--i:2;--c:var(--tint);--t:var(--ink)"><i><b>3</b></i><span>Ranking</span></a>
+  <a class="bay" href="#s4" style="--i:3;--c:var(--accent);--t:var(--paper)"><i><b>4</b></i><span>Status</span></a>
+  <a class="bay" href="#s5" style="--i:4;--c:var(--pop);--t:var(--ink)"><i><b>5</b></i><span>Covers</span></a>
+  <a class="bay" href="#s6" style="--i:5;--c:var(--tint);--t:var(--ink)"><i><b>6</b></i><span>Words</span></a>
+  <a class="bay" href="#s7" style="--i:6;--c:var(--accent);--t:var(--paper)"><i><b>7</b></i><span>Site and slides</span></a>
+ </nav>
+</div></header>
+
+<main class="steps">
+ <div class="thread" aria-hidden="true"><i></i><b></b></div>
+
+ <section class="step" id="s1"><div>
+  <div class="n">1</div><h2>Someone presses one button</h2>
+  <p>The report doesn't run on a timer. On Wednesday a person presses a button on a private dashboard. That opens a session with Claude, Anthropic's AI, and hands it a written checklist.</p>
+  <p>The checklist is the same every week, so every report is made the same way. When the run ends, the person gets a note saying what was found and anything that couldn't be checked.</p>
+  <p class="under">Behind the scenes: the checklist is a Claude skill called <code>trend-report</code>. It holds the rules too, like "only state facts you checked this week".</p>
+ </div><figure class="win" data-scene="run"></figure></section>
+
+ <section class="step" id="s2"><div>
+  <div class="n">2</div><h2>Every trend has to earn its number</h2>
+  <p>Claude starts with the latest round-ups from New Engen, SocialPilot, Buffer, Postdom and others to see what people are talking about. A mention isn't enough to get on the list.</p>
+  <p>It then opens the trend's own TikTok sound page or Instagram audio page and reads the count from there. If only a round-up has the number, the page names that round-up. If nothing can be checked, it's left out.</p>
+  <p class="under">Behind the scenes: each trend becomes one entry in <code>data/trends.json</code> with what it is, where it came from, its sound, a brand idea, what to watch out for, example posts and sources.</p>
+ </div><figure class="win" data-scene="research"></figure></section>
+
+ <section class="step" id="s3"><div>
+  <div class="n">3</div><h2>The list puts usable trends first</h2>
+  <p>Trends a brand can run any week go at the top, ranked by how many videos use them. Trends tied to a date go underneath, ranked the same way.</p>
+  <p>That's why a huge Christmas sound can sit below a smaller dance. Once its date passes, it's no use to anyone.</p>
+  <p class="under">Behind the scenes: a trend keeps its exact name from week to week. That's how past reports can show when it first appeared and how much it has grown.</p>
+ </div><figure class="win" data-scene="rank"></figure></section>
+
+ <section class="step" id="s4"><div>
+  <div class="n">4</div><h2>Each trend gets a status</h2>
+  <p>Rising, Peaking, Steady or Past peak. It tells a brand whether there's still time to join in.</p>
+  <p>This part is a judgement. Claude compares the count with earlier dated counts. Where there's only one count, it looks at how recent the biggest posts are and whether new ones are still landing.</p>
+  <p class="under">Behind the scenes: the reasoning behind each status is saved with the trend, so a call can be questioned later.</p>
+ </div><figure class="win" data-scene="status"></figure></section>
+
+ <section class="step" id="s5"><div>
+  <div class="n">5</div><h2>Pictures come from real posts</h2>
+  <p>Each trend gets one picture: the cover frame of a real example post, linked back to that post.</p>
+  <p>A script opens the platforms' public pages with no login and saves the frame. If no post can be captured, an AI illustration fills the gap and the page labels it as one.</p>
+  <p class="under">Behind the scenes: <code>tools/shots.cjs</code> collects the frames and <code>tools/ai_images.py</code> fills any gaps.</p>
+ </div><figure class="win" data-scene="covers"></figure></section>
+
+ <section class="step" id="s6"><div>
+  <div class="n">6</div><h2>Slang is measured by dictionary lookups</h2>
+  <p>Nothing free counts words in TikTok comments, so the tracker uses a stand-in: how many people look a word up on Wiktionary, from Wikimedia's public figures. Each word's last 14 days are compared with the 14 before and with its best stretch in 26 weeks.</p>
+  <dl class="rules">
+   <div><dt><span class="st rise"><i></i>Rising</span></dt><dd>Up 20% or more on the 14 days before</dd></div>
+   <div><dt><span class="st peak"><i></i>Peaking</span></dt><dd>Within 15% of its best, and at least 25% above its usual level</dd></div>
+   <div><dt><span class="st fade"><i></i>Past peak</span></dt><dd>Down 20% or more, or at 60% or less of its best</dd></div>
+   <div><dt><span class="st flat"><i></i>Steady</span></dt><dd>Anything else, or under 40 lookups in 14 days</dd></div>
+  </dl>
+  <p class="under">Behind the scenes: unlike trend status, this is a fixed rule in <code>tools/words.py</code>, with no judgement in it. Phrases have no dictionary page, so their status is set by hand.</p>
+ </div><figure class="win" data-scene="words"></figure></section>
+
+ <section class="step" id="s7"><div>
+  <div class="n">7</div><h2>One file becomes the site and the slides</h2>
+  <p>Claude writes the week's headlines into one file. A script builds this site from it and freezes a copy in past reports, so old weeks never change. Pushing to GitHub Pages puts it live about a minute later.</p>
+  <p>The same file fills a fresh copy of the slide template, pictures included. Every slide is then exported and looked at for spilled text, leftover placeholders and the wrong picture.</p>
+  <p class="under">Behind the scenes: <code>tools/build.py</code> makes the pages and <code>tools/deck.py</code> writes the changes for Google's Slides API. It stops if a line is too long for its box, because Slides won't shrink text to fit.</p>
+ </div><figure class="win" data-scene="out"></figure></section>
+</main>
+
+<section class="limits"><div class="wrap"><h2>What this report can't tell you</h2><ul>
+ <li><h3>Lookups aren't use</h3><p>They show curiosity. A word can be everywhere and rarely looked up, because everyone already knows it.</p></li>
+ <li><h3>Seasonal counts cover every year</h3><p>A sound that returns each Christmas keeps its old videos, so its count doesn't measure this season.</p></li>
+ <li><h3>Trend status is a reading</h3><p>It comes from counts and post dates, and TikTok and Instagram don't publish a weekly growth figure.</p></li>
+ <li><h3>Not every clip is watched</h3><p>Some checks rest on cover frames, captions and post data, so play a clip through before copying it.</p></li>
+ <li><h3>Licensing isn't checked</h3><p>Business accounts often can't use major-label tracks. Check the sound before posting from a brand account.</p></li>
+</ul></div></section>
+<footer class="a-foot"><div class="wrap big"><div><a class="lk" href="../">This week's report</a></div><div><a class="lk" href="../slides/">Weekly slides</a></div></div></footer>
+
+<script>
+const D = {"trends": [{"r": 1, "name": "Ba Ba Ba dance", "n": "714.6K", "ev": true}, {"r": 2, "name": "Vlog timestamps", "n": "692K", "ev": true}, {"r": 3, "name": "Someone's gotta hold it down", "n": "655.3K", "ev": true}, {"r": 4, "name": "Small text zoom", "n": "570K", "ev": true}, {"r": 5, "name": "Housewife POV", "n": "503.1K", "ev": true}, {"r": 6, "name": "My Netflix documentary", "n": "455K", "ev": true}, {"r": 7, "name": "Not every angel walks the runway", "n": "391.6K", "ev": true}, {"r": 8, "name": "Money can't buy happiness, but...", "n": "377.1K", "ev": true}, {"r": 9, "name": "Upside Down hand transition", "n": "352K", "ev": true}, {"r": 10, "name": "Listening ears", "n": "63.2K", "ev": true}, {"r": 11, "name": "The Process", "n": "49K", "ev": true}, {"r": 12, "name": "Pray For Me slow-mo entrance", "n": "48.2K", "ev": true}, {"r": 13, "name": "Beautiful people are busy", "n": "44.5K", "ev": true}, {"r": 14, "name": "Toggle on", "n": "27K", "ev": true}, {"r": 15, "name": "GRWM loading 0% to 100%", "n": "10.3K", "ev": true}, {"r": 16, "name": "The November 1 switch", "n": "16.2M", "ev": false}, {"r": 17, "name": "November Rain", "n": "282.8K", "ev": false}, {"r": 18, "name": "Santa Tell Me countdown", "n": "237.5K", "ev": false}, {"r": 19, "name": "Underneath the Tree reveals", "n": "49.4K", "ev": false}], "counts": {"Rising": 4, "Peaking": 9, "Steady": 5, "Past peak": 1}, "word": {"word": "Mogging", "weekly": [2047, 2817, 2009, 1815, 2002, 1358, 2113, 1355, 866, 963, 898, 945, 828, 808, 800, 898, 931, 936, 1166, 1697, 1149, 828, 743, 907, 1040, 1304], "pct": "+42%"}, "real": 19, "ai": 0, "weeks": 2, "v": "2026-11-06"};
+const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+const cut = (s, n) => s.length > n ? s.slice(0, n - 1).trimEnd() + '...' : s;
+const PAPER = 'var(--paper)', POP = 'var(--pop)', TINT = 'var(--tint)', ACC = 'var(--accent)';
+const svg = (h, body) => `<svg viewBox="0 0 340 ${h}" aria-hidden="true">${body}</svg>`;
+const curve = (d, delay, t, c = TINT, w = 2.4) => `<path class="draw" pathLength="1" style="--d:${delay}s;--t:${t}s" d="${d}" fill="none" stroke="${c}" stroke-width="${w}" stroke-linecap="round"/>`;
+
+const scenes = {
+  run() {
+    const days = 'MTWTFSS'.split('').map((l, i) => {
+      const x = 12 + i * 46, on = i === 2;
+      return `<path d="M${x} 62v-34a18 18 0 0 1 36 0v34z" fill="${on ? POP : 'none'}" stroke="${on ? POP : TINT}" stroke-width="1.5"/><text class="h" x="${x + 18}" y="48" text-anchor="middle" style="fill:${on ? 'var(--ink)' : PAPER}">${l}</text>`;
+    }).join('');
+    const lines = ['Opens a session with Claude', 'Loads the weekly checklist', 'Starts the research'].map((t, i) =>
+      `<g class="up" style="--d:${1.1 + i * .3}s"><path d="M20 ${216 + i * 34}l6 6 11-13" fill="none" stroke="${POP}" stroke-width="2.6"/><text x="50" y="${221 + i * 34}">${t}</text></g>`).join('');
+    return { big: 'Wednesday', small: 'one press, no timer', h: 320, body: `${days}<rect class="ring" x="70" y="96" width="200" height="60" rx="30" fill="none" stroke="${POP}" stroke-width="3"/><g class="press"><rect x="70" y="96" width="200" height="60" rx="30" fill="${ACC}"/><text class="h" x="170" y="132" text-anchor="middle" style="font-size:18px">Run the report</text></g>${lines}` };
+  },
+  research() {
+    const chips = ['New Engen', 'SocialPilot', 'Buffer', 'Postdom'].map((t, i) => {
+      const x = 2 + i * 85;
+      return `<g class="up" style="--d:${i * .12}s"><rect x="${x}" y="0" width="81" height="30" rx="15" fill="none" stroke="${TINT}" stroke-width="1.4"/><text x="${x + 40.5}" y="19.5" text-anchor="middle" style="font-size:11.5px">${t}</text></g>` + curve(`M${x + 40.5} 30C${x + 40.5} 62 170 54 170 92`, .5 + i * .08, .6);
+    }).join('');
+    return { big: D.trends.length, small: 'trends earned a place this week', h: 322, body: `${chips}
+      <circle class="pop" style="--d:1.2s" cx="170" cy="100" r="9" fill="${POP}"/><text class="a" style="--d:1.2s" x="188" y="105">A trend gets mentioned</text>
+      ${curve('M170 110V156', 1.4, .4)}
+      <g class="pop" style="--d:1.8s"><rect x="82" y="156" width="176" height="36" rx="18" fill="${ACC}"/><text class="h" x="170" y="179" text-anchor="middle" style="font-size:14px">Open its sound page</text></g>
+      ${curve('M130 192C110 214 86 214 78 240', 2.2, .5, POP)}${curve('M210 192C230 214 254 214 262 240', 2.2, .5)}
+      <circle class="pop" style="--d:2.7s" cx="78" cy="258" r="17" fill="${POP}"/><path class="a" style="--d:2.9s" d="M70 258l6 6 11-13" fill="none" stroke="var(--ink)" stroke-width="3"/>
+      <text class="a m" style="--d:3s" x="78" y="298" text-anchor="middle">${D.trends[0].n} videos</text><text class="a" style="--d:3s" x="78" y="316" text-anchor="middle">count read, it's in</text>
+      <circle class="pop" style="--d:2.9s" cx="262" cy="258" r="17" fill="none" stroke="${TINT}" stroke-width="2"/><path class="a" style="--d:3.1s" d="M255 251l14 14m0-14l-14 14" stroke="${TINT}" stroke-width="2.6"/>
+      <text class="a" style="--d:3.2s" x="262" y="298" text-anchor="middle">nothing to check</text><text class="a" style="--d:3.2s" x="262" y="316" text-anchor="middle">left out</text>` };
+  },
+  rank() {
+    const ever = D.trends.filter(t => t.ev).slice(0, 6), dated = D.trends.filter(t => !t.ev).slice(0, 3);
+    const rows = [...ever, ...dated], scramble = [4, 7, 1, 8, 0, 5, 2, 6, 3];
+    const pos = i => i < ever.length ? 24 + i * 34 : 24 + ever.length * 34 + 28 + (i - ever.length) * 34;
+    const body = rows.map((t, i) => `<g class="row" style="--y0:${24 + scramble[i % 9] * 34}px;--y1:${pos(i)}px;--d:.7s"><rect width="340" height="29" rx="6" fill="${t.ev ? 'rgb(255 255 255 / .1)' : ACC}"/><text class="h" x="12" y="20">${t.r}</text><text x="44" y="19.5">${esc(cut(t.name, 28))}</text><text class="m" x="330" y="19.5" text-anchor="end">${t.n}</text></g>`).join('');
+    return { big: `1 to ${D.trends.length}`, small: 'sorted by videos made', h: 372, body: `<text class="a h" style="--d:1.5s;fill:var(--pop)" x="0" y="14">Works any week</text><text class="a h" style="--d:1.5s;fill:var(--pop)" x="0" y="${24 + ever.length * 34 + 18}">Tied to a date</text>${body}` };
+  },
+  status() {
+    const d = 'M6 300C60 292 90 92 140 84C186 77 196 168 236 172C258 174 264 176 276 194C296 226 312 292 334 304';
+    const p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    p.setAttribute('d', d);
+    const L = p.getTotalLength();
+    const zones = { Rising: [.1, .3], Peaking: [.33, .47], Steady: [.56, .69], 'Past peak': [.8, .94] };
+    const labels = { Rising: [4, 140, 'start'], Peaking: [146, 58, 'middle'], Steady: [262, 146, 'middle'], 'Past peak': [216, 290, 'middle'] };
+    let delay = 1.1, out = '';
+    for (const [k, [a, b]] of Object.entries(zones)) {
+      const n = D.counts[k] || 0, [x, y, anchor] = labels[k];
+      for (let i = 0; i < n; i++) {
+        const pt = p.getPointAtLength(L * (a + (b - a) * (n > 1 ? i / (n - 1) : .5)));
+        out += `<circle class="pop" style="--d:${delay.toFixed(2)}s" cx="${pt.x.toFixed(1)}" cy="${pt.y.toFixed(1)}" r="7" fill="${k === 'Peaking' ? POP : k === 'Past peak' ? 'none' : TINT}" stroke="${k === 'Past peak' ? TINT : 'var(--deep)'}" stroke-width="2"/>`;
+        delay += .07;
+      }
+      out += `<text class="a h" style="--d:${delay.toFixed(2)}s" x="${x}" y="${y}" text-anchor="${anchor}">${k}: ${n}</text>`;
+    }
+    return { big: `${D.counts.Peaking || 0} of ${D.trends.length}`, small: 'are peaking this week', h: 320, body: curve(d, .1, 1, TINT, 3) + out };
+  },
+  covers() {
+    const cell = (i) => {
+      const x = 2 + (i % 3) * 114, y = i < 3 ? 0 : 176, id = `c${i}`, w = 108, h = 166;
+      return `<clipPath id="${id}"><path d="M${x} ${y + h}V${y + 54}a54 54 0 0 1 108 0V${y + h}z"/></clipPath><g class="up" style="--d:${.15 + i * .28}s"><image clip-path="url(#${id})" href="../img/${D.trends[i].r}.jpg?v=${D.v}" x="${x}" y="${y}" width="${w}" height="${h}" preserveAspectRatio="xMidYMid slice"/></g>`;
+    };
+    return { big: D.real, small: `covers from real posts${D.ai ? `, ${D.ai} AI` : ''}`, h: 344, body: [0, 1, 2, 3, 4, 5].map(cell).join('') };
+  },
+  words() {
+    const w = D.word, v = w.weekly, n = v.length, top = Math.max(...v);
+    const X = i => 6 + i * 328 / (n - 1), Y = x => 214 - x / top * 196;
+    const now = v[n - 1] + v[n - 2], before = v[n - 3] + v[n - 4];
+    const line = 'M' + v.map((x, i) => `${X(i).toFixed(1)} ${Y(x).toFixed(1)}`).join('L');
+    return { big: w.pct, small: `${esc(w.word)}, the top word this week`, h: 300, body: `
+      <rect class="a" style="--d:1.7s;fill-opacity:.2" x="${X(n - 4.5)}" y="4" width="${X(n - 2.5) - X(n - 4.5)}" height="214" fill="${TINT}"/>
+      <rect class="a" style="--d:2.1s;fill-opacity:.3" x="${X(n - 2.5)}" y="4" width="${334 - X(n - 2.5)}" height="214" fill="${POP}"/>
+      ${curve(line, .1, 1.5, POP, 2.6)}
+      <path d="M6 218H334" stroke="${TINT}" stroke-width="1"/><text x="6" y="238" style="font-size:12px">26 weeks ago</text><text x="334" y="238" text-anchor="end" style="font-size:12px">Now</text>
+      <text class="a" style="--d:2.5s" x="6" y="270">14 days before</text><text class="a m" style="--d:2.5s" x="334" y="270" text-anchor="end">${before.toLocaleString('en-AU')} lookups</text>
+      <text class="a" style="--d:2.8s" x="6" y="292">Last 14 days</text><text class="a m" style="--d:2.8s;fill:var(--pop)" x="334" y="292" text-anchor="end">${now.toLocaleString('en-AU')} lookups</text>` };
+  },
+  out() {
+    let tiles = '';
+    for (let i = 0; i < 12; i++) tiles += `<rect class="pop" style="--d:${1.5 + i * .08}s" x="${204 + (i % 3) * 42}" y="${124 + Math.floor(i / 3) * 31}" width="36" height="25" rx="2" fill="${[POP, TINT, ACC][i % 3]}"/>`;
+    let stack = '';
+    for (let i = Math.min(D.weeks, 6) - 1; i >= 0; i--) stack += `<rect class="up" style="--d:${2.7 + i * .12}s" x="${112 + i * 8}" y="${262 - i * 4}" width="76" height="46" rx="3" fill="${i % 2 ? TINT : POP}" stroke="var(--deep)" stroke-width="2"/>`;
+    return { big: 'One file', small: 'two things come out of it', h: 320, body: `
+      <g class="pop"><rect x="128" y="0" width="84" height="58" rx="4" fill="${PAPER}"/><path d="M140 16h60M140 28h60M140 40h36" stroke="var(--accent)" stroke-width="3"/></g>
+      ${curve('M150 58C150 88 78 80 78 116', .5, .6, POP)}${curve('M190 58C190 88 262 80 262 116', .5, .6, POP)}
+      <g class="pop" style="--d:1.1s"><rect x="14" y="120" width="128" height="124" rx="4" fill="${PAPER}"/><rect x="14" y="120" width="128" height="44" rx="4" fill="${ACC}"/><path d="M104 164v-18a14 14 0 0 1 28 0v18z" fill="${POP}"/><path d="M26 180h100M26 194h100M26 208h68M26 222h84" stroke="var(--tint)" stroke-width="5"/></g>
+      ${tiles}
+      ${curve('M78 244C78 272 100 280 112 282', 2.4, .4)}${curve('M262 244C262 272 240 280 216 282', 2.4, .4)}
+      <text class="a" style="--d:1.3s" x="8" y="262">The site</text><text class="a" style="--d:2.4s" x="332" y="262" text-anchor="end">12 slides</text>
+      ${stack}<text class="a" style="--d:3.2s" x="170" y="322" text-anchor="middle">${D.weeks} ${D.weeks === 1 ? 'week' : 'weeks'} frozen in past reports</text>` };
+  },
+};
+
+const still = matchMedia('(prefers-reduced-motion:reduce)').matches;
+const seen = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('on'); seen.unobserve(e.target); }
+}), { threshold: .45 });
+document.querySelectorAll('.win').forEach(win => {
+  const s = scenes[win.dataset.scene]();
+  win.innerHTML = `<div><div class="in"><div class="head"><b>${s.big}</b><span>${s.small}</span></div>${svg(s.h, s.body)}</div></div><button class="again" type="button">Play again</button>`;
+  win.querySelector('.again').onclick = () => {
+    win.classList.remove('on');
+    void win.offsetWidth;
+    requestAnimationFrame(() => win.classList.add('on'));
+  };
+  still ? win.classList.add('on') : seen.observe(win);
+});
+
+const steps = document.querySelector('.steps'), thread = document.querySelector('.thread');
+let queued = false;
+const track = () => {
+  queued = false;
+  const r = thread.getBoundingClientRect();
+  thread.style.setProperty('--p', Math.min(1, Math.max(0, (innerHeight * .5 - r.top) / r.height)).toFixed(4));
+};
+addEventListener('scroll', () => { if (!queued) { queued = true; requestAnimationFrame(track); } }, { passive: true });
+addEventListener('resize', track);
+track();
+</script>
+</body>
+</html>

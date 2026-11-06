@@ -33,9 +33,14 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;text-a
 .a-nav span{display:flex;gap:22px}
 .a-mast{position:relative;z-index:2;font:800 clamp(52px,8.5vw,136px)/.95 var(--head);font-stretch:75%;letter-spacing:-.012em;margin:12px 0 0;white-space:nowrap}
 .a-mast br{display:none}
+.a-what{position:relative;z-index:2;max-width:min(52%,640px);margin-top:18px}
+.a-what p{font-size:clamp(17px,1.5vw,20px);line-height:1.4}
+.a-btn{display:inline-flex;align-items:center;min-height:46px;margin-top:14px;padding:0 22px;border-radius:999px;background:var(--pop);color:var(--ink);font-weight:600;text-decoration:none}
+.a-btn:hover{background:var(--paper)}
+.a-kick{font:600 15px var(--body);color:var(--pop);margin-bottom:8px}
 .a-lead{position:relative;z-index:2;max-width:min(55%,700px);margin-top:auto;padding-top:40px}
 .a-lead h1{font-size:clamp(38px,4.9vw,70px);font-weight:600}
-.a-lead p{margin-top:18px;font-size:19px;max-width:40ch;color:var(--soft)}
+.a-lead p:not(.a-kick){margin-top:18px;font-size:19px;max-width:40ch;color:var(--soft)}
 .a-arch{position:absolute;right:5%;bottom:0;top:30px;width:min(40%,520px)}
 .a-arch .s1,.a-arch .s2,.a-arch figure{position:absolute;left:50%;bottom:0;translate:-50% 0;border-radius:var(--arch)}
 .a-arch .s1{width:100%;height:100%;background:var(--accent)}
@@ -89,6 +94,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;text-a
 .a-dated .a-row{border-bottom-color:var(--paper)}
 
 .a-words{background:var(--deep);color:var(--paper);padding:88px 0}
+.a-words .a-kick{font-size:16px}
 .a-words h2{font-size:clamp(36px,5vw,72px);max-width:17ch;font-weight:700}
 .a-wtop{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;margin-top:48px}
 .a-wtop h3{font-size:clamp(44px,6vw,84px);font-weight:800;color:var(--pop)}
@@ -117,9 +123,10 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;text-a
 @media (max-width:760px){
  .wrap{padding:0 16px}
  .a-hero{min-height:0;padding:14px 16px 0}
- .a-nav{font-size:13px;white-space:nowrap;gap:8px}.a-nav span{gap:12px}
+ .a-nav{font-size:13px;flex-wrap:wrap;gap:4px 8px}.a-nav span{gap:12px;flex-wrap:wrap}
  .a-mast{white-space:normal;font-size:clamp(52px,19vw,104px);line-height:.9}
  .a-mast br{display:inline}
+ .a-what{max-width:none}
  .a-lead{max-width:none;padding-top:20px;margin-top:0;order:1}
  .a-lead p{font-size:17px}
  .a-arch{position:relative;inset:auto;width:100%;max-width:340px;aspect-ratio:1/1.12;margin:28px auto 0;order:2}
