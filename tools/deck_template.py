@@ -3,7 +3,7 @@ Only needed if the template is lost or redesigned. Weekly decks are copies of it
 Usage: python tools/deck_template.py <batch 0|1|2>"""
 import json, sys
 
-POOL, PLASTER, TERRA, SUN, AQUA, INK, SAND, MUTE = "0E4A5A", "F7F0E4", "C8553D", "F2B134", "7CC6CF", "14303A", "E8DCC6", "6B7A80"
+POOL, PLASTER, TERRA, SUN, AQUA, INK, SAND, MUTE = "3A2C7A", "FBF8FF", "6D45D1", "F7C9DC", "B9A8F2", "211847", "ECE5FA", "5F5885"
 HEAD, BODY, MONO = "Bricolage Grotesque", "DM Sans", "DM Mono"
 EMU = 914400
 

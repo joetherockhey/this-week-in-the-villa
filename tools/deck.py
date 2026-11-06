@@ -9,8 +9,8 @@ import json, pathlib, sys, datetime
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = "https://joetherockhey.github.io/this-week-in-the-villa"
 TEMPLATE = "1rvdR3fjF2m_mhh2mmFXs_AuJB1XRXVV-R7u6RrdSg8I"  # 'This Week in the Villa (template)' in Joe's Drive; tools/deck_template.py drew it
-PILL = {"Rising": ("0E4A5A", "F7F0E4"), "Peaking": ("C8553D", "F7F0E4"), "Steady": ("E8DCC6", "14303A"), "Past peak": ("D3C6AE", "6B7A80")}
-TERRA, POOL, MUTE, INK = "C8553D", "0E4A5A", "6B7A80", "14303A"
+PILL = {"Rising": ("3A2C7A", "FBF8FF"), "Peaking": ("6D45D1", "FBF8FF"), "Steady": ("ECE5FA", "211847"), "Past peak": ("DDD3F2", "5F5885")}
+TERRA, POOL, MUTE, INK = "6D45D1", "3A2C7A", "5F5885", "211847"
 LIMITS = {"theme": 70, "glance_title": 75, "glance_note": 230, "story_title": 70, "story_bullets": 360, "lang_title": 50, "peak_title": 62,
           "case_title": 75, "brand_title": 75, "brand_num": 6, "brand_label": 90, "brand_use": 165, "brand_risk": 165,
           "src": 130, "tbl1": 62, "tbl2": 62, "tbl3": 62, "head": 48, "text": 150, "when": 12, "what": 85, "name": 36, "audio": 50, "ctx": 70, "label": 30}
@@ -119,7 +119,7 @@ def requests(monday):
               tint("w_tab", {"Rising": POOL, "Peaking": TERRA}.get(w["status"], MUTE), (i, 1))]
     e = datetime.date.fromisoformat(wd["through"])
     r.append(sub("lang_note", f"Lookups on English Wiktionary over 7 days. Change compares the 14 days to {e.day} {e:%b} with the 14 before. Lookups show curiosity, not a count of use."))
-    r.append(link("en_ll", f"{SITE}/archive/{monday}/", "F2B134"))
+    r.append(link("en_ll", f"{SITE}/archive/{monday}/", "F7C9DC"))
     return r
 
 

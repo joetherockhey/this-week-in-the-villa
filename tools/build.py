@@ -1,4 +1,4 @@
-"""data/trends.json + data/shots.json -> index.html, a frozen copy in archive/<monday>/, and archive/index.html
+"""data/trends.json + data/shots.json + data/deck/<monday>.json + tools/site.css -> index.html, a frozen copy in archive/<monday>/, and archive/index.html
 (all past reports plus each trend's history). Raw data is kept in data/weeks/.
 
 trends.json is kept in rank order: evergreen trends first, then seasonal, each by usage_n (videos made).
@@ -55,13 +55,6 @@ def examples(t):
     return "".join(rows)
 
 
-def row(i, t):
-    return (f'<tr><td class="rk">{i}</td><td><a href="#t{i}">{e(t["name"])}</a></td>'
-            f'<td class="st {STATUS.get(t["status"], "flat")}">{e(t["status"])}</td>'
-            f'<td class="num">{short(t.get("usage_n")) or "n/a"}</td>'
-            f'<td class="when">{"Any week" if t["longevity"] == "evergreen" else "To " + e(re.sub(r" \d{4}$", "", t.get("ends") or ""))}</td></tr>')
-
-
 def card(i, t):
     shot = shots.get(str(i))
     if shot and shot["kind"] == "ai":
@@ -83,7 +76,7 @@ def card(i, t):
 <article class="trend" id="t{i}">
   {img}
   <div class="body">
-    <p class="meta"><span class="rk">{i:02d}</span><span class="st {STATUS.get(t["status"], "flat")}">{e(t["status"])}</span><span>{when}</span><span>{e(" + ".join(t["platforms"]))}</span></p>
+    <p class="meta"><span class="rk">{i}</span>{st(t["status"])}<span>{when}</span><span>{e(" + ".join(t["platforms"]))}</span></p>
     <h3>{e(t["name"])}</h3>
     <p class="what">{e(t["what"])}</p>
     <dl>
@@ -100,25 +93,90 @@ def card(i, t):
 </article>"""
 
 
-def spark(v):
+def spark(v, w, h, area=False):
+    """26 weeks scaled to the word's own peak, ending on a dot."""
     top = max(v) or 1
-    pts = " ".join(f"{i * 120 / (len(v) - 1):.1f},{26 - x / top * 24:.1f}" for i, x in enumerate(v))
-    return f'<svg viewBox="0 0 120 28" width="120" height="28" aria-hidden="true"><polyline points="{pts}" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>'
+    pts = [(i * w / (len(v) - 1), h - 3 - x / top * (h - 6)) for i, x in enumerate(v)]
+    line = " ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
+    fill = f'<polygon points="0,{h} {line} {w},{h}" fill="currentColor" opacity=".22"/>' if area else ""
+    return (f'<svg class="spark" viewBox="0 0 {w} {h}" role="img" aria-label="26 weeks of lookups">{fill}<polyline points="{line}" fill="none" '
+            f'stroke="currentColor" stroke-width="{2.4 if area else 1.5}" stroke-linejoin="round"/><circle cx="{w}" cy="{pts[-1][1]:.1f}" r="{3.6 if area else 2.2}" fill="currentColor"/></svg>')
 
 
-def word_row(w):
-    cls = STATUS[w["status"]]
-    return (f'<tr><td><b>{e(w["word"])}</b><span class="origin">{e(w["means"])}</span></td><td class="st {cls}">{e(w["status"])}</td>'
-            f'<td class="num">{w["lookups"]:,}</td><td class="num">{w["change"]:+.0%}</td><td class="spark st {cls}">{spark(w["weekly"])}</td></tr>')
+def st(status):
+    return f'<span class="st {STATUS.get(status, "flat")}"><i></i>{e(status)}</span>'
+
+
+def pct(c):
+    return f"{c:+.0%}".replace("-", "\u2212")
+
+
+def cover(i, lazy=True):
+    return f'<img src="img/{i}.jpg?v={today}" alt="Example post for {e(trends[i - 1]["name"])}"{" loading=\"lazy\"" if lazy else ""}>'
+
+
+def label(t):
+    return deck["rows"][t["name"]].get("name", t["name"])
+
+
+def ends(t):
+    return re.sub(r" \d{4}$", "", t.get("ends") or "")
+
+
+def list_row(i, t):
+    """Date-bound counts run across every year the sound has been around, so they carry their end date instead of 'videos'."""
+    n = short(t.get("usage_n")) or "n/a"
+    n = f"{n} videos" if t["longevity"] == "evergreen" else f"{n}, to {ends(t)}"
+    return (f'<a class="a-row" href="#t{i}"><div class="th">{cover(i)}</div><span class="rk">{i}</span><div><h4>{e(label(t))}</h4><small>{e(deck["rows"][t["name"]]["ctx"])}</small></div>'
+            f'<div class="r">{st(t["status"])}<span class="num">{e(n)}</span></div></a>')
+
+
+def top_word(w):
+    return (f'<div><h3>{e(w["word"])}</h3><p>{e(w["means"])}</p>{st(w["status"])}<span class="num">{pct(w["change"])}, {w["lookups"]:,} lookups in 7 days</span>{spark(w["weekly"], 300, 70, True)}</div>')
+
+
+def wall_word(w):
+    return f'<div><h4>{e(w["word"])}</h4><div class="ln">{st(w["status"])}<span class="num">{pct(w["change"])}</span></div>{spark(w["weekly"], 160, 34)}</div>'
 
 
 words_data = json.loads((ROOT / f"data/words/{monday}.json").read_text("utf-8"))
 words = [w for w in words_data["words"] if "weekly" in w]
 phrases = [w for w in words_data["words"] if "weekly" not in w]
 through = day(datetime.date.fromisoformat(words_data["through"]))
+deck_file = ROOT / f"data/deck/{monday}.json"
+assert deck_file.exists(), f"write {deck_file.name} first: the page's headlines come from it"
+deck = json.loads(deck_file.read_text("utf-8"))
+idx = {t["name"]: i for i, t in enumerate(trends, 1)}
 ever = [(i, t) for i, t in enumerate(trends, 1) if t["longevity"] == "evergreen"]
 seas = [(i, t) for i, t in enumerate(trends, 1) if t["longevity"] != "evergreen"]
-table = lambda rows: "".join(row(i, t) for i, t in rows)
+order = {"Rising": 0, "Peaking": 1, "Steady": 2, "Past peak": 3}
+words = sorted(words, key=lambda w: (order[w["status"]], -w["change"]))
+css = (ROOT / "tools/site.css").read_text("utf-8")
+fonts = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400..700&display=swap" rel="stylesheet">'
+
+
+def arcade(name):
+    i = idx[name]
+    t = trends[i - 1]
+    when = f"To {ends(t)}<br>" if t.get("ends") else ""
+    unit = "all years" if t["longevity"] != "evergreen" else "videos"
+    return f'<li><a class="pic" href="#t{i}">{cover(i)}</a><h3>{e(label(t))}</h3><p>{when}<span class="num">{short(t.get("usage_n"))} {unit}</span></p></li>'
+
+
+def moment(m):
+    i = idx[m["trend"]]
+    return f'<article><h3>{e(m["head"])}</h3><p>{e(m["text"])}</p><a href="#t{i}">{e(label(trends[i - 1]))}, number {i}</a></article>'
+
+
+def five(i, t):
+    return (f'<li><a href="#t{i}"><span class="pic">{cover(i)}</span><h3><span>{i}</span>{e(label(t))}</h3>'
+            f'<div class="meta">{st(t["status"])}<span class="num">{short(t.get("usage_n"))} videos</span></div></a></li>')
+
+
+lead_i, lead = ever[0]
+lede = re.split(r"(?<=\.)\s", deck["glance_note"])[0]
+dated = f"""<div class="a-dated"><h3>{e(deck["tbl3"])}</h3><p>Post soon or skip. Video counts cover every year the sound has run.</p><div class="a-rows">{"".join(list_row(i, t) for i, t in seas)}</div></div>""" if seas else ""
+phrase_list = "".join(f'<li>{e(w["word"])}{st(w["status"])}</li>' for w in phrases)
 
 page = f"""<!doctype html>
 <html lang="en-AU">
@@ -127,91 +185,36 @@ page = f"""<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{NAME} · Week of {wk}</title>
 <meta name="description" content="{len(trends)} social trends ranked by how much they're used, for the week of {wk}.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+{fonts}
 <style>
-:root{{--bg:#fafaf9;--ink:#1c1b1a;--soft:#44423f;--muted:#6f6c68;--line:#e4e2df;--red:#e2361b;--rise:#1f7a4d;--fade:#8a8580}}
-@media (prefers-color-scheme:dark){{:root{{--bg:#151413;--ink:#ecebe8;--soft:#c9c7c3;--muted:#99958f;--line:#2e2c2a;--red:#ff5a3c;--rise:#4cc38a;--fade:#8a8580}}}}
-*{{box-sizing:border-box;margin:0;padding:0}}
-body{{background:var(--bg);color:var(--ink);font:400 16px/1.55 Geist,system-ui,sans-serif;-webkit-font-smoothing:antialiased}}
-a{{color:inherit;text-underline-offset:3px;text-decoration-color:var(--line)}}
-a:hover{{color:var(--red);text-decoration-color:currentColor}}
-.wrap{{max-width:1120px;margin:0 auto;padding:0 32px}}
-header{{display:flex;justify-content:space-between;align-items:center;height:68px;border-bottom:1px solid var(--line)}}
-.mark{{font:600 20px/1 Geist,sans-serif;letter-spacing:-.02em;text-decoration:none}}
-header span,.meta,.ex span,.src,figcaption,th,.num,.when,.rk{{font-family:"Geist Mono",monospace;font-size:12.5px}}
-header span{{color:var(--muted)}}
-.intro{{padding:56px 0 40px;max-width:720px}}
-h1{{font:700 clamp(32px,4.5vw,48px)/1.08 Geist,sans-serif;letter-spacing:-.03em;margin-bottom:16px}}
-.intro p{{color:var(--soft);font-size:18px;max-width:60ch}}
-h2{{font:600 20px/1.2 Geist,sans-serif;letter-spacing:-.01em;margin:40px 0 4px}}
-h2+p{{color:var(--muted);font-size:15px;margin-bottom:12px}}
-table{{width:100%;border-collapse:collapse}}
-th{{text-align:left;font-weight:400;color:var(--muted);padding:8px 12px 8px 0;border-bottom:1px solid var(--ink)}}
-td{{padding:11px 12px 11px 0;border-bottom:1px solid var(--line);vertical-align:baseline}}
-td a{{text-decoration:none;font-weight:500}}
-.rk{{color:var(--muted);width:3em}} .num{{text-align:right;width:7em}} th.num{{text-align:right}} .when{{color:var(--muted);width:9em;padding-left:24px;white-space:nowrap}}
-.st{{font-family:"Geist Mono",monospace;font-size:12.5px;width:7em}}
-.st.rise{{color:var(--rise)}} .st.peak{{color:var(--red)}} .st.fade{{color:var(--fade)}} .st.flat{{color:var(--muted)}}
-.section-break{{margin-top:80px;padding-top:24px;border-top:1px solid var(--ink)}}
-.trend{{display:grid;grid-template-columns:240px 1fr;gap:40px;padding:40px 0;border-bottom:1px solid var(--line);scroll-margin-top:12px}}
-figure img{{width:100%;aspect-ratio:9/14;object-fit:cover;object-position:top;border-radius:6px;display:block;background:var(--line)}}
-.pic{{display:block}} .pic:hover img{{opacity:.85}}
-figcaption{{margin-top:8px;color:var(--muted)}}
-.noimg{{aspect-ratio:9/14;border-radius:6px;background:var(--line)}}
-.meta{{display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--muted)}}
-.meta .rk{{color:var(--ink);width:auto}}
-h3{{font:600 clamp(24px,3vw,30px)/1.15 Geist,sans-serif;letter-spacing:-.02em;margin:10px 0 10px}}
-.what{{font-size:18px;color:var(--soft);max-width:62ch}}
-dl{{display:grid;grid-template-columns:7.5em 1fr;gap:10px 16px;margin:22px 0;max-width:68ch;font-size:15.5px}}
-dt{{color:var(--muted);font-size:14px}}
-.ex{{list-style:none;display:grid;gap:6px;font-size:15px}}
-.ex li{{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}}
-.ex a{{font-weight:500}} .ex span{{color:var(--muted)}}
-.src{{margin-top:16px;color:var(--muted);font-size:11.5px}}
-.origin{{display:block;color:var(--muted);font-size:14px;margin-top:2px}}
-td b{{font-weight:500}} .spark{{width:132px}} th.spark{{text-align:right}} .spark svg{{display:block;margin-left:auto}}
-.intro .past{{margin-top:22px}}
-.btn{{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 18px;border-radius:8px;background:var(--ink);color:var(--bg);font-size:15px;font-weight:500;text-decoration:none}}
-.btn:hover{{background:var(--red);color:var(--bg)}}
-.btn:focus-visible{{outline:2px solid var(--red);outline-offset:2px}}
-footer{{padding:40px 0 64px;color:var(--muted);font-size:14px;display:grid;gap:10px;max-width:72ch}}
-@media (max-width:760px){{
-  .wrap{{padding:0 16px}} .intro{{padding:36px 0 24px}}
-  .when,th.whenh,.spark{{display:none}}
-  .trend{{grid-template-columns:1fr;gap:20px}} figure{{max-width:260px}}
-  dl{{grid-template-columns:1fr;gap:2px}} dd{{margin-bottom:10px}}
-}}
-</style>
+{css}</style>
 </head>
 <body>
-<div class="wrap">
-<header><a class="mark" href="./">{NAME}</a><span>Week of {wk}</span></header>
-<section class="intro">
-  <h1>Social trend report</h1>
-  <p>{len(trends)} TikTok and Reels trends, ranked by how many videos use them. Trends a brand can run any week sit at the top. Ones tied to a date sit lower.</p>
-  <p class="past"><a class="btn" href="#words">Words <span aria-hidden="true">↓</span></a> <a class="btn" href="slides/">Weekly slides <span aria-hidden="true">→</span></a> <a class="btn" href="archive/">Past reports and trend history <span aria-hidden="true">→</span></a></p>
-</section>
-<h2>Works any week</h2>
-<p>Not tied to a date. Ranked by videos made.</p>
-<table><thead><tr><th>#</th><th>Trend</th><th>Status</th><th class="num">Videos</th><th class="when whenh">Window</th></tr></thead><tbody>{table(ever)}</tbody></table>
-<h2>Time-bound</h2>
-<p>Still being made, but they end with the date. Post soon or skip.</p>
-<table><thead><tr><th>#</th><th>Trend</th><th>Status</th><th class="num">Videos</th><th class="when whenh">Window</th></tr></thead><tbody>{table(seas)}</tbody></table>
-<h2 id="words">Words</h2>
-<p>Which slang is climbing and which is fading. Status compares the last 14 days of lookups on Wiktionary with the 14 before, and with each word's best stretch in 26 weeks. Lookups show curiosity about a word, so read them as a sign of use, not a count. Data runs to {through}.</p>
-<table><thead><tr><th>Word</th><th>Status</th><th class="num">Lookups, 7 days</th><th class="num">Change</th><th class="spark">26 weeks</th></tr></thead><tbody>{"".join(word_row(w) for w in words)}</tbody></table>
-<h2>Phrases</h2>
-<p>These have no dictionary page to measure, so their status is read by hand.</p>
-<table><thead><tr><th>Phrase</th><th>Where</th><th>Status</th></tr></thead><tbody>{"".join(f'<tr><td><b>{e(w["word"])}</b></td><td>{e(w["where"])}</td><td class="st {STATUS[w["status"]]}">{e(w["status"])}</td></tr>' for w in phrases)}</tbody></table>
-<div class="section-break"></div>
-<main>{"".join(card(i, t) for i, t in enumerate(trends, 1))}</main>
-<footer id="how">
+<header class="a-hero">
+ <div class="a-nav"><b>Week of {wk}</b><span><a href="#words">Words</a><a href="slides/">Weekly slides</a><a href="archive/">Past reports</a></span></div>
+ <p class="a-mast">This Week <br>in the Villa</p>
+ <div class="a-arch"><div class="s1"></div><div class="s2"></div><figure>{cover(idx[deck["story_trend"]], False)}</figure></div>
+ <div class="a-lead"><h1>{e(deck["glance_title"])}</h1><p>{e(lede)}</p></div>
+</header>
+<section class="a-feature"><div class="wrap"><h2>{e(deck["story_title"])}</h2>
+ <div class="a-fgrid"><ul class="a-facts">{"".join(f"<li>{e(b)}</li>" for b in deck["story_bullets"])}</ul><ul class="a-arcade">{"".join(arcade(n) for n in deck["story_trends"])}</ul></div></div></section>
+<section class="a-moments"><div class="wrap"><h2>Also this week</h2>{"".join(moment(m) for m in deck["moments"])}</div></section>
+<section class="a-list"><div class="wrap"><h2>The list</h2><p>{len(trends)} TikTok and Reels trends, ranked by how many videos use them. Trends that work any week come first.</p>
+ <div class="a-one"><a class="pic" href="#t{lead_i}">{cover(lead_i)}</a><div><div class="rk">{lead_i}</div><h3>{e(label(lead))}</h3><div class="meta">{st(lead["status"])}<span class="num">{short(lead.get("usage_n"))} videos</span></div><p class="tx">{e(lead["what"])}</p><p class="tx"><b>Brand idea:</b> {e(lead["brand_use"])}</p></div></div>
+ <ul class="a-five">{"".join(five(i, t) for i, t in ever[1:5])}</ul>
+ <div class="a-rows">{"".join(list_row(i, t) for i, t in ever[5:])}</div>
+ {dated}
+</div></section>
+<section class="a-words" id="words"><div class="wrap"><h2>{e(deck["lang_title"])}</h2><div class="a-wtop">{"".join(top_word(w) for w in words[:2])}</div><div class="a-wall">{"".join(wall_word(w) for w in words[2:])}</div>
+ <ul class="a-phr">{phrase_list}</ul><p class="a-wnote">Status compares the last 14 days of Wiktionary lookups with the 14 before, and with each word's best stretch in 26 weeks. Lookups show curiosity about a word, so read them as a sign of use. Data runs to {through}. Each line is 26 weeks, scaled to that word's own peak. Phrases have no dictionary page, so their status is read by hand.</p></div></section>
+<section class="a-full"><div class="wrap"><h2>Full write-ups</h2>
+<main>{"".join(card(i, t) for i, t in enumerate(trends, 1))}</main></div></section>
+<div class="wrap how" id="how">
   <p>How this works: each Wednesday the latest round-ups (New Engen, SocialPilot, Buffer, Postdom and others) are checked against the live TikTok sound pages. Video counts come from the sound page or the round-up quoting them, as of the date shown. Plays and likes on the examples come from TikTok's own post data at the time of checking.</p>
   <p>Example images are the cover frames of the linked posts, shown for reference. Check a sound's licensing before using it on a brand account.</p>
   <p>Compiled {today.day} {today:%B %Y}.</p>
-</footer>
 </div>
+<footer class="a-foot"><div class="wrap big"><div><a class="lk" href="slides/">Weekly slides</a><p>This week: {e(deck["theme"])}</p></div><div><a class="lk" href="archive/">Past reports</a><p>Every report as it ran, and when each trend first made the list.</p></div></div></footer>
 </body>
 </html>
 """
@@ -237,39 +240,35 @@ def hist_row(seen):
 
 
 rows = "".join(hist_row(s) for s in sorted(hist.values(), key=lambda s: (s[0][0], s[-1][2].get("usage_n") or 0), reverse=True))
-style = re.search(r"<style>.*?</style>", page, re.S).group(0).replace("</style>", """.first{font-family:"Geist Mono",monospace;font-size:12.5px;color:var(--muted);white-space:nowrap}
-.num{width:auto;white-space:nowrap}
-th{white-space:nowrap}
-@media (max-width:760px){.num{white-space:normal;padding-right:0}.first{white-space:normal}}
-</style>""")
-fonts = re.search(r'<link rel="preconnect".*?rel="stylesheet">', page, re.S).group(0)
-(ROOT / "archive/index.html").write_text(f"""<!doctype html>
+
+
+def shell(title, crumb, home, h1, lead, body):
+    return f"""<!doctype html>
 <html lang="en-AU">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{NAME} Past Reports</title>
+<title>{title}</title>
 {fonts}
-{style}
+<style>
+{css}</style>
 </head>
 <body>
-<div class="wrap">
-<header><a class="mark" href="../">{NAME}</a><span>Past reports</span></header>
-<section class="intro">
-  <h1>Past reports</h1>
-  <p>Every weekly report as it ran, and when each trend first made the list.</p>
-</section>
+<header class="sub-top"><div class="wrap"><div class="a-nav"><a href="{home}"><b>{NAME}</b></a><span>{crumb}</span></div><h1>{h1}</h1><p class="lead">{lead}</p></div></header>
+<div class="wrap sub">{body}</div>
+</body>
+</html>
+"""
+
+
+(ROOT / "archive/index.html").write_text(shell(f"{NAME} Past Reports", "Past reports", "../", "Past reports", "Every weekly report as it ran, and when each trend first made the list.", f"""
 <h2>Weekly reports</h2>
 <p>Each one is frozen as it was published.</p>
 <table><tbody>{reports}</tbody></table>
 <h2>Trend history</h2>
 <p>Newest to the list first. The line under each name says when the trend actually began. Videos show the count when first listed, then when last listed.</p>
-<table><thead><tr><th>Trend</th><th>First listed</th><th class="when whenh">Last listed</th><th class="num">Videos</th></tr></thead><tbody>{rows}</tbody></table>
-<footer></footer>
-</div>
-</body>
-</html>
-""", "utf-8")
+<table><thead><tr><th>Trend</th><th>First listed</th><th class="when">Last listed</th><th class="num">Videos</th></tr></thead><tbody>{rows}</tbody></table>
+"""), "utf-8")
 
 # slides/index.html: one link per week's Google Slides deck (data/decks.json, written by the trend-report skill).
 decks = json.loads((ROOT / "data/decks.json").read_text("utf-8"))
@@ -277,27 +276,6 @@ deck_rows = "".join(f'<tr><td><a href="{e(d["url"])}" target="_blank" rel="noope
                     f'<td class="num"><a href="{e(d["url"])}" target="_blank" rel="noopener">Open slides <span aria-hidden="true">→</span></a></td></tr>'
                     for w, d in sorted(decks.items(), reverse=True))
 (ROOT / "slides").mkdir(exist_ok=True)
-(ROOT / "slides/index.html").write_text(f"""<!doctype html>
-<html lang="en-AU">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{NAME} Slides</title>
-{fonts}
-{style}
-</head>
-<body>
-<div class="wrap">
-<header><a class="mark" href="../">{NAME}</a><span>Weekly slides</span></header>
-<section class="intro">
-  <h1>Weekly slides</h1>
-  <p>Each week's findings as a Google Slides deck, newest first.</p>
-</section>
-<table><tbody>{deck_rows}</tbody></table>
-<footer></footer>
-</div>
-</body>
-</html>
-""", "utf-8")
+(ROOT / "slides/index.html").write_text(shell(f"{NAME} Slides", "Weekly slides", "../", "Weekly slides", "Each week's findings as a Google Slides deck, newest first.", f"<h2>All decks</h2><table><tbody>{deck_rows}</tbody></table>"), "utf-8")
 assert all((ROOT / f"archive/{w}/index.html").exists() for w in weeks), "a week in data/weeks has no archived page"
 print("built", len(trends), "trends,", len(weeks), "weeks archived")

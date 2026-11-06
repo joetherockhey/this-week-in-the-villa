@@ -39,15 +39,17 @@ function embedUrl(u) {
           }
         } catch (err) { console.log(n, 'cover fail', u, err.message); }
       }
-      if (/instagram\.com\/(p|reels?)\/[\w-]+/.test(u)) {  // the post page serves its cover as og:image to link-preview bots
+      if (/instagram\.com\/(p|reels?)\/[\w-]+/.test(u)) {  // the embed loads a clean cover; og:image has a play button baked in
+        const page = await ctx.newPage();
         try {
-          const html = await (await fetch(u, { headers: { 'User-Agent': 'facebookexternalhit/1.1' } })).text();
-          const m = html.match(/og:image" content="([^"]+)"/);
-          if (m) {
-            const img = Buffer.from(await (await fetch(m[1].replace(/&amp;/g, '&'))).arrayBuffer());
-            if (img.length > 15000) { fs.writeFileSync(out, img); shots[n] = { kind: 'example', url: u }; break; }
-          }
-        } catch (err) { console.log(n, 'og fail', u, err.message); }
+          await page.goto(embedUrl(u), { waitUntil: 'domcontentloaded', timeout: 30000 });
+          await page.waitForTimeout(5000);
+          const src = await page.evaluate(() => [...document.images].sort((a, b) => b.naturalWidth * b.naturalHeight - a.naturalWidth * a.naturalHeight)[0]?.currentSrc);
+          const img = src && Buffer.from(await (await fetch(src)).arrayBuffer());
+          if (img && img.length > 15000) { fs.writeFileSync(out, img); shots[n] = { kind: 'example', url: u }; }
+        } catch (err) { console.log(n, 'embed cover fail', u, err.message.split('\n')[0]); }
+        await page.close();
+        if (shots[n]) break;
       }
       const e = embedUrl(u);
       if (!e) continue;

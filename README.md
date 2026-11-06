@@ -14,5 +14,5 @@ Weekly run (Wednesdays, from the Trend report button on Claude HQ's Run tab, whi
 2. `node tools/shots.cjs` grabs one example image per trend (TikTok cover frame / Instagram embed).
 3. `python tools/ai_images.py` fills any gaps with a labelled AI illustration (Cloudflare Workers AI, free tier).
 4. `python tools/words.py` pulls Wiktionary lookups for `data/words.json` and works out each word's status.
-5. `python tools/build.py` writes `index.html`, freezes the week in `archive/<monday>/` and rebuilds `archive/index.html` (past reports + trend history; trends match across weeks by exact name, so keep names stable). Review, then push.
-6. Write `data/deck/<monday>.json` (the deck's words), `python tools/deck.py` prints the Slides requests, and the deck is a copy of the Drive template. Each deck's link goes in `data/decks.json`, and `python tools/build.py` lists them on `slides/`.
+5. Write `data/deck/<monday>.json` (the week's headlines, used by both the site and the deck). `python tools/build.py` then writes `index.html` (look and colours in `tools/site.css`), freezes the week in `archive/<monday>/` and rebuilds `archive/index.html` (past reports + trend history; trends match across weeks by exact name, so keep names stable). Review, then push.
+6. `python tools/deck.py` prints the Slides requests, and the deck is a copy of the Drive template. Each deck's link goes in `data/decks.json`, and `python tools/build.py` lists them on `slides/`.

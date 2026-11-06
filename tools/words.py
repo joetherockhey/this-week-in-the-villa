@@ -42,7 +42,7 @@ def chart(rows, path):
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
-    ink, plaster, colours = "#14303A", "#F7F0E4", ("#C8553D", "#1E8A9C", "#D99A1C", "#14303A")
+    ink, plaster, colours = "#211847", "#FBF8FF", ("#6D45D1", "#D1477A", "#2F8FB0", "#211847")
     fig, ax = plt.subplots(figsize=(4.6, 3.5), dpi=220, facecolor=plaster)
     ax.set_facecolor(plaster)
     measured = [r for r in rows if r.get("weekly")]

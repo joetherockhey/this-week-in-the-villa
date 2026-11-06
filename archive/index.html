@@ -5,80 +5,197 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>This Week in the Villa Past Reports</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400..700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#fafaf9;--ink:#1c1b1a;--soft:#44423f;--muted:#6f6c68;--line:#e4e2df;--red:#e2361b;--rise:#1f7a4d;--fade:#8a8580}
-@media (prefers-color-scheme:dark){:root{--bg:#151413;--ink:#ecebe8;--soft:#c9c7c3;--muted:#99958f;--line:#2e2c2a;--red:#ff5a3c;--rise:#4cc38a;--fade:#8a8580}}
+:root{--deep:#3A2C7A;--paper:#FBF8FF;--accent:#6D45D1;--pop:#F7C9DC;--tint:#B9A8F2;--ink:#211847;--soft:#ECE5FA;
+--head:"Bricolage Grotesque",system-ui,sans-serif;--body:"DM Sans",system-ui,sans-serif;--mono:"DM Mono",ui-monospace,monospace;--bar:0px;--arch:999px 999px 0 0}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--ink);font:400 16px/1.55 Geist,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-underline-offset:3px;text-decoration-color:var(--line)}
-a:hover{color:var(--red);text-decoration-color:currentColor}
-.wrap{max-width:1120px;margin:0 auto;padding:0 32px}
-header{display:flex;justify-content:space-between;align-items:center;height:68px;border-bottom:1px solid var(--line)}
-.mark{font:600 20px/1 Geist,sans-serif;letter-spacing:-.02em;text-decoration:none}
-header span,.meta,.ex span,.src,figcaption,th,.num,.when,.rk{font-family:"Geist Mono",monospace;font-size:12.5px}
-header span{color:var(--muted)}
-.intro{padding:56px 0 40px;max-width:720px}
-h1{font:700 clamp(32px,4.5vw,48px)/1.08 Geist,sans-serif;letter-spacing:-.03em;margin-bottom:16px}
-.intro p{color:var(--soft);font-size:18px;max-width:60ch}
-h2{font:600 20px/1.2 Geist,sans-serif;letter-spacing:-.01em;margin:40px 0 4px}
-h2+p{color:var(--muted);font-size:15px;margin-bottom:12px}
-table{width:100%;border-collapse:collapse}
-th{text-align:left;font-weight:400;color:var(--muted);padding:8px 12px 8px 0;border-bottom:1px solid var(--ink)}
-td{padding:11px 12px 11px 0;border-bottom:1px solid var(--line);vertical-align:baseline}
-td a{text-decoration:none;font-weight:500}
-.rk{color:var(--muted);width:3em} .num{text-align:right;width:7em} th.num{text-align:right} .when{color:var(--muted);width:9em;padding-left:24px;white-space:nowrap}
-.st{font-family:"Geist Mono",monospace;font-size:12.5px;width:7em}
-.st.rise{color:var(--rise)} .st.peak{color:var(--red)} .st.fade{color:var(--fade)} .st.flat{color:var(--muted)}
-.section-break{margin-top:80px;padding-top:24px;border-top:1px solid var(--ink)}
-.trend{display:grid;grid-template-columns:240px 1fr;gap:40px;padding:40px 0;border-bottom:1px solid var(--line);scroll-margin-top:12px}
-figure img{width:100%;aspect-ratio:9/14;object-fit:cover;object-position:top;border-radius:6px;display:block;background:var(--line)}
-.pic{display:block} .pic:hover img{opacity:.85}
-figcaption{margin-top:8px;color:var(--muted)}
-.noimg{aspect-ratio:9/14;border-radius:6px;background:var(--line)}
-.meta{display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--muted)}
-.meta .rk{color:var(--ink);width:auto}
-h3{font:600 clamp(24px,3vw,30px)/1.15 Geist,sans-serif;letter-spacing:-.02em;margin:10px 0 10px}
-.what{font-size:18px;color:var(--soft);max-width:62ch}
-dl{display:grid;grid-template-columns:7.5em 1fr;gap:10px 16px;margin:22px 0;max-width:68ch;font-size:15.5px}
-dt{color:var(--muted);font-size:14px}
-.ex{list-style:none;display:grid;gap:6px;font-size:15px}
-.ex li{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}
-.ex a{font-weight:500} .ex span{color:var(--muted)}
-.src{margin-top:16px;color:var(--muted);font-size:11.5px}
-.origin{display:block;color:var(--muted);font-size:14px;margin-top:2px}
-td b{font-weight:500} .spark{width:132px} th.spark{text-align:right} .spark svg{display:block;margin-left:auto}
-.intro .past{margin-top:22px}
-.btn{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 18px;border-radius:8px;background:var(--ink);color:var(--bg);font-size:15px;font-weight:500;text-decoration:none}
-.btn:hover{background:var(--red);color:var(--bg)}
-.btn:focus-visible{outline:2px solid var(--red);outline-offset:2px}
-footer{padding:40px 0 64px;color:var(--muted);font-size:14px;display:grid;gap:10px;max-width:72ch}
-@media (max-width:760px){
-  .wrap{padding:0 16px} .intro{padding:36px 0 24px}
-  .when,th.whenh,.spark{display:none}
-  .trend{grid-template-columns:1fr;gap:20px} figure{max-width:260px}
-  dl{grid-template-columns:1fr;gap:2px} dd{margin-bottom:10px}
+html{color-scheme:light;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.5 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{display:block;width:100%;height:100%;object-fit:cover;background:var(--soft)}
+ul,ol{list-style:none}
+h1,h2,h3{font-family:var(--head);font-weight:700;letter-spacing:-.025em;line-height:1.02;text-wrap:balance}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;text-align:left}
+:focus-visible{outline:3px solid var(--pop);outline-offset:2px}
+.num{font-family:var(--mono);font-size:.82em;letter-spacing:-.01em}
+.spark{display:block;width:100%;height:auto;overflow:visible}
+
+/* status mark: the arch itself, filled with the status colour */
+.st{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:12.5px;white-space:nowrap}
+.st i{width:10px;height:13px;border-radius:5px 5px 0 0;flex:none}
+.st.rise i{background:#D9518A}.st.peak i{background:var(--accent)}.st.flat i{background:var(--tint)}.st.fade i{background:transparent;box-shadow:inset 0 0 0 1.5px currentColor}
+
+/* ============ A: magazine ============ */
+.wrap{max-width:1320px;margin:0 auto;padding:0 40px}
+.a-hero{position:relative;background:var(--deep);color:var(--paper);min-height:min(calc(100dvh - var(--bar)),860px);overflow:hidden;display:flex;flex-direction:column;padding:18px 40px 44px}
+.a-nav{position:relative;z-index:2;display:flex;justify-content:space-between;gap:16px;font-size:15px}
+.a-nav span{display:flex;gap:22px}
+.a-mast{position:relative;z-index:2;font:800 clamp(52px,8.5vw,136px)/.95 var(--head);font-stretch:75%;letter-spacing:-.012em;margin:12px 0 0;white-space:nowrap}
+.a-mast br{display:none}
+.a-lead{position:relative;z-index:2;max-width:min(55%,700px);margin-top:auto;padding-top:40px}
+.a-lead h1{font-size:clamp(38px,4.9vw,70px);font-weight:600}
+.a-lead p{margin-top:18px;font-size:19px;max-width:40ch;color:var(--soft)}
+.a-arch{position:absolute;right:5%;bottom:0;top:30px;width:min(40%,520px)}
+.a-arch .s1,.a-arch .s2,.a-arch figure{position:absolute;left:50%;bottom:0;translate:-50% 0;border-radius:var(--arch)}
+.a-arch .s1{width:100%;height:100%;background:var(--accent)}
+.a-arch .s2{width:84%;height:calc(100% - clamp(120px,14vw,216px));background:var(--pop)}
+.a-arch figure{width:68%;height:calc(100% - clamp(160px,17.5vw,270px));overflow:hidden}
+.a-arch img{object-position:50% 30%}
+
+.a-feature{background:var(--pop);padding:88px 0 96px}
+.a-feature h2{font-size:clamp(40px,6.6vw,96px);max-width:20ch;font-weight:800;font-stretch:85%;letter-spacing:-.015em}
+.a-fgrid{display:grid;grid-template-columns:5fr 7fr;gap:64px;margin-top:56px;align-items:end}
+.a-facts li{font-size:20px;line-height:1.35;padding:14px 0;border-top:2px solid var(--ink)}
+.a-arcade{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.a-arcade .pic,.a-five .pic{aspect-ratio:3/4.4;border-radius:var(--arch);overflow:hidden;display:block}
+.a-arcade h3{font-size:18px;font-weight:600;letter-spacing:-.01em;line-height:1.12;margin-top:10px}
+.a-arcade p{font-size:13.5px;margin-top:4px}
+
+.a-moments{padding:96px 0 40px}
+.a-moments>.wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px 72px}
+.a-moments h2{grid-column:1/-1;font-size:clamp(32px,3.6vw,48px)}
+.a-moments article:nth-of-type(even){translate:0 48px}
+.a-moments h3{font-size:clamp(26px,2.7vw,38px);font-weight:600}
+.a-moments p{margin-top:10px;font-size:17px;max-width:44ch}
+.a-moments a{display:inline-block;margin-top:8px;font-size:14.5px}
+
+.a-list{padding:128px 0 96px}
+.a-list>.wrap>h2{font-size:clamp(44px,7vw,104px);font-weight:800;font-stretch:85%;letter-spacing:-.015em}
+.a-list>.wrap>p{font-size:19px;margin-top:10px;max-width:56ch}
+.a-one{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:56px;align-items:end;margin-top:56px}
+.a-one .pic{display:block;aspect-ratio:3/4;border-radius:var(--arch);overflow:hidden}
+.a-one .rk{font:800 clamp(96px,14vw,200px)/.8 var(--head);color:var(--accent);letter-spacing:-.05em}
+.a-one h3{font-size:clamp(36px,5vw,72px);font-weight:700;margin-top:18px}
+.a-one .meta{display:flex;flex-wrap:wrap;gap:6px 20px;margin-top:14px;align-items:center;font-size:17px}
+.a-one .tx{margin-top:14px;font-size:18px;max-width:54ch}
+.a-five{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:72px}
+.a-five a{text-decoration:none}
+.a-five h3{font-size:24px;font-weight:600;line-height:1.08;margin-top:14px}
+.a-five h3 span{color:var(--accent);font-weight:800;margin-right:6px}
+.a-five .meta{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-top:8px;font-size:17px}
+.a-rows{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 56px;margin-top:64px}
+.a-row{display:grid;grid-template-columns:48px 34px minmax(0,1fr) auto;gap:12px;align-items:center;padding:12px 0;text-decoration:none;border-bottom:1px solid var(--soft)}
+.a-row .th{width:48px;height:62px;border-radius:var(--arch);overflow:hidden}
+.a-row .rk{font:700 20px/1 var(--head)}
+.a-row h4{font:600 17.5px/1.15 var(--head);letter-spacing:-.01em}
+.a-row small{display:block;font-size:13.5px;line-height:1.3;margin-top:3px}
+.a-row .r{text-align:right;display:grid;gap:3px;justify-items:end;font-size:16px}
+.a-row:hover h4{text-decoration:underline}
+.a-dated{background:var(--soft);margin-top:72px;padding:40px 44px 32px;border-radius:220px 220px 0 0}
+.a-dated h3{font-size:clamp(28px,3.2vw,44px);text-align:center}
+.a-dated>p{text-align:center;margin-top:6px}
+.a-dated .a-rows{margin-top:20px}
+.a-dated .a-row{border-bottom-color:var(--paper)}
+
+.a-words{background:var(--deep);color:var(--paper);padding:88px 0}
+.a-words h2{font-size:clamp(36px,5vw,72px);max-width:17ch;font-weight:700}
+.a-wtop{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;margin-top:48px}
+.a-wtop h3{font-size:clamp(44px,6vw,84px);font-weight:800;color:var(--pop)}
+.a-wtop p{margin:6px 0 16px;font-size:17px}
+.a-wtop .st{font-size:14px;margin-right:14px}
+.a-wtop .spark{color:var(--pop);margin-top:12px}
+.a-wall{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px 32px;margin-top:64px}
+.a-wall h4{font:600 19px/1.1 var(--head)}
+.a-wall .ln{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:5px 0 8px;font-size:15px}
+.a-wall .st{font-size:12px}
+.a-wall .spark{color:var(--tint)}
+.a-wnote{margin-top:32px;font-size:14.5px;max-width:72ch;color:var(--soft)}
+.a-phr{display:flex;flex-wrap:wrap;gap:14px 36px;margin-top:48px;font:500 20px/1.25 var(--head)}
+.a-phr li{display:grid;gap:3px}
+
+.a-foot{background:var(--accent);color:var(--paper);padding:64px 0 44px}
+.a-foot .big{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.a-foot a.lk{font:800 clamp(40px,6.4vw,92px)/1 var(--head);font-stretch:85%;letter-spacing:-.015em;text-underline-offset:8px;text-decoration-thickness:3px}
+.a-foot p{margin-top:12px;font:700 20px/1.3 var(--body);max-width:30ch}
+
+@media (max-width:980px){
+ .a-fgrid,.a-one{grid-template-columns:minmax(0,1fr);gap:36px}
+ .a-rows{grid-template-columns:minmax(0,1fr)}
+ .a-wall{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
-.first{font-family:"Geist Mono",monospace;font-size:12.5px;color:var(--muted);white-space:nowrap}
-.num{width:auto;white-space:nowrap}
-th{white-space:nowrap}
-@media (max-width:760px){.num{white-space:normal;padding-right:0}.first{white-space:normal}}
+@media (max-width:760px){
+ .wrap{padding:0 16px}
+ .a-hero{min-height:0;padding:14px 16px 0}
+ .a-nav{font-size:13px;white-space:nowrap;gap:8px}.a-nav span{gap:12px}
+ .a-mast{white-space:normal;font-size:clamp(52px,19vw,104px);line-height:.9}
+ .a-mast br{display:inline}
+ .a-lead{max-width:none;padding-top:20px;margin-top:0;order:1}
+ .a-lead p{font-size:17px}
+ .a-arch{position:relative;inset:auto;width:100%;max-width:340px;aspect-ratio:1/1.12;margin:28px auto 0;order:2}
+ .a-arch .s2{height:88%}.a-arch figure{height:76%}
+ .a-feature{padding:56px 0 60px}
+ .a-arcade{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 14px}
+ .a-facts li{font-size:18px}
+ .a-moments{padding:60px 0 8px}
+ .a-moments>.wrap{grid-template-columns:minmax(0,1fr);gap:30px}
+ .a-moments article:nth-of-type(even){translate:none}
+ .a-list{padding:60px 0 56px}
+ .a-five{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 14px;margin-top:44px}
+ .a-five h3{font-size:20px}
+ .a-five .meta{flex-direction:column;align-items:flex-start;gap:2px}
+ .a-row{grid-template-columns:44px 26px minmax(0,1fr);gap:4px 10px}
+ .a-row .th{width:44px;height:58px;grid-row:span 2}
+ .a-row .rk{grid-row:span 2}
+ .a-row .r{grid-column:3;display:flex;justify-content:space-between;align-items:center;gap:10px;text-align:left}
+ .a-dated{padding:36px 16px 16px;border-radius:120px 120px 0 0;margin-left:-16px;margin-right:-16px}
+ .a-words{padding:56px 0}
+ .a-wtop{grid-template-columns:minmax(0,1fr);gap:32px}
+ .a-wall{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 18px;margin-top:40px}
+ .a-foot .big{grid-template-columns:minmax(0,1fr)}
+}
+
+
+/* full write-ups */
+.a-full{padding:88px 0 40px}
+.a-full>.wrap>h2{font-size:clamp(44px,7vw,104px);font-weight:800;font-stretch:85%;letter-spacing:-.015em}
+.trend{display:grid;grid-template-columns:240px minmax(0,1fr);gap:40px;padding:40px 0;border-bottom:1px solid var(--soft);scroll-margin-top:12px}
+.trend figure .pic,.trend figure>img{display:block;aspect-ratio:3/4.4;border-radius:var(--arch);overflow:hidden}
+.trend figcaption{margin-top:8px;font:400 12.5px var(--mono)}
+.trend .meta{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;font:400 12.5px var(--mono)}
+.trend .rk{font:800 24px/1 var(--head);color:var(--accent)}
+.trend h3{font-size:clamp(28px,3.4vw,42px);margin:10px 0}
+.trend .what{font-size:18px;max-width:62ch}
+.trend dl{display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:10px 16px;margin:22px 0;max-width:68ch;font-size:15.5px}
+.trend dt{font:500 12.5px/1.8 var(--mono)}
+.ex{display:grid;gap:6px;font-size:15px}
+.ex li{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}
+.ex a{font-weight:500}.ex span{font:400 12.5px var(--mono)}
+.src{margin-top:16px;font:400 11.5px var(--mono)}
+.how{padding-top:24px;padding-bottom:64px;display:grid;gap:10px;font-size:14px}
+.how p{max-width:72ch}
+.a-foot a.lk:hover,.a-row:hover h4{text-decoration-thickness:2px}
+
+/* past reports and slides pages */
+.sub-top{background:var(--deep);color:var(--paper);padding:18px 0 48px}
+.sub-top .a-nav{margin-bottom:40px}
+.sub-top h1{font:800 clamp(48px,8vw,104px)/.95 var(--head);font-stretch:75%;letter-spacing:-.012em}
+.sub-top p.lead{margin-top:14px;font-size:19px;max-width:48ch;color:var(--soft)}
+.sub h2{font-size:clamp(28px,3.2vw,40px);margin:48px 0 6px}
+.sub h2+p{font-size:15.5px;margin-bottom:12px;max-width:72ch}
+.sub table{width:100%;border-collapse:collapse;margin-bottom:40px}
+.sub th{text-align:left;font:400 12.5px var(--mono);padding:8px 12px 8px 0;border-bottom:1px solid var(--ink);white-space:nowrap}
+.sub td{padding:12px 12px 12px 0;border-bottom:1px solid var(--soft);vertical-align:baseline}
+.sub td a{font-weight:500;text-decoration:none}.sub td a:hover{text-decoration:underline}
+.sub .origin{display:block;font-size:14px;margin-top:2px}
+.sub .num,.sub .first,.sub .when{font:400 12.5px var(--mono);white-space:nowrap}
+.sub .num{text-align:right}
+@media (max-width:760px){
+ .trend{grid-template-columns:minmax(0,1fr);gap:20px}.trend figure{max-width:220px}
+ .trend dl{grid-template-columns:minmax(0,1fr);gap:2px}.trend dd{margin-bottom:10px}
+ .sub .num,.sub .first,.sub .when{white-space:normal}.sub td.when,.sub th.when{display:none}
+}
 </style>
 </head>
 <body>
-<div class="wrap">
-<header><a class="mark" href="../">This Week in the Villa</a><span>Past reports</span></header>
-<section class="intro">
-  <h1>Past reports</h1>
-  <p>Every weekly report as it ran, and when each trend first made the list.</p>
-</section>
+<header class="sub-top"><div class="wrap"><div class="a-nav"><a href="../"><b>This Week in the Villa</b></a><span>Past reports</span></div><h1>Past reports</h1><p class="lead">Every weekly report as it ran, and when each trend first made the list.</p></div></header>
+<div class="wrap sub">
 <h2>Weekly reports</h2>
 <p>Each one is frozen as it was published.</p>
 <table><tbody><tr><td><a href="2026-11-02/">Week of 2 November 2026</a></td><td class="num">19 trends</td></tr><tr><td><a href="2026-10-19/">Week of 19 October 2026</a></td><td class="num">16 trends</td></tr></tbody></table>
 <h2>Trend history</h2>
 <p>Newest to the list first. The line under each name says when the trend actually began. Videos show the count when first listed, then when last listed.</p>
-<table><thead><tr><th>Trend</th><th>First listed</th><th class="when whenh">Last listed</th><th class="num">Videos</th></tr></thead><tbody><tr><td><a href="2026-11-02/#t16">All I Want for Christmas Is You, the November 1 switch</a><span class="origin">Released in 1994. The yearly 1 Nov return is tied to Mariah Carey&#x27;s &#x27;It&#x27;s Time&#x27; post, and big early November posts sit on this sound from 2023, 2024 and 2025.</span></td><td class="first">2 Nov 2026</td><td class="when">This week</td><td class="num">16.2M</td></tr><tr><td><a href="2026-11-02/#t1">Ba Ba Ba dance</a><span class="origin">The audio comes from a DJ mash-up posted by @iproducedit (prodshyp) on 20 Sep 2026. One dance post credits the steps to OTR.J5. A dad and daughter post on 27 Oct became the biggest on the sound.</span></td><td class="first">2 Nov 2026</td><td class="when">This week</td><td class="num">714.6K</td></tr><tr><td><a href="2026-11-02/#t2">Vlog timestamps</a><span class="origin">An older track picked up by small businesses and runners from Sept 2026. Later.com listed the format on 23 Oct 2026 and Buffer on 3 Nov 2026. Original creator not found.</span></td><td class="first">2 Nov 2026</td><td class="when">This week</td><td class="num">692K</td></tr><tr><td><a href="2026-11-02/#t3">Someone&#x27;s gotta hold it down</a><span class="origin">ADÉLA started it in July 2026 with a clip joking that someone has to hold it down in Bratislava, Slovakia. Charli D&#x27;Amelio&#x27;s post on 31 Jul is the biggest on the sound.</span></td><td class="first">2 Nov 2026</td><td class="when">This week</td><td class="num">655.3K</td></tr><tr><td><a href="2026-11-02/#t4">Small text zoom</a><span class="origin">Mash-up uploaded by altego_music; the biggest reels are from 7 to 9 Oct 2026, on parenting accounts. Later.com listed it on 30 Oct 2026 and Buffer on 3 Nov 2026. Original reel not found.</span></td><td class="first">2 Nov 2026</td><td class="when">This week</td><td class="num">570K</td></tr><tr><td><a href="2026-11-02/#t5">Housewife POV</a><span class="origin">Tate McRae released the song on 15 Oct 2026 and posted the top clip herself on 16 Oct. Coverage on 20 Oct described &#x27;housewife era&#x27; manifesting posts; the POV work jokes on the sound date from 20 to 30 Oct.</span></td><td class="first">2 Nov 2026</td><td class="when">This week</td><td class="num">503.1K</td></tr><tr><td><a href="2026-11-02/#t7">Not every angel walks the runway</a><span class="origin">JADE&#x27;s 2024 single came back after Kylie Jenner&#x27;s Victoria&#x27;s Secret show walk (18 Oct 2026, InMusicBlog). JADE&#x27;s own TikTok about it (20 Oct) is the most-played post checked on the sound.</span></td><td class="first">2 Nov 2026</td><td class="when">This week</td><td class="num">391.6K</td></tr><tr><td><a href="2026-11-02/#t9">Upside Down hand transition</a><span class="origin">Later.com listed it on 2 Oct 2026; the biggest reels are from 4 to 7 Oct 2026. Buffer still had it on 3 Nov and CreatorDB on 4 Nov. Original creator not found.</span></td><td class="first">2 Nov 2026</td><td class="when">This week</td><td class="num">352K</td></tr><tr><td><a href="2026-11-02/#t17">November Rain</a><span class="origin">1992 single. SocialPilot and Buffer both list it as a November sound, and SocialPilot says it returns every year. On TikTok the biggest 2026 posts started before the month, from late Sep.</span></td><td class="first">2 Nov 2026</td><td class="when">This week</td><td class="num">282.8K</td></tr><tr><td><a href="2026-11-02/#t18">Santa Tell Me countdown</a><span class="origin">Released in 2014. SocialPilot counted ten Reels on its audio page posted 26 to 29 Oct 2026, mostly countdown clips.</span></td><td class="first">2 Nov 2026</td><td class="when">This week</td><td class="num">237.5K</td></tr><tr><td><a href="2026-11-02/#t10">Listening ears</a><span class="origin">The audio comes from an anime fan post by @visionofsae on 25 Sep 2026. School and uni creators took it viral from 7 Oct, with lines like &#x27;fire drill&#x27; and &#x27;this will be on the exam&#x27;.</span></td><td class="first">2 Nov 2026</td><td class="when">This week</td><td class="num">63.2K</td></tr><tr><td><a href="2026-11-02/#t19">Underneath the Tree reveals</a><span class="origin">Released in 2013. SocialPilot calls it the brand-launch sound of the season, with the hook &#x27;Christmas starts November 1&#x27;. On TikTok, big 2026 posts began in mid Sep.</span></td><td class="first">2 Nov 2026</td><td class="when">This week</td><td class="num">49.4K</td></tr><tr><td><a href="2026-11-02/#t13">Beautiful people are busy</a><span class="origin">The audio comes from a post by @ugc.drake on 4 Aug 2026. It took off from September with posts by @kkloey and K-pop group Hearts2Hearts.</span></td><td class="first">2 Nov 2026</td><td class="when">This week</td><td class="num">44.5K</td></tr><tr><td><a href="2026-11-02/#t14">Toggle on</a><span class="origin">Italian knitwear maker @sviola_handmade posted the audio with a pattern launch on 7 Oct 2026, which is also the top reel on it. Later.com listed it on 30 Oct 2026 and Buffer on 3 Nov 2026.</span></td><td class="first">2 Nov 2026</td><td class="when">This week</td><td class="num">27K</td></tr><tr><td><a href="2026-10-19/#t12">we fell in love in october</a><span class="origin">girl in red released the song in 2018; it returns as the go-to October sound every year.</span></td><td class="first">19 Oct 2026</td><td class="when">19 Oct 2026</td><td class="num">3.1M</td></tr><tr><td><a href="2026-10-19/#t13">Pumpkin Head trend</a><span class="origin">Began as the pumpkin head photoshoot in autumn 2020 (Know Your Meme); returns every October, with a 2026 wave led by @the_life_of_aivax on 25 Sep.</span></td><td class="first">19 Oct 2026</td><td class="when">19 Oct 2026</td><td class="num">548.6K</td></tr><tr><td><a href="2026-10-19/#t14">Goo Goo Muck Halloween reels</a><span class="origin">The Cramps song (1981) went viral with the Wednesday Addams dance from Netflix&#x27;s Wednesday in late 2022 and now returns every Halloween.</span></td><td class="first">19 Oct 2026</td><td class="when">19 Oct 2026</td><td class="num">520.2K</td></tr><tr><td><a href="2026-10-19/#t15">Ramalama costume walk</a><span class="origin">Walk versions appeared in late Jul 2025; @swaggy_cucumber&#x27;s Hocus Pocus group walk on 1 Oct 2025 made it the Halloween costume-reveal format. Revived Oct 2026.</span></td><td class="first">19 Oct 2026</td><td class="when">19 Oct 2026</td><td class="num">473.9K</td></tr><tr><td><a href="2026-11-02/#t6">Preparing for my Netflix documentary</a><span class="origin">Started by TikTok creator @borderbandittx on 16 Jun 2026; posts by @fombasyllah and @wassupa1ex on 30 Jun took it viral.</span></td><td class="first">19 Oct 2026</td><td class="when">This week</td><td class="num">438.7K → 455K</td></tr><tr><td><a href="2026-11-02/#t8">Money can&#x27;t buy happiness, but...</a><span class="origin">The Instagram audio comes from an eresdigna reel posted 25 Nov 2025; the text format took off on it from September 2026.</span></td><td class="first">19 Oct 2026</td><td class="when">This week</td><td class="num">334.1K → 377.1K</td></tr><tr><td><a href="2026-10-19/#t3">I just want to be OK</a><span class="origin">A 2008 Ingrid Michaelson song, revived on TikTok around 20 to 22 Aug 2026; the earliest big posts found are @madozilla and @camilla.</span></td><td class="first">19 Oct 2026</td><td class="when">19 Oct 2026</td><td class="num">204.5K</td></tr><tr><td><a href="2026-10-19/#t4">Text message from -A</a><span class="origin">The sound dates to Nov 2023; the &#x27;-A&#x27; text wave started 19 Sep 2026 (@nia.lavine and others), and cast member Shay Mitchell joined on 23 Sep.</span></td><td class="first">19 Oct 2026</td><td class="when">19 Oct 2026</td><td class="num">72.1K</td></tr><tr><td><a href="2026-11-02/#t11">The Process (process to result)</a><span class="origin">Original audio from Instagram creator @its_drfarah; Later.com listed the format on 18 Sep 2026. Original reel not found.</span></td><td class="first">19 Oct 2026</td><td class="when">This week</td><td class="num">43K → 49K</td></tr><tr><td><a href="2026-11-02/#t12">Pray For Me slow-mo entrance</a><span class="origin">Dancer @lesgetitrell made the slowed sound and slow-mo routine on 30 Aug 2020; it resurfaced as a group trend in October 2026.</span></td><td class="first">19 Oct 2026</td><td class="when">This week</td><td class="num">34.4K → 48.2K</td></tr><tr><td><a href="2026-10-19/#t7">Two fishes (Love Island)</a><span class="origin">Peacock posted the Love Island USA Season 8 clip of islander Sincere on 5 Jun 2026; the &#x27;explaining to my parents&#x27; lip-sync took off from mid Jun.</span></td><td class="first">19 Oct 2026</td><td class="when">19 Oct 2026</td><td class="num">33.9K</td></tr><tr><td><a href="2026-10-19/#t8">Ceiling fan outfit transition</a><span class="origin">Went viral on TikTok in the week of 28 Sep 2026 (The Tab); a CapCut fan-transition template was circulating from late Aug. Original creator not confirmed.</span></td><td class="first">19 Oct 2026</td><td class="when">19 Oct 2026</td><td class="num">33K</td></tr><tr><td><a href="2026-10-19/#t9">&quot;Let&#x27;s…&quot; Sean O&#x27;Pry snap edit</a><span class="origin">@.fwmatu&#x27;s Sean O&#x27;Pry edit (a 2015 Paco Rabanne ad) on 9 Sep 2026 started it; the &#x27;Let&#x27;s…&#x27; skit version took off on TikTok in late Sep 2026.</span></td><td class="first">19 Oct 2026</td><td class="when">19 Oct 2026</td><td class="num">30.7K</td></tr><tr><td><a href="2026-10-19/#t16">October is all about me</a><span class="origin">The sound clip was posted by TikTok user J (@user2267783) on 21 Sep 2026 in a Libra birthday-month video.</span></td><td class="first">19 Oct 2026</td><td class="when">19 Oct 2026</td><td class="num">14.3K</td></tr><tr><td><a href="2026-11-02/#t15">GRWM loading 0% to 100%</a><span class="origin">TikTok creator @saffknight posted the first version with her original sound on 2 Oct 2026; Later.com listed the Instagram version the same day.</span></td><td class="first">19 Oct 2026</td><td class="when">This week</td><td class="num">5.7K → 10.3K</td></tr><tr><td><a href="2026-10-19/#t10">Look, a spider (couples)</a><span class="origin">Spanish-language TikTok user @user077983456 posted the original friends clip on 19 Mar 2025; it was revived by couples in Aug and Sep 2026.</span></td><td class="first">19 Oct 2026</td><td class="when">19 Oct 2026</td><td class="num">6.7K</td></tr></tbody></table>
-<footer></footer>
+<table><thead><tr><th>Trend</th><th>First listed</th><th class="when">Last listed</th><th class="num">Videos</th></tr></thead><tbody><tr><td><a href="2026-11-02/#t16">All I Want for Christmas Is You, the November 1 switch</a><span class="origin">Released in 1994. The yearly 1 Nov return is tied to Mariah Carey&#x27;s &#x27;It&#x27;s Time&#x27; post, and big early November posts sit on this sound from 2023, 2024 and 2025.</span></td><td class="first">2 Nov 2026</td><td class="when">This week</td><td class="num">16.2M</td></tr><tr><td><a href="2026-11-02/#t1">Ba Ba Ba dance</a><span class="origin">The audio comes from a DJ mash-up posted by @iproducedit (prodshyp) on 20 Sep 2026. One dance post credits the steps to OTR.J5. A dad and daughter post on 27 Oct became the biggest on the sound.</span></td><td class="first">2 Nov 2026</td><td class="when">This week</td><td class="num">714.6K</td></tr><tr><td><a href="2026-11-02/#t2">Vlog timestamps</a><span class="origin">An older track picked up by small businesses and runners from Sept 2026. Later.com listed the format on 23 Oct 2026 and Buffer on 3 Nov 2026. Original creator not found.</span></td><td class="first">2 Nov 2026</td><td class="when">This week</td><td class="num">692K</td></tr><tr><td><a href="2026-11-02/#t3">Someone&#x27;s gotta hold it down</a><span class="origin">ADÉLA started it in July 2026 with a clip joking that someone has to hold it down in Bratislava, Slovakia. Charli D&#x27;Amelio&#x27;s post on 31 Jul is the biggest on the sound.</span></td><td class="first">2 Nov 2026</td><td class="when">This week</td><td class="num">655.3K</td></tr><tr><td><a href="2026-11-02/#t4">Small text zoom</a><span class="origin">Mash-up uploaded by altego_music; the biggest reels are from 7 to 9 Oct 2026, on parenting accounts. Later.com listed it on 30 Oct 2026 and Buffer on 3 Nov 2026. Original reel not found.</span></td><td class="first">2 Nov 2026</td><td class="when">This week</td><td class="num">570K</td></tr><tr><td><a href="2026-11-02/#t5">Housewife POV</a><span class="origin">Tate McRae released the song on 15 Oct 2026 and posted the top clip herself on 16 Oct. Coverage on 20 Oct described &#x27;housewife era&#x27; manifesting posts; the POV work jokes on the sound date from 20 to 30 Oct.</span></td><td class="first">2 Nov 2026</td><td class="when">This week</td><td class="num">503.1K</td></tr><tr><td><a href="2026-11-02/#t7">Not every angel walks the runway</a><span class="origin">JADE&#x27;s 2024 single came back after Kylie Jenner&#x27;s Victoria&#x27;s Secret show walk (18 Oct 2026, InMusicBlog). JADE&#x27;s own TikTok about it (20 Oct) is the most-played post checked on the sound.</span></td><td class="first">2 Nov 2026</td><td class="when">This week</td><td class="num">391.6K</td></tr><tr><td><a href="2026-11-02/#t9">Upside Down hand transition</a><span class="origin">Later.com listed it on 2 Oct 2026; the biggest reels are from 4 to 7 Oct 2026. Buffer still had it on 3 Nov and CreatorDB on 4 Nov. Original creator not found.</span></td><td class="first">2 Nov 2026</td><td class="when">This week</td><td class="num">352K</td></tr><tr><td><a href="2026-11-02/#t17">November Rain</a><span class="origin">1992 single. SocialPilot and Buffer both list it as a November sound, and SocialPilot says it returns every year. On TikTok the biggest 2026 posts started before the month, from late Sep.</span></td><td class="first">2 Nov 2026</td><td class="when">This week</td><td class="num">282.8K</td></tr><tr><td><a href="2026-11-02/#t18">Santa Tell Me countdown</a><span class="origin">Released in 2014. SocialPilot counted ten Reels on its audio page posted 26 to 29 Oct 2026, mostly countdown clips.</span></td><td class="first">2 Nov 2026</td><td class="when">This week</td><td class="num">237.5K</td></tr><tr><td><a href="2026-11-02/#t10">Listening ears</a><span class="origin">The audio comes from an anime fan post by @visionofsae on 25 Sep 2026. School and uni creators took it viral from 7 Oct, with lines like &#x27;fire drill&#x27; and &#x27;this will be on the exam&#x27;.</span></td><td class="first">2 Nov 2026</td><td class="when">This week</td><td class="num">63.2K</td></tr><tr><td><a href="2026-11-02/#t19">Underneath the Tree reveals</a><span class="origin">Released in 2013. SocialPilot calls it the brand-launch sound of the season, with the hook &#x27;Christmas starts November 1&#x27;. On TikTok, big 2026 posts began in mid Sep.</span></td><td class="first">2 Nov 2026</td><td class="when">This week</td><td class="num">49.4K</td></tr><tr><td><a href="2026-11-02/#t13">Beautiful people are busy</a><span class="origin">The audio comes from a post by @ugc.drake on 4 Aug 2026. It took off from September with posts by @kkloey and K-pop group Hearts2Hearts.</span></td><td class="first">2 Nov 2026</td><td class="when">This week</td><td class="num">44.5K</td></tr><tr><td><a href="2026-11-02/#t14">Toggle on</a><span class="origin">Italian knitwear maker @sviola_handmade posted the audio with a pattern launch on 7 Oct 2026, which is also the top reel on it. Later.com listed it on 30 Oct 2026 and Buffer on 3 Nov 2026.</span></td><td class="first">2 Nov 2026</td><td class="when">This week</td><td class="num">27K</td></tr><tr><td><a href="2026-10-19/#t12">we fell in love in october</a><span class="origin">girl in red released the song in 2018; it returns as the go-to October sound every year.</span></td><td class="first">19 Oct 2026</td><td class="when">19 Oct 2026</td><td class="num">3.1M</td></tr><tr><td><a href="2026-10-19/#t13">Pumpkin Head trend</a><span class="origin">Began as the pumpkin head photoshoot in autumn 2020 (Know Your Meme); returns every October, with a 2026 wave led by @the_life_of_aivax on 25 Sep.</span></td><td class="first">19 Oct 2026</td><td class="when">19 Oct 2026</td><td class="num">548.6K</td></tr><tr><td><a href="2026-10-19/#t14">Goo Goo Muck Halloween reels</a><span class="origin">The Cramps song (1981) went viral with the Wednesday Addams dance from Netflix&#x27;s Wednesday in late 2022 and now returns every Halloween.</span></td><td class="first">19 Oct 2026</td><td class="when">19 Oct 2026</td><td class="num">520.2K</td></tr><tr><td><a href="2026-10-19/#t15">Ramalama costume walk</a><span class="origin">Walk versions appeared in late Jul 2025; @swaggy_cucumber&#x27;s Hocus Pocus group walk on 1 Oct 2025 made it the Halloween costume-reveal format. Revived Oct 2026.</span></td><td class="first">19 Oct 2026</td><td class="when">19 Oct 2026</td><td class="num">473.9K</td></tr><tr><td><a href="2026-11-02/#t6">Preparing for my Netflix documentary</a><span class="origin">Started by TikTok creator @borderbandittx on 16 Jun 2026; posts by @fombasyllah and @wassupa1ex on 30 Jun took it viral.</span></td><td class="first">19 Oct 2026</td><td class="when">This week</td><td class="num">438.7K → 455K</td></tr><tr><td><a href="2026-11-02/#t8">Money can&#x27;t buy happiness, but...</a><span class="origin">The Instagram audio comes from an eresdigna reel posted 25 Nov 2025; the text format took off on it from September 2026.</span></td><td class="first">19 Oct 2026</td><td class="when">This week</td><td class="num">334.1K → 377.1K</td></tr><tr><td><a href="2026-10-19/#t3">I just want to be OK</a><span class="origin">A 2008 Ingrid Michaelson song, revived on TikTok around 20 to 22 Aug 2026; the earliest big posts found are @madozilla and @camilla.</span></td><td class="first">19 Oct 2026</td><td class="when">19 Oct 2026</td><td class="num">204.5K</td></tr><tr><td><a href="2026-10-19/#t4">Text message from -A</a><span class="origin">The sound dates to Nov 2023; the &#x27;-A&#x27; text wave started 19 Sep 2026 (@nia.lavine and others), and cast member Shay Mitchell joined on 23 Sep.</span></td><td class="first">19 Oct 2026</td><td class="when">19 Oct 2026</td><td class="num">72.1K</td></tr><tr><td><a href="2026-11-02/#t11">The Process (process to result)</a><span class="origin">Original audio from Instagram creator @its_drfarah; Later.com listed the format on 18 Sep 2026. Original reel not found.</span></td><td class="first">19 Oct 2026</td><td class="when">This week</td><td class="num">43K → 49K</td></tr><tr><td><a href="2026-11-02/#t12">Pray For Me slow-mo entrance</a><span class="origin">Dancer @lesgetitrell made the slowed sound and slow-mo routine on 30 Aug 2020; it resurfaced as a group trend in October 2026.</span></td><td class="first">19 Oct 2026</td><td class="when">This week</td><td class="num">34.4K → 48.2K</td></tr><tr><td><a href="2026-10-19/#t7">Two fishes (Love Island)</a><span class="origin">Peacock posted the Love Island USA Season 8 clip of islander Sincere on 5 Jun 2026; the &#x27;explaining to my parents&#x27; lip-sync took off from mid Jun.</span></td><td class="first">19 Oct 2026</td><td class="when">19 Oct 2026</td><td class="num">33.9K</td></tr><tr><td><a href="2026-10-19/#t8">Ceiling fan outfit transition</a><span class="origin">Went viral on TikTok in the week of 28 Sep 2026 (The Tab); a CapCut fan-transition template was circulating from late Aug. Original creator not confirmed.</span></td><td class="first">19 Oct 2026</td><td class="when">19 Oct 2026</td><td class="num">33K</td></tr><tr><td><a href="2026-10-19/#t9">&quot;Let&#x27;s…&quot; Sean O&#x27;Pry snap edit</a><span class="origin">@.fwmatu&#x27;s Sean O&#x27;Pry edit (a 2015 Paco Rabanne ad) on 9 Sep 2026 started it; the &#x27;Let&#x27;s…&#x27; skit version took off on TikTok in late Sep 2026.</span></td><td class="first">19 Oct 2026</td><td class="when">19 Oct 2026</td><td class="num">30.7K</td></tr><tr><td><a href="2026-10-19/#t16">October is all about me</a><span class="origin">The sound clip was posted by TikTok user J (@user2267783) on 21 Sep 2026 in a Libra birthday-month video.</span></td><td class="first">19 Oct 2026</td><td class="when">19 Oct 2026</td><td class="num">14.3K</td></tr><tr><td><a href="2026-11-02/#t15">GRWM loading 0% to 100%</a><span class="origin">TikTok creator @saffknight posted the first version with her original sound on 2 Oct 2026; Later.com listed the Instagram version the same day.</span></td><td class="first">19 Oct 2026</td><td class="when">This week</td><td class="num">5.7K → 10.3K</td></tr><tr><td><a href="2026-10-19/#t10">Look, a spider (couples)</a><span class="origin">Spanish-language TikTok user @user077983456 posted the original friends clip on 19 Mar 2025; it was revived by couples in Aug and Sep 2026.</span></td><td class="first">19 Oct 2026</td><td class="when">19 Oct 2026</td><td class="num">6.7K</td></tr></tbody></table>
 </div>
 </body>
 </html>

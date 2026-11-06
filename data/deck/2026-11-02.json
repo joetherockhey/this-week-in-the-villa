@@ -121,6 +121,18 @@
     "Underneath the Tree reveals": {
       "audio": "Underneath the Tree, Kelly Clarkson",
       "ctx": "Tree reveals and decor going up. Runs to 25 Dec"
+    },
+    "Beautiful people are busy": {
+      "audio": "original sound, ugc.drake",
+      "ctx": "Lip-sync the line, then walk away from the camera"
+    },
+    "Toggle on": {
+      "audio": "Original audio, sviola_handmade",
+      "ctx": "Flip an ON switch and the news appears"
+    },
+    "GRWM loading 0% to 100%": {
+      "audio": "original sound, saff",
+      "ctx": "A get-ready-with-me that loads from 0% to 100%"
     }
   },
   "lang_title": "Mogging and maxxing climb while most slang cools",
@@ -149,5 +161,11 @@
   "brand_label": "Instagram reels on the audio by 5 Nov, up from 241K on 2 Nov",
   "brand_use": "'Not every angel walks the runway, some of us do the BAS.' Hotels can use the dreamy version: their best view, or a ring box opening.",
   "brand_risk": "It is a major-label track, so business accounts may be blocked. The joke leans on one celebrity moment, so it will age faster than the dreamy version.",
-  "peak_title": "Nine of 19 trends are peaking, and four are still climbing"
+  "peak_title": "Nine of 19 trends are peaking, and four are still climbing",
+  "story_trends": [
+    "All I Want for Christmas Is You, the November 1 switch",
+    "November Rain",
+    "Santa Tell Me countdown",
+    "Underneath the Tree reveals"
+  ]
 }
