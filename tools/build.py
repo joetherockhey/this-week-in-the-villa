@@ -152,7 +152,7 @@ seas = [(i, t) for i, t in enumerate(trends, 1) if t["longevity"] != "evergreen"
 order = {"Rising": 0, "Peaking": 1, "Steady": 2, "Past peak": 3}
 words = sorted(words, key=lambda w: (order[w["status"]], -w["change"]))
 css = (ROOT / "tools/site.css").read_text("utf-8")
-fonts = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400..700&display=swap" rel="stylesheet">'
+fonts = '<link rel="icon" href="/this-week-in-the-villa/icon-64.png"><link rel="apple-touch-icon" href="/this-week-in-the-villa/icon-180.png">\n<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400..700&display=swap" rel="stylesheet">'
 
 
 def arcade(name):
