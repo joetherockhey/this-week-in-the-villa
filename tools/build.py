@@ -6,13 +6,14 @@ trends.json is kept in rank order: evergreen trends first, then seasonal, each b
 import json, html, datetime, pathlib, shutil, urllib.parse, re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
+NAME = "This Week in the Villa"
 trends = json.loads((ROOT / "data/trends.json").read_text("utf-8"))
 shots = json.loads((ROOT / "data/shots.json").read_text("utf-8"))
 today = datetime.date.today()
 monday = today - datetime.timedelta(days=today.weekday())
 wk = f"{monday.day} {monday:%B %Y}"
 e = lambda s: html.escape(str(s or ""))
-STATUS = {"Rising": "rise", "Peaking": "peak", "Steady": "flat", "Past peak": "fade"}
+STATUS = {"Rising": "rise", "Peaking": "peak", "Steady": "flat", "Past peak": "fade", "Active slang": "flat"}
 day = lambda d: f"{d.day} {d:%b %Y}"
 
 # Every week each trend was listed. ponytail: matched by exact name, so keep a trend's name the same between weeks.
@@ -99,6 +100,22 @@ def card(i, t):
 </article>"""
 
 
+def spark(v):
+    top = max(v) or 1
+    pts = " ".join(f"{i * 120 / (len(v) - 1):.1f},{26 - x / top * 24:.1f}" for i, x in enumerate(v))
+    return f'<svg viewBox="0 0 120 28" width="120" height="28" aria-hidden="true"><polyline points="{pts}" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>'
+
+
+def word_row(w):
+    cls = STATUS[w["status"]]
+    return (f'<tr><td><b>{e(w["word"])}</b><span class="origin">{e(w["means"])}</span></td><td class="st {cls}">{e(w["status"])}</td>'
+            f'<td class="num">{w["lookups"]:,}</td><td class="num">{w["change"]:+.0%}</td><td class="spark st {cls}">{spark(w["weekly"])}</td></tr>')
+
+
+words_data = json.loads((ROOT / f"data/words/{monday}.json").read_text("utf-8"))
+words = [w for w in words_data["words"] if "weekly" in w]
+phrases = [w for w in words_data["words"] if "weekly" not in w]
+through = day(datetime.date.fromisoformat(words_data["through"]))
 ever = [(i, t) for i, t in enumerate(trends, 1) if t["longevity"] == "evergreen"]
 seas = [(i, t) for i, t in enumerate(trends, 1) if t["longevity"] != "evergreen"]
 table = lambda rows: "".join(row(i, t) for i, t in rows)
@@ -108,7 +125,7 @@ page = f"""<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Trend Report · Week of {wk}</title>
+<title>{NAME} · Week of {wk}</title>
 <meta name="description" content="{len(trends)} social trends ranked by how much they're used, for the week of {wk}.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -152,6 +169,8 @@ dt{{color:var(--muted);font-size:14px}}
 .ex li{{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}}
 .ex a{{font-weight:500}} .ex span{{color:var(--muted)}}
 .src{{margin-top:16px;color:var(--muted);font-size:11.5px}}
+.origin{{display:block;color:var(--muted);font-size:14px;margin-top:2px}}
+td b{{font-weight:500}} .spark{{width:132px}} th.spark{{text-align:right}} .spark svg{{display:block;margin-left:auto}}
 .intro .past{{margin-top:22px}}
 .btn{{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 18px;border-radius:8px;background:var(--ink);color:var(--bg);font-size:15px;font-weight:500;text-decoration:none}}
 .btn:hover{{background:var(--red);color:var(--bg)}}
@@ -159,7 +178,7 @@ dt{{color:var(--muted);font-size:14px}}
 footer{{padding:40px 0 64px;color:var(--muted);font-size:14px;display:grid;gap:10px;max-width:72ch}}
 @media (max-width:760px){{
   .wrap{{padding:0 16px}} .intro{{padding:36px 0 24px}}
-  .when,th.whenh{{display:none}}
+  .when,th.whenh,.spark{{display:none}}
   .trend{{grid-template-columns:1fr;gap:20px}} figure{{max-width:260px}}
   dl{{grid-template-columns:1fr;gap:2px}} dd{{margin-bottom:10px}}
 }}
@@ -167,11 +186,11 @@ footer{{padding:40px 0 64px;color:var(--muted);font-size:14px;display:grid;gap:1
 </head>
 <body>
 <div class="wrap">
-<header><a class="mark" href="./">The Weekly Tea</a><span>Week of {wk}</span></header>
+<header><a class="mark" href="./">{NAME}</a><span>Week of {wk}</span></header>
 <section class="intro">
   <h1>Social trend report</h1>
   <p>{len(trends)} TikTok and Reels trends, ranked by how many videos use them. Trends a brand can run any week sit at the top. Ones tied to a date sit lower.</p>
-  <p class="past"><a class="btn" href="slides/">Weekly slides <span aria-hidden="true">→</span></a> <a class="btn" href="archive/">Past reports and trend history <span aria-hidden="true">→</span></a></p>
+  <p class="past"><a class="btn" href="#words">Words <span aria-hidden="true">↓</span></a> <a class="btn" href="slides/">Weekly slides <span aria-hidden="true">→</span></a> <a class="btn" href="archive/">Past reports and trend history <span aria-hidden="true">→</span></a></p>
 </section>
 <h2>Works any week</h2>
 <p>Not tied to a date. Ranked by videos made.</p>
@@ -179,6 +198,12 @@ footer{{padding:40px 0 64px;color:var(--muted);font-size:14px;display:grid;gap:1
 <h2>Time-bound</h2>
 <p>Still being made, but they end with the date. Post soon or skip.</p>
 <table><thead><tr><th>#</th><th>Trend</th><th>Status</th><th class="num">Videos</th><th class="when whenh">Window</th></tr></thead><tbody>{table(seas)}</tbody></table>
+<h2 id="words">Words</h2>
+<p>Which slang is climbing and which is fading. Status compares the last 14 days of lookups on Wiktionary with the 14 before, and with each word's best stretch in 26 weeks. Lookups show curiosity about a word, so read them as a sign of use, not a count. Data runs to {through}.</p>
+<table><thead><tr><th>Word</th><th>Status</th><th class="num">Lookups, 7 days</th><th class="num">Change</th><th class="spark">26 weeks</th></tr></thead><tbody>{"".join(word_row(w) for w in words)}</tbody></table>
+<h2>Phrases</h2>
+<p>These have no dictionary page to measure, so their status is read by hand.</p>
+<table><thead><tr><th>Phrase</th><th>Where</th><th>Status</th></tr></thead><tbody>{"".join(f'<tr><td><b>{e(w["word"])}</b></td><td>{e(w["where"])}</td><td class="st {STATUS[w["status"]]}">{e(w["status"])}</td></tr>' for w in phrases)}</tbody></table>
 <div class="section-break"></div>
 <main>{"".join(card(i, t) for i, t in enumerate(trends, 1))}</main>
 <footer id="how">
@@ -213,7 +238,6 @@ def hist_row(seen):
 
 rows = "".join(hist_row(s) for s in sorted(hist.values(), key=lambda s: (s[0][0], s[-1][2].get("usage_n") or 0), reverse=True))
 style = re.search(r"<style>.*?</style>", page, re.S).group(0).replace("</style>", """.first{font-family:"Geist Mono",monospace;font-size:12.5px;color:var(--muted);white-space:nowrap}
-.origin{display:block;color:var(--muted);font-size:14px;margin-top:2px}
 .num{width:auto;white-space:nowrap}
 th{white-space:nowrap}
 @media (max-width:760px){.num{white-space:normal;padding-right:0}.first{white-space:normal}}
@@ -224,13 +248,13 @@ fonts = re.search(r'<link rel="preconnect".*?rel="stylesheet">', page, re.S).gro
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Past Trend Reports</title>
+<title>{NAME} Past Reports</title>
 {fonts}
 {style}
 </head>
 <body>
 <div class="wrap">
-<header><a class="mark" href="../">The Weekly Tea</a><span>Past reports</span></header>
+<header><a class="mark" href="../">{NAME}</a><span>Past reports</span></header>
 <section class="intro">
   <h1>Past reports</h1>
   <p>Every weekly report as it ran, and when each trend first made the list.</p>
@@ -247,7 +271,7 @@ fonts = re.search(r'<link rel="preconnect".*?rel="stylesheet">', page, re.S).gro
 </html>
 """, "utf-8")
 
-# slides/index.html: one link per week's Google Slides deck (data/decks.json, written by the weekly-tea skill).
+# slides/index.html: one link per week's Google Slides deck (data/decks.json, written by the trend-report skill).
 decks = json.loads((ROOT / "data/decks.json").read_text("utf-8"))
 deck_rows = "".join(f'<tr><td><a href="{e(d["url"])}" target="_blank" rel="noopener">Week of {day(datetime.date.fromisoformat(w))}</a><span class="origin">{e(d["theme"])}</span></td>'
                     f'<td class="num"><a href="{e(d["url"])}" target="_blank" rel="noopener">Open slides <span aria-hidden="true">→</span></a></td></tr>'
@@ -258,13 +282,13 @@ deck_rows = "".join(f'<tr><td><a href="{e(d["url"])}" target="_blank" rel="noope
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Weekly Tea Slides</title>
+<title>{NAME} Slides</title>
 {fonts}
 {style}
 </head>
 <body>
 <div class="wrap">
-<header><a class="mark" href="../">The Weekly Tea</a><span>Weekly slides</span></header>
+<header><a class="mark" href="../">{NAME}</a><span>Weekly slides</span></header>
 <section class="intro">
   <h1>Weekly slides</h1>
   <p>Each week's findings as a Google Slides deck, newest first.</p>

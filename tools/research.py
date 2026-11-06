@@ -88,7 +88,7 @@ Skip anything the page dates before {cutoff}. Embedded post URLs on the page: {e
 PAGE TEXT:
 {text}"""
 
-MERGE = """Today is {today}. You are helping a Sydney full-service creative agency (Apparent) brief its
+MERGE = """Today is {today}. You are helping a Sydney full-service creative agency brief its
 social team on THIS WEEK's social trends. Below are trends extracted from several roundup pages.
 
 1. Merge duplicates (same trend under different names).
