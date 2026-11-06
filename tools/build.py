@@ -111,7 +111,7 @@ page = f"""<!doctype html>
 <title>Trend Report · Week of {wk}</title>
 <meta name="description" content="{len(trends)} social trends ranked by how much they're used, for the week of {wk}.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Oswald:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{{--bg:#fafaf9;--ink:#1c1b1a;--soft:#44423f;--muted:#6f6c68;--line:#e4e2df;--red:#e2361b;--rise:#1f7a4d;--fade:#8a8580}}
 @media (prefers-color-scheme:dark){{:root{{--bg:#151413;--ink:#ecebe8;--soft:#c9c7c3;--muted:#99958f;--line:#2e2c2a;--red:#ff5a3c;--rise:#4cc38a;--fade:#8a8580}}}}
@@ -121,8 +121,7 @@ a{{color:inherit;text-underline-offset:3px;text-decoration-color:var(--line)}}
 a:hover{{color:var(--red);text-decoration-color:currentColor}}
 .wrap{{max-width:1120px;margin:0 auto;padding:0 32px}}
 header{{display:flex;justify-content:space-between;align-items:center;height:68px;border-bottom:1px solid var(--line)}}
-.mark{{font:600 30px/1 Oswald,sans-serif;color:var(--red);letter-spacing:-.02em;text-decoration:none;display:flex;align-items:center;gap:6px}}
-.mark i{{width:18px;height:18px;border-radius:50% 50% 50% 6px;background:var(--red)}}
+.mark{{font:600 20px/1 Geist,sans-serif;letter-spacing:-.02em;text-decoration:none}}
 header span,.meta,.ex span,.src,figcaption,th,.num,.when,.rk{{font-family:"Geist Mono",monospace;font-size:12.5px}}
 header span{{color:var(--muted)}}
 .intro{{padding:56px 0 40px;max-width:720px}}
@@ -168,11 +167,11 @@ footer{{padding:40px 0 64px;color:var(--muted);font-size:14px;display:grid;gap:1
 </head>
 <body>
 <div class="wrap">
-<header><a class="mark" href="./"><i></i>apparent</a><span>Week of {wk}</span></header>
+<header><a class="mark" href="./">The Weekly Tea</a><span>Week of {wk}</span></header>
 <section class="intro">
   <h1>Social trend report</h1>
   <p>{len(trends)} TikTok and Reels trends, ranked by how many videos use them. Trends a brand can run any week sit at the top. Ones tied to a date sit lower.</p>
-  <p class="past"><a class="btn" href="archive/">Past reports and trend history <span aria-hidden="true">→</span></a></p>
+  <p class="past"><a class="btn" href="slides/">Weekly slides <span aria-hidden="true">→</span></a> <a class="btn" href="archive/">Past reports and trend history <span aria-hidden="true">→</span></a></p>
 </section>
 <h2>Works any week</h2>
 <p>Not tied to a date. Ranked by videos made.</p>
@@ -183,7 +182,7 @@ footer{{padding:40px 0 64px;color:var(--muted);font-size:14px;display:grid;gap:1
 <div class="section-break"></div>
 <main>{"".join(card(i, t) for i, t in enumerate(trends, 1))}</main>
 <footer id="how">
-  <p>How this works: each Monday the latest round-ups (New Engen, SocialPilot, Buffer, Postdom and others) are checked against the live TikTok sound pages. Video counts come from the sound page or the round-up quoting them, as of the date shown. Plays and likes on the examples come from TikTok's own post data at the time of checking.</p>
+  <p>How this works: each Wednesday the latest round-ups (New Engen, SocialPilot, Buffer, Postdom and others) are checked against the live TikTok sound pages. Video counts come from the sound page or the round-up quoting them, as of the date shown. Plays and likes on the examples come from TikTok's own post data at the time of checking.</p>
   <p>Example images are the cover frames of the linked posts, shown for reference. Check a sound's licensing before using it on a brand account.</p>
   <p>Compiled {today.day} {today:%B %Y}.</p>
 </footer>
@@ -196,7 +195,7 @@ footer{{padding:40px 0 64px;color:var(--muted);font-size:14px;display:grid;gap:1
 # Freeze this week. Images are numbered and reused every week, so each report keeps its own copy.
 snap = ROOT / "archive" / str(monday)
 snap.mkdir(parents=True, exist_ok=True)
-(snap / "index.html").write_text(page.replace('href="archive/"', 'href="../"').replace('href="./"', 'href="../../"'), "utf-8")
+(snap / "index.html").write_text(page.replace('href="archive/"', 'href="../"').replace('href="slides/"', 'href="../../slides/"').replace('href="./"', 'href="../../"'), "utf-8")
 shutil.copytree(ROOT / "img", snap / "img", dirs_exist_ok=True)
 
 # archive/index.html: every report, then every trend with when it first showed up.
@@ -231,7 +230,7 @@ fonts = re.search(r'<link rel="preconnect".*?rel="stylesheet">', page, re.S).gro
 </head>
 <body>
 <div class="wrap">
-<header><a class="mark" href="../"><i></i>apparent</a><span>Past reports</span></header>
+<header><a class="mark" href="../">The Weekly Tea</a><span>Past reports</span></header>
 <section class="intro">
   <h1>Past reports</h1>
   <p>Every weekly report as it ran, and when each trend first made the list.</p>
@@ -242,6 +241,35 @@ fonts = re.search(r'<link rel="preconnect".*?rel="stylesheet">', page, re.S).gro
 <h2>Trend history</h2>
 <p>Newest to the list first. The line under each name says when the trend actually began. Videos show the count when first listed, then when last listed.</p>
 <table><thead><tr><th>Trend</th><th>First listed</th><th class="when whenh">Last listed</th><th class="num">Videos</th></tr></thead><tbody>{rows}</tbody></table>
+<footer></footer>
+</div>
+</body>
+</html>
+""", "utf-8")
+
+# slides/index.html: one link per week's Google Slides deck (data/decks.json, written by the weekly-tea skill).
+decks = json.loads((ROOT / "data/decks.json").read_text("utf-8"))
+deck_rows = "".join(f'<tr><td><a href="{e(d["url"])}" target="_blank" rel="noopener">Week of {day(datetime.date.fromisoformat(w))}</a><span class="origin">{e(d["theme"])}</span></td>'
+                    f'<td class="num"><a href="{e(d["url"])}" target="_blank" rel="noopener">Open slides <span aria-hidden="true">→</span></a></td></tr>'
+                    for w, d in sorted(decks.items(), reverse=True))
+(ROOT / "slides").mkdir(exist_ok=True)
+(ROOT / "slides/index.html").write_text(f"""<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Weekly Tea Slides</title>
+{fonts}
+{style}
+</head>
+<body>
+<div class="wrap">
+<header><a class="mark" href="../">The Weekly Tea</a><span>Weekly slides</span></header>
+<section class="intro">
+  <h1>Weekly slides</h1>
+  <p>Each week's findings as a Google Slides deck, newest first.</p>
+</section>
+<table><tbody>{deck_rows}</tbody></table>
 <footer></footer>
 </div>
 </body>

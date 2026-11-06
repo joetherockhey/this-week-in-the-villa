@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Weekly Tea Slides</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fafaf9;--ink:#1c1b1a;--soft:#44423f;--muted:#6f6c68;--line:#e4e2df;--red:#e2361b;--rise:#1f7a4d;--fade:#8a8580}
+@media (prefers-color-scheme:dark){:root{--bg:#151413;--ink:#ecebe8;--soft:#c9c7c3;--muted:#99958f;--line:#2e2c2a;--red:#ff5a3c;--rise:#4cc38a;--fade:#8a8580}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.55 Geist,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-underline-offset:3px;text-decoration-color:var(--line)}
+a:hover{color:var(--red);text-decoration-color:currentColor}
+.wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+header{display:flex;justify-content:space-between;align-items:center;height:68px;border-bottom:1px solid var(--line)}
+.mark{font:600 20px/1 Geist,sans-serif;letter-spacing:-.02em;text-decoration:none}
+header span,.meta,.ex span,.src,figcaption,th,.num,.when,.rk{font-family:"Geist Mono",monospace;font-size:12.5px}
+header span{color:var(--muted)}
+.intro{padding:56px 0 40px;max-width:720px}
+h1{font:700 clamp(32px,4.5vw,48px)/1.08 Geist,sans-serif;letter-spacing:-.03em;margin-bottom:16px}
+.intro p{color:var(--soft);font-size:18px;max-width:60ch}
+h2{font:600 20px/1.2 Geist,sans-serif;letter-spacing:-.01em;margin:40px 0 4px}
+h2+p{color:var(--muted);font-size:15px;margin-bottom:12px}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;font-weight:400;color:var(--muted);padding:8px 12px 8px 0;border-bottom:1px solid var(--ink)}
+td{padding:11px 12px 11px 0;border-bottom:1px solid var(--line);vertical-align:baseline}
+td a{text-decoration:none;font-weight:500}
+.rk{color:var(--muted);width:3em} .num{text-align:right;width:7em} th.num{text-align:right} .when{color:var(--muted);width:9em;padding-left:24px;white-space:nowrap}
+.st{font-family:"Geist Mono",monospace;font-size:12.5px;width:7em}
+.st.rise{color:var(--rise)} .st.peak{color:var(--red)} .st.fade{color:var(--fade)} .st.flat{color:var(--muted)}
+.section-break{margin-top:80px;padding-top:24px;border-top:1px solid var(--ink)}
+.trend{display:grid;grid-template-columns:240px 1fr;gap:40px;padding:40px 0;border-bottom:1px solid var(--line);scroll-margin-top:12px}
+figure img{width:100%;aspect-ratio:9/14;object-fit:cover;object-position:top;border-radius:6px;display:block;background:var(--line)}
+.pic{display:block} .pic:hover img{opacity:.85}
+figcaption{margin-top:8px;color:var(--muted)}
+.noimg{aspect-ratio:9/14;border-radius:6px;background:var(--line)}
+.meta{display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--muted)}
+.meta .rk{color:var(--ink);width:auto}
+h3{font:600 clamp(24px,3vw,30px)/1.15 Geist,sans-serif;letter-spacing:-.02em;margin:10px 0 10px}
+.what{font-size:18px;color:var(--soft);max-width:62ch}
+dl{display:grid;grid-template-columns:7.5em 1fr;gap:10px 16px;margin:22px 0;max-width:68ch;font-size:15.5px}
+dt{color:var(--muted);font-size:14px}
+.ex{list-style:none;display:grid;gap:6px;font-size:15px}
+.ex li{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}
+.ex a{font-weight:500} .ex span{color:var(--muted)}
+.src{margin-top:16px;color:var(--muted);font-size:11.5px}
+.intro .past{margin-top:22px}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 18px;border-radius:8px;background:var(--ink);color:var(--bg);font-size:15px;font-weight:500;text-decoration:none}
+.btn:hover{background:var(--red);color:var(--bg)}
+.btn:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+footer{padding:40px 0 64px;color:var(--muted);font-size:14px;display:grid;gap:10px;max-width:72ch}
+@media (max-width:760px){
+  .wrap{padding:0 16px} .intro{padding:36px 0 24px}
+  .when,th.whenh{display:none}
+  .trend{grid-template-columns:1fr;gap:20px} figure{max-width:260px}
+  dl{grid-template-columns:1fr;gap:2px} dd{margin-bottom:10px}
+}
+.first{font-family:"Geist Mono",monospace;font-size:12.5px;color:var(--muted);white-space:nowrap}
+.origin{display:block;color:var(--muted);font-size:14px;margin-top:2px}
+.num{width:auto;white-space:nowrap}
+th{white-space:nowrap}
+@media (max-width:760px){.num{white-space:normal;padding-right:0}.first{white-space:normal}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><a class="mark" href="../">The Weekly Tea</a><span>Weekly slides</span></header>
+<section class="intro">
+  <h1>Weekly slides</h1>
+  <p>Each week's findings as a Google Slides deck, newest first.</p>
+</section>
+<table><tbody><tr><td><a href="https://docs.google.com/presentation/d/1y41nnD7raNg5hEpbtyypP7S26LdoqpH89lUXo-XMYtc/edit" target="_blank" rel="noopener">Week of 2 Nov 2026</a><span class="origin">Christmas arrives, angels stay, dances go duo</span></td><td class="num"><a href="https://docs.google.com/presentation/d/1y41nnD7raNg5hEpbtyypP7S26LdoqpH89lUXo-XMYtc/edit" target="_blank" rel="noopener">Open slides <span aria-hidden="true">→</span></a></td></tr></tbody></table>
+<footer></footer>
+</div>
+</body>
+</html>

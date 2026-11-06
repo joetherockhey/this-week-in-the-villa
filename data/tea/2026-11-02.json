@@ -1,0 +1,72 @@
+{
+  "theme": "Christmas arrives, angels stay, dances go duo",
+  "src": "Source: TikTok and Instagram sound pages, Postdom and SocialPilot, checked 5 Nov 2026.",
+  "glance_title": "Christmas replaced Halloween, and 14 of 19 trends are new",
+  "glance": [
+    [19, "trends on the list"],
+    [14, "new since 19 Oct"],
+    [4, "rising this week"],
+    [4, "tied to a date"]
+  ],
+  "glance_note": "Eleven trends left the list, including the Halloween sounds. The biggest evergreen trend, the Ba Ba Ba dance, sits at 714.6K TikTok videos.",
+  "story_title": "The Christmas switch happened on 1 November, right on time",
+  "story_trend": "Santa Tell Me countdown",
+  "story_bullets": [
+    "Mariah Carey's song came back on 1 Nov, as it has each year since at least 2023",
+    "Santa Tell Me and Underneath the Tree joined it, and November Rain runs to the end of the month",
+    "The 16.2M video count covers every year, so it does not measure this season",
+    "Australian brands should swap snow for heat, beach or backyard"
+  ],
+  "moments": [
+    {"head": "A dad and daughter took over Ba Ba Ba", "text": "Their 27 Oct post is the biggest on the sound: 22.1M views and 3.9M likes.", "trend": "Ba Ba Ba dance"},
+    {"head": "JADE joined the trend", "text": "JADE's 20 Oct TikTok about Kylie Jenner's runway walk reached 23.7M plays.", "trend": "Not every angel walks the runway"},
+    {"head": "A 2020 slow-mo sound came back", "text": "Pray For Me grew 40% since 20 Oct, from 34.4K to 48.2K videos.", "trend": "Pray For Me slow-mo entrance"},
+    {"head": "Tate McRae's Housewife became a POV", "text": "503.1K videos pair a busy-day POV line with a strut to the chorus.", "trend": "Housewife POV"}
+  ],
+  "tbl1": "Six trends lead the list, each above 450K videos",
+  "tbl2": "Angels are rising, and small sounds are worth a look",
+  "tbl3": "Four date-bound trends end by Christmas",
+  "rows": {
+    "Ba Ba Ba dance": {"audio": "prodshyp mash-up", "ctx": "Easy duo dance under a 'how long have you been friends?' caption"},
+    "Vlog timestamps": {"audio": "Pump It, Black Eyed Peas", "ctx": "Clips of a day or job, each labelled with a time or step"},
+    "Someone's gotta hold it down": {"audio": "Ain't In LA, ADÉLA", "ctx": "The place that keeps running while everyone else is away"},
+    "Small text zoom": {"audio": "Drop It Like It's Hot x Stayin' Alive", "ctx": "Camera zooms into a tiny encouraging line of text"},
+    "Housewife POV": {"audio": "Housewife, Tate McRae", "ctx": "POV line about an ordinary day, then a strut to the chorus"},
+    "Preparing for my Netflix documentary": {"name": "My Netflix documentary", "audio": "On a Mission, Duomo", "ctx": "Mime a lapel mic and frame a petty event as a documentary"},
+    "Not every angel walks the runway": {"audio": "Angel Of My Dreams, JADE", "ctx": "You at your desk or commute, walking like an angel anyway"},
+    "Money can't buy happiness, but...": {"audio": "Original audio, eresdigna", "ctx": "The caption sets it up, then a clip of what makes you happy"},
+    "Upside Down hand transition": {"audio": "Upside Down, Diana Ross", "ctx": "Mouth the lyric, hit the gesture, cut to the reveal"},
+    "Listening ears": {"audio": "Original sound, vivi", "ctx": "Mime switching on your ears when a favourite word comes up"},
+    "The Process (process to result)": {"name": "The Process", "audio": "Original audio, its_drfarah", "ctx": "Tools and steps behind something, ending on the result"},
+    "Pray For Me slow-mo entrance": {"audio": "Pray For Me (slowed), lesgetitrell", "ctx": "Friends enter the frame one at a time in slow motion"},
+    "All I Want for Christmas Is You, the November 1 switch": {"name": "The November 1 switch", "audio": "All I Want for Christmas Is You", "ctx": "Marks the move from Halloween to Christmas. Runs to 25 Dec"},
+    "November Rain": {"audio": "November Rain, Guns N' Roses", "ctx": "Moody clips and 90s memory montages. Runs to 30 Nov"},
+    "Santa Tell Me countdown": {"audio": "Santa Tell Me, Ariana Grande", "ctx": "Countdown clips, gift ideas and unboxings. Runs to 25 Dec"},
+    "Underneath the Tree reveals": {"audio": "Underneath the Tree, Kelly Clarkson", "ctx": "Tree reveals and decor going up. Runs to 25 Dec"}
+  },
+  "lang_title": "Mogging and larping are peaking in the comments",
+  "lang_note": "Carried over from the Oct/early Nov edition. Language is tracked by hand, not from sound pages.",
+  "language": [
+    ["Lore", "Content and comments", "Active slang"],
+    ["My favourite animal", "Content", "Past peak"],
+    ["Things that changed my brain chemistry", "Content", "Past peak"],
+    ["Is ___ in the room with us?", "Comments", "Active slang"],
+    ["Larping", "Comments", "Peaking"],
+    ["...just to feel something", "Content and comments", "Active slang"],
+    ["Mogging", "Content and comments", "Peaking"]
+  ],
+  "case_title": "How a 2024 single became the office worker's runway",
+  "case_trend": "Not every angel walks the runway",
+  "case_story": "A runway moment turned a two-year-old song into a workplace joke",
+  "case_steps": [
+    ["2024", "JADE releases Angel Of My Dreams as a single"],
+    ["18 Oct 2026", "The song plays during Kylie Jenner's Victoria's Secret show walk"],
+    ["20 Oct 2026", "JADE's TikTok reaches 23.7M plays. @kelsey_paul posts 'I'm in Excel'"],
+    ["27 Oct 2026", "@australia uses the dreamy version for a Melbourne reel"]
+  ],
+  "brand_title": "The workplace joke suits any team, but it will date quickly",
+  "brand_num": "263K",
+  "brand_label": "Instagram reels on the audio by 5 Nov, up from 241K on 2 Nov",
+  "brand_use": "'Not every angel walks the runway, some of us do the BAS.' Hotels can use the dreamy version: their best view, or a ring box opening.",
+  "brand_risk": "It is a major-label track, so business accounts may be blocked. The joke leans on one celebrity moment, so it will age faster than the dreamy version."
+}
