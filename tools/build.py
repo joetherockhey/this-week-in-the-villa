@@ -174,6 +174,8 @@ def five(i, t):
 
 
 lead_i, lead = ever[0]
+others = [i for i, t in ever if t["name"] != deck["story_trend"]]
+trio = [others[0], idx[deck["story_trend"]], others[2]]  # the week's story in the middle, between two of the biggest trends
 dated = f"""<div class="a-dated"><h3>{e(deck["tbl3"])}</h3><p>Post soon or skip. Video counts cover every year the sound has run.</p><div class="a-rows">{"".join(list_row(i, t) for i, t in seas)}</div></div>""" if seas else ""
 phrase_list = "".join(f'<li>{e(w["word"])}{st(w["status"])}</li>' for w in phrases)
 
@@ -192,9 +194,9 @@ page = f"""<!doctype html>
 <header class="a-hero">
  <div class="a-nav"><b>Week of {wk}</b><span><a href="#words">Words</a><a href="slides/">Weekly slides</a><a href="archive/">Past reports</a><a href="how/">How it works</a></span></div>
  <p class="a-mast">This Week <br>in the Villa</p>
- <div class="a-what"><p>What's trending on TikTok and Instagram each week, and how brands can use it.</p><a class="a-btn" href="how/">See how it works</a></div>
- <div class="a-arch"><div class="s1"></div><div class="s2"></div><figure>{cover(idx[deck["story_trend"]], False)}</figure></div>
- <div class="a-lead"><p class="a-kick">This week</p><h1>{e(deck["glance_title"])}</h1></div>
+ <div class="a-col"><div class="a-what"><p>What's trending on TikTok and Instagram each week, and how brands can use it.</p><a class="a-btn" href="how/">See how it works</a></div>
+ <div class="a-lead"><p class="a-kick">This week</p><h1>{e(deck["glance_title"])}</h1></div></div>
+ <div class="a-trio">{"".join(f'<a href="#t{i}">{cover(i, False)}</a>' for i in trio)}</div>
 </header>
 <section class="a-feature"><div class="wrap"><h2>{e(deck["story_title"])}</h2>
  <div class="a-fgrid"><ul class="a-facts">{"".join(f"<li>{e(b)}</li>" for b in deck["story_bullets"])}</ul><ul class="a-arcade">{"".join(arcade(n) for n in deck["story_trends"])}</ul></div></div></section>
