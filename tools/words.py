@@ -3,9 +3,9 @@
 Measures how often each word is looked up on English Wiktionary (Wikimedia pageviews, free, no key).
 ponytail: lookups stand in for use. Nothing free counts words in TikTok comments, so read it as curiosity about a word.
 Entries with no "titles" are phrases with no page: their status is set by hand in words.json.
-Usage: python tools/words.py
+Usage: python tools/words.py [chart]   (chart: only redraw img/words.png)
 """
-import datetime, json, pathlib, time, urllib.error, urllib.parse, urllib.request
+import datetime, json, pathlib, sys, time, urllib.error, urllib.parse, urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 WEEKS = 26
@@ -45,11 +45,13 @@ def chart(rows, path):
     ink, plaster, colours = "#14303A", "#F7F0E4", ("#C8553D", "#1E8A9C", "#D99A1C", "#14303A")
     fig, ax = plt.subplots(figsize=(4.6, 3.5), dpi=220, facecolor=plaster)
     ax.set_facecolor(plaster)
-    top = [r for r in rows if r.get("weekly")][:4]
+    measured = [r for r in rows if r.get("weekly")]
+    top = [r for r in measured if r["status"] == "Rising"][:3] + [min(measured, key=lambda r: r["change"])]  # what's climbing, and the steepest fall
     for r, c in zip(top, colours):
-        base = max(r["weekly"])
-        y = [v / base * 100 for v in r["weekly"]]
-        ax.plot(y, color=c, linewidth=2)
+        v = r["weekly"]
+        v = [sum(v[max(0, i - 2):i + 1]) / len(v[max(0, i - 2):i + 1]) for i in range(len(v))]  # three-week average: single weeks are noisy
+        y = [x / max(v) * 100 for x in v]
+        ax.plot(y, color=c, linewidth=2.2)
         ax.annotate(r["word"], (len(y) - 1, y[-1]), xytext=(5, 0), textcoords="offset points", color=c, fontsize=9, fontweight="bold", va="center")
     ax.set_xlim(0, WEEKS + 5)
     ax.set_ylim(0, 108)
@@ -60,6 +62,13 @@ def chart(rows, path):
     ax.spines["bottom"].set_color(ink)
     fig.tight_layout()
     fig.savefig(path, facecolor=plaster)
+
+
+def redraw():
+    """Redraw the chart from saved data, without calling Wikimedia again."""
+    today = datetime.date.today()
+    monday = today - datetime.timedelta(days=today.weekday())
+    chart(json.loads((ROOT / f"data/words/{monday}.json").read_text("utf-8"))["words"], ROOT / "img/words.png")
 
 
 def main():
@@ -97,4 +106,4 @@ def demo():
 
 if __name__ == "__main__":
     demo()
-    main()
+    redraw() if sys.argv[1:] == ["chart"] else main()

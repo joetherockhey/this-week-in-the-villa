@@ -11,7 +11,7 @@ SITE = "https://joetherockhey.github.io/this-week-in-the-villa"
 TEMPLATE = "1rvdR3fjF2m_mhh2mmFXs_AuJB1XRXVV-R7u6RrdSg8I"  # 'This Week in the Villa (template)' in Joe's Drive; tools/deck_template.py drew it
 PILL = {"Rising": ("0E4A5A", "F7F0E4"), "Peaking": ("C8553D", "F7F0E4"), "Steady": ("E8DCC6", "14303A"), "Past peak": ("D3C6AE", "6B7A80")}
 TERRA, POOL, MUTE, INK = "C8553D", "0E4A5A", "6B7A80", "14303A"
-LIMITS = {"theme": 70, "glance_title": 75, "glance_note": 230, "story_title": 70, "story_bullets": 360, "lang_title": 62, "peak_title": 62,
+LIMITS = {"theme": 70, "glance_title": 75, "glance_note": 230, "story_title": 70, "story_bullets": 360, "lang_title": 50, "peak_title": 62,
           "case_title": 75, "brand_title": 75, "brand_num": 6, "brand_label": 90, "brand_use": 165, "brand_risk": 165,
           "src": 130, "tbl1": 62, "tbl2": 62, "tbl3": 62, "head": 48, "text": 150, "when": 12, "what": 85, "name": 36, "audio": 50, "ctx": 70, "label": 30}
 
@@ -94,7 +94,7 @@ def requests(monday):
         r += [sub(f"m{i}_head", fits("head", m["head"])), sub(f"m{i}_text", fits("text", m["text"])), pic(f"img_m{i}", m.get("img") or cover(m["trend"]))]
     for i, (when, what) in enumerate(tea["case_steps"], 1):
         r += [sub(f"c{i}_when", fits("when", when), "v_case"), sub(f"c{i}_what", fits("what", what), "v_case")]
-    r += [pic("img_story", cover(tea["story_trend"])), pic("img_case", cover(tea["case_trend"])), pic("img_words", f"{SITE}/archive/{monday}/img/words.png")]
+    r += [pic("img_story", cover(tea["story_trend"])), pic("img_case", cover(tea["case_trend"])), pic("img_words", f"{SITE}/archive/{monday}/img/words.png?v={wd['through']}")]
     r += cards("a", "v_tr1", ever[:6], tea, cover) + cards("b", "v_tr2", ever[6:12], tea, cover)
 
     for st in PILL:

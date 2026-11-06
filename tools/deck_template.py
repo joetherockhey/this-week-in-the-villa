@@ -119,7 +119,7 @@ def b1():
     for i in range(1, 7):
         x = .5 + (i - 1) * 1.52
         r += img(page, f"a_im{i}", x, 1.05, 1.4, 1.95, f"img_c{i}")
-        r += box(page, f"a_pl{i}", x, 3.06, .78, .22, "{{c%d_status}}" % i, 8, MONO, fill=SAND, kind="ROUND_RECTANGLE", align="CENTER", anchor="MIDDLE")
+        r += box(page, f"a_pl{i}", x, 3.06, .92, .22, "{{c%d_status}}" % i, 8, MONO, fill=SAND, kind="ROUND_RECTANGLE", align="CENTER", anchor="MIDDLE")
         r += box(page, f"a_ct{i}", x + .55, 3.02, .95, .3, "{{c%d_n}}" % i, 9, MONO, align="END")
         r += box(page, f"a_nm{i}", x - .1, 3.27, 1.6, .6, "{{c%d_name}}" % i, 10.5, bold=True)
         r += box(page, f"a_cx{i}", x - .1, 3.83, 1.6, .85, "{{c%d_ctx}}" % i, 9)
