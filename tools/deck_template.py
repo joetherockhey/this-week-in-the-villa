@@ -82,7 +82,7 @@ def table(page, oid, x, y, widths, head, tokens, rows, size, row_h, right=()):
 
 
 def b0():
-    r = slide("v_cover", POOL)
+    r = slide("v_cover", POOL) + [{"deleteObject": {"objectId": "p"}}]  # the blank slide a new file starts with
     r += arch("v_cover", "cv_o", 5.5, .55, 3.9, TERRA) + arch("v_cover", "cv_m", 6.0, 1.05, 2.9, PLASTER) + arch("v_cover", "cv_i", 6.5, 1.55, 1.9, AQUA)
     r += box("v_cover", "cv_sun", 7.05, 2.1, .8, .8, fill=SUN, kind="ELLIPSE") + box("v_cover", "cv_sea", 6.5, 3.75, 1.9, 1.875, fill=POOL, kind="RECTANGLE")
     r += box("v_cover", "cv_kk", .4, .28, 5, .3, "WEEKLY TREND REPORT", 10, MONO, color=SUN)
@@ -112,18 +112,21 @@ def b1():
         r += box("v_mom", f"mo_h{i}", x - .1, 3.15, 2.3, .6, "{{m%d_head}}" % i, 12, bold=True)
         r += box("v_mom", f"mo_b{i}", x - .1, 3.72, 2.3, 1.35, "{{m%d_text}}" % i, 10.5)
     r += src("v_mom")
-    for page, p, label in (("v_tr1", "a", "THE TRENDS: TOP OF THE LIST"), ("v_tr2", "b", "THE TRENDS: NEXT UP")):
-        r += slide(page, PLASTER) + kicker(page, label)
-        r += box(page, p + "_ttl", .4, .52, 9.2, .5, "{{%s_title}}" % p, 22, HEAD, True)
-        for i in range(1, 7):
-            x = .5 + (i - 1) * 1.52
-            r += img(page, f"{p}_im{i}", x, 1.05, 1.4, 1.95, f"img_{p}{i}")
-            r += box(page, f"{p}_pl{i}", x, 3.06, .78, .22, "{{%s%d_status}}" % (p, i), 8, MONO, fill=SAND, kind="ROUND_RECTANGLE", align="CENTER", anchor="MIDDLE")
-            r += box(page, f"{p}_ct{i}", x + .55, 3.02, .95, .3, "{{%s%d_n}}" % (p, i), 9, MONO, align="END")
-            r += box(page, f"{p}_nm{i}", x - .1, 3.27, 1.6, .6, "{{%s%d_name}}" % (p, i), 10.5, bold=True)
-            r += box(page, f"{p}_cx{i}", x - .1, 3.83, 1.6, .85, "{{%s%d_ctx}}" % (p, i), 9)
-            r += box(page, f"{p}_sd{i}", x - .1, 4.68, 1.6, .45, "{{%s%d_audio}}" % (p, i), 8, MONO, color=MUTE)
-        r += src(page)
+    page = "v_tr1"
+    r += slide(page, PLASTER) + kicker(page, "{{kick}}")
+    r += box(page, "a_ttl", .4, .52, 9.2, .5, "{{t_title}}", 22, HEAD, True)
+    ids = {page: "v_tr2", "v_tr1_k": "v_tr2_k", "v_tr1_s": "v_tr2_s", "a_ttl": "b_ttl"}
+    for i in range(1, 7):
+        x = .5 + (i - 1) * 1.52
+        r += img(page, f"a_im{i}", x, 1.05, 1.4, 1.95, f"img_c{i}")
+        r += box(page, f"a_pl{i}", x, 3.06, .78, .22, "{{c%d_status}}" % i, 8, MONO, fill=SAND, kind="ROUND_RECTANGLE", align="CENTER", anchor="MIDDLE")
+        r += box(page, f"a_ct{i}", x + .55, 3.02, .95, .3, "{{c%d_n}}" % i, 9, MONO, align="END")
+        r += box(page, f"a_nm{i}", x - .1, 3.27, 1.6, .6, "{{c%d_name}}" % i, 10.5, bold=True)
+        r += box(page, f"a_cx{i}", x - .1, 3.83, 1.6, .85, "{{c%d_ctx}}" % i, 9)
+        r += box(page, f"a_sd{i}", x - .1, 4.68, 1.6, .45, "{{c%d_audio}}" % i, 8, MONO, color=MUTE)
+        ids.update({f"a_{k}{i}": f"b_{k}{i}" for k in ("im", "pl", "ct", "nm", "cx", "sd")})
+    r += src(page)
+    r.append({"duplicateObject": {"objectId": page, "objectIds": ids}})
     r += slide("v_peak", POOL) + kicker("v_peak", "WHAT'S PEAKING", SUN)
     r += box("v_peak", "pk_ti", .4, .55, 9.2, .7, "{{peak_title}}", 24, HEAD, True, PLASTER)
     for i, (st, c) in enumerate((("Rising", AQUA), ("Peaking", TERRA), ("Steady", SAND), ("Past peak", MUTE))):
