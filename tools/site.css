@@ -24,8 +24,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;text-a
 .a-nav span{display:flex;gap:22px}
 .a-mast{position:relative;z-index:2;font:800 clamp(52px,8.5vw,136px)/.95 var(--head);font-stretch:75%;letter-spacing:-.012em;margin:12px 0 0;white-space:nowrap}
 .a-mast br{display:none}
-.a-what{position:relative;z-index:2;max-width:min(52%,640px);margin-top:18px}
-.a-what p{font-size:clamp(17px,1.5vw,20px);line-height:1.4}
+.a-what{position:relative;z-index:2;max-width:min(56%,700px);margin-top:18px}
+.a-what p{font-size:clamp(17px,1.5vw,20px);line-height:1.4;text-wrap:balance}
 .a-btn{display:inline-flex;align-items:center;min-height:46px;margin-top:14px;padding:0 22px;border-radius:999px;background:var(--pop);color:var(--ink);font-weight:600;text-decoration:none}
 .a-btn:hover{background:var(--paper)}
 .a-kick{font:600 15px var(--body);color:var(--pop);margin-bottom:8px}
